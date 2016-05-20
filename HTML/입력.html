@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!--엘리먼트(요소)= <input/>
+    속성 type의 종류
+	1. text =텍스트를 입력받을때
+	2. password = 비밀번호형식으로 텍스트가 비공개됨
+	3. radio = 단일 선택버튼(여러개중에 하나만 선택함)
+	4. checkbox = 다중 선택버튼(여러개중에 여러개 선택함)
+	5. button = (거의 잘 안씀) 범용버튼(모든 쓸수 있음) 특별한 용도 없이 아무때나 사용 가능
+	6. submit = 전송을 할때 사용하는 버튼
+	7. reset = (거의 잘 안씀) 내가 작성한 폼에 있는 내용을 삭제. 초기화
+	8. file = (파일을 올릴수 있는) 파일/선택 및 업로드 할때 사용
+    5-8 =점부 버튼식
+
+    <label for=""> </label>
+    <fieldset>
+        <legend></legend>
+    </fieldset>-->
+
+    <input type="text" />
+    <input type="password" />
+    <input type="radio" />
+    <input type="checkbox" />
+    <input type="button" value="확인" />
+    <input type="submit" value=""/>
+    <input type="file" />
+
+    <!-- fieldset 사용하기 -->
+    아이디: <input type="text" />
+
+    <fieldset>
+        <legend>필수 입력</legend>
+            아이디 <input type="text" />
+    </fieldset>
+
+    <h1>회원가입신청서</h1>
+    <fieldset>
+        <legend>필수 입력</legend>
+            <ul>
+                <li> <label for="userId"> 아이디</label>
+                <input type="text"  id="userId"/></li>
+                <li> 이름 <input type="text" /></li>
+            </ul>
+    </fieldset>
+
+
+    <h1>회원가입신청서</h1>
+    <fieldset>
+        <legend>필수 입력</legend>
+            <ul>
+                <li> <label for="userId">
+                <input type="text"  id="userId" palceholder="아이디"/></label>
+            </li>
+                <li> 이름 <input type="text" /></li>
+            </ul>
+    </fieldset>
+
+    <h1>회원가입신청서</h1>
+    <fieldset>
+        <legend>필수 입력</legend>
+            <ul>
+                <li> <label for="userId"> 아이디</label>
+                <input type="text"  id="userId" value="아이디"/></li>
+                <!-- value는 글씨가 안없어짐 -->
+                <li> 이름 <input type="text" /></li>
+            </ul>
+    </fieldset>
+
+
+
+       <label for="userId1"> 아이디</label>
+       <input type="text"  id="userId1"/>
+       <br />
+       <input type="checkbox"  id= "test"/><label for="test"> 동의하십니까?</label>
+
+
+</body>
+</html>
