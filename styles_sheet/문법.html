@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    </head>
+<body>
+            <!--inline 방식의 스타일링  -->
+        <div style="border:1px red solid;"></div>
+        <div style="border:1px red solid; width:100px; height:100px;"></div>
+            <!--div태그일 경우 개행된다.  -->
+        <div style="border:1px red solid;">text</div>
+        <div style="border:1px red solid;">text</div>
+            <!-- span태그일 경우 공간이 생긴다.  -->
+        <span style="border:1px red solid;">text</span>
+        <span style="border:1px red solid;">text</span>
+            <!-- 바디 태그 안에 직접 꼬리표 달듯이  -->
+
+
+        <!--인라인 방식  -->
+        <p style="border:1px; red solidl; backgroud-color:blue;">hello</p>
+        <p style="border:1px; red solidl;">hello</p>
+        <p style="border:1px; red solidl; backgroud-color:blue;">hello</p>
+        <p style="border:1px; red solidl;">hello</p>
+        <!-- 헤드에 스타일에 쓸필요 없다. -->
+
+</body>
+</html>
+
+
+
+<!--internal (인터널) 헤드 안에  스타일 값을 넣는다.
+바디 안에도 집어 넣는다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <style>
+        span{border:1px #F00 solid;}
+        .box{border:1px red solid; width:100px; height:100px;}
+    </style>
+</head>
+<body>
+
+    <span>gongon</span>
+    <div class="box">text</div>
+    <!-- class 이름을 지어 놓으면 같은 클라스 속성을 가지고 있으면 그것이 다 변한다.
+ -->
+</body>
+</html>
+
+
+
+
+
+<!-- external방식 링크를 걸어서
+헤드에 <link rel="stylesheet" href="external.css"/>를 넣어서
+href에 넣을 파일을 만들어 스타일을 정리 해서 저장후 파일 이름을 넣는다
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+        <link rel="stylesheet" href="external.css"/>
+<!--
+    <style>
+        p{border:1px red solid;}
+        .blue{backgroud-coloer:blue}
+    </style>
+-->
+
+</head>
+<body>
+
+    <p class="bleu">hello</p>
+    <p>hello</p>
+    <p class="bleu">hello</p>
+    <p>hello</p>
+
+    <!--인라인 방식  -->
+    <p style="border:1px; red solidl; backgroud-color:blue;">hello</p>
+    <p style="border:1px; red solidl;">hello</p>
+    <p style="border:1px; red solidl; backgroud-color:blue;">hello</p>
+    <p style="border:1px; red solidl;">hello</p>
+    <!-- 헤드에 스타일에 쓸필요 없다. -->
+
+</body>
+</html>
