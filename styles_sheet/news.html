@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>news</title>
+            <style type="text/css">
+                *{margin:0; padding:0;}
+                ul,ol{list-style:none;}
+                
+                .wrapper{
+                    outline:1px #000 solid; 
+                    width:900px; 
+                    height:540px;
+                    margin:20px auto 0;
+                }
+                .header{
+                    border-bottom:2px #000 solid;
+                    margin:0 30px 15px;
+                    /*margin:0 auto;로 사용해도 되지만 이건 상황에 따라 다르다.*/
+                    height:55px;
+                    padding:20px 0 33px;
+                }
+                .header .h-left{
+                    border:1px #F00 solid;
+                    float:left;
+                    /*margin-bottom:10px;*/
+                }
+                .header .h-right{
+                    border:1px #0FF solid;
+                    float:right;
+                }
+                .header .h-contents{
+                    border:1px #00F solid;
+                    width:320px;
+                    height:25px;
+                    clear:left;
+                }
+                
+                
+                .contents{
+                    outline:1px #F00 solid;
+                    margin:0 30px;
+                    height:386px;
+                }
+                
+                .contents .lc{
+                    outline:1px #0F0 solid;
+                    width:503px;
+                    height:100%;
+                    float:left;
+                }
+                
+                .contents .rc{
+                    outline:1px #0F0 solid;
+                    margin-left:513px;
+                    height:100%;
+                }
+                .contents .lc .top_article{
+                    outline:1px #00F solid;
+                    height:110px;
+                    margin-bottom:10px;
+                }
+                
+                .lc .top_article ul{
+                    border:1px #000 solid;
+                }
+                .lc .top_article ul li{
+                    margin-left:150px;
+                }
+                .lc .top_article ul li.article_1{
+                    margin-left:0; 
+                    margin-bottom:10px;
+                }
+                .lc .top_article ul li.article_1 img{
+                    float:left;
+                    margin-right:10px;
+                }
+                .lc .top_article ul li.article_1 strong{
+                    display:block;
+                    overflow:hidden; 
+                    white-space:nowrap; 
+                    text-overflow:ellipsis  
+                }
+                .lc .top_article ul li.article_1 span{
+                    font-size:12px; 
+                    display:block; 
+                    overflow:hidden; 
+                    white-space:nowrap; 
+                    text-overflow:ellipsis  
+                }
+                
+                .contents .lc .bottom_article{
+                    outline:1px #00F solid;
+                    height:266px;
+                }
+                .contents .rc .rc_top{
+                    outline:1px #0FF solid;
+                    height:188px;
+                }
+                .contents .rc .rc_bottom{
+                    outline:1px #0FF solid;
+                    height:137px;
+                    margin-bottom:24px;
+                }
+                .contents .rc .rc_promotion{
+                    outline:1px #0FF solid;
+                    height:37px;
+                }
+                .contents .rc .rc_top .a1{
+                    outline:1px #F0F solid;
+                    width:130px;
+                    height:100%;
+                    margin:0 17px;
+                    float:left;
+                }
+                .contents .rc .rc_top .a2{
+                    outline:1px #F0F solid;
+                    width:130;
+                    height:100%;
+                    margin:0 17px 0 181px;
+                }
+            </style>
+    </head>
+    <body>
+        <div class="wrapper">
+           
+           <div class="header">
+                <div class="h-left">
+                    <img src="http://static.naver.net/newsstand/up/2013/0813/nsd114738777.gif" alt="아이뉴스24로고" />
+                </div>
+                <div class="h-right">
+                    <img src="http://adcreative.naver.com/ad3/1004/1004874/468_60_01446516899395.jpg" alt="해피빈" />
+                </div>
+                <div class="h-contents">
+                    <button type="button">구독자
+                    </button>
+                    <button type="button">이용자한마디
+                    </button>
+                    <button type="button">소셜보내기
+                    </button>
+                    <span>
+                        2016-05-26
+                    </span>
+               </div>
+           </div>
+           
+           <div class="contents">
+               <div class="lc">
+                   <div class="top_article">
+                       <ul>
+                            <li class="article_1">
+                                <img src="http://static.naver.net/newsstand/2016/0526/inews/154711/001.jpg" alt="안경 쓴 양복입은 대머리 아저씨"></img>
+                                <strong>삼성전자 "퀀텀닷 기술, 차세대 TV 화질 역사쓸 것"</strong>
+                                <span>장혁 삼성전자 종합기술원 부사장 '국제 퀀텀닷 컨퍼런스' 기조연설 나서</span>
+                            </li>
+                            <li class="article_2">
+                               <a href="http://news.inews24.com/php/news_view.php?g_menu=020810&g_serial=955748">김현석 삼성전자 "퀀텀닷 TV, OLED 앞선다"
+                               </a>
+                            </li>
+                            <li class="article_3">
+                               <a href="http://news.inews24.com/php/news_view.php?g_menu=020810&g_serial=955259">삼성전자, 멕시코서 '퀀텀닷 기술 세미나' 개최                               </a>
+                            </li>
+                       </ul>
+                   </div>
+                   <div class="bottom_article">
+                   </div>
+               </div>
+               
+               <div class="rc">
+                   <div class="rc_top">
+                       <div class="a1"></div>
+                       <div class="a2"></div>
+                   </div>
+                   <div class="rc_bottom"></div>
+                   <div class="rc_promotion"></div>
+               </div>
+           </div>
+           
+        </div>
+    </body>
+</html>
