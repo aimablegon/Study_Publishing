@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>05.30 신문접기</title>
+           <style type="text/css">
+               *{margin:0; padding:0;}
+               ul{list-style:none;}
+               body{
+                   background-image:url(http://static.naver.net/newsstand/img/20121231/bg_bd.png);
+                }
+               .wrapper{
+                   background-image:url(http://static.naver.net/newsstand/img/20121231/bg_panel.png);
+                   outline:1px #000 solid; width:900px; height:540px;
+                   margin:100px auto 0; padding:0 16px;
+               }
+               .wrapper .header{
+                   border-bottom:3px #000 solid; height:55px;
+                   margin:0 30px 20px; padding:20px 0 33px;
+               }
+               .wrapper>.header div:first-child{
+                   outline:1px #F00 solid; width:260px; height:55px;
+                   float:left; margin-bottom:5px;
+               }
+               .wrapper>.header div.h_left + div{
+                   outline:1px #F00 solid; width:468px; height:60px;
+                   float:right;
+               }
+               .wrapper>.header div.h_left + div + div{
+                   outline:1px #F00 solid; width:300px; height:25px;
+                   clear:left;
+               }
+               
+               
+               
+               .wrapper .contents{
+                   outline:1px #000 solid; height:380px;
+                   margin:0 30px;
+               }
+               .contents .cl{
+                   outline:1px #F00 solid; width:606px; height:100%;
+                   float:left;
+               }
+               .cl>.cl_left{
+                   outline:1px #00F solid; width:360px; height:240px;
+                   float:left; margin-right:4px;
+               }
+               .cl>.cl_right{
+                   outline:1px #00F solid; width:242px; height:240px;
+                   float:left; margin-bottom:10px;
+               }
+               .cl>.cl_right> ul li{
+                   outline:1px #0FF solid; width:117px; height:114px;
+                   float:left;
+               }
+               .cl>.cl_right>ul li:first-child{
+                   margin-right:7px;
+               }
+               .cl>.cl_right>ul li:first-child+li{
+                   margin-bottom:12px;
+               }
+               .cl>.cl_right>ul li:first-child+li+li{
+                   margin-right:7px;
+               }
+               [class*="box"]{
+                   outline:1px #F0F solid; height:80px;
+                   display:block;
+               }
+               [class*="box"]>img{
+                   width:100%; height:auto;
+               }
+               [class*="text"]{
+                   outline:1px #F0F solid; height:31px;
+                   display:block; 
+                   font-size:12px;
+               }
+               
+               .cl>.cl_bottom{
+                   border-top:1px #000 solid; height:114px;
+                   clear:left; padding:10px 0 5px;
+               }
+               .cl>.cl_bottom>ul li{
+                  outline:1px #F00 solid; width:117px; height:114px;
+                  float:left; margin-left:5px;
+               }
+               .cl>.cl_bottom>ul li:first-child{
+                   margin:0;
+               }
+               
+               
+               
+               .contents .cr{
+                   outline:1px #F00 solid; width:224px; height:100%;
+                   margin-left:616px; 
+               }
+               .cr>.cr_top{
+                   outline:1px #00F solid; width:224px; height:205px;
+               }
+               [class="text_a"]{
+                   outline:1px #00F solid; height:15px;
+                   margin-top:3px;
+                   list-style-position: inside;
+                   font-size:12px;
+               }
+               [class$="_strong"]{
+                   width:219px; height:19px;
+                   padding:5px 0 2px 5px;
+                   background-color:#666;
+               }
+              
+               .cr>.cr_center{
+                   outline:1px #00F solid; width:224px; height:62px;
+                   margin-top:4px;
+               }
+               .cr_center>ul>.crcs>strong{
+                   outline:1px #0FF solid; height:16px;
+                   display:block; margin-top:4px; 
+               }
+               .cr_center>ul>.crcs>span{
+                   outline:1px #0FF solid; height:16px;
+                   display:block; font-size:12px;
+               }
+               .cr>.cr_bottom{
+                   outline:1px #00F solid; width:224px; height:105px;
+                   margin-top:4px;
+               }
+               .cr_bottom>ul>li.crbs> img{
+                   outline:1px #0FF solid; width:46px; height:66px;
+                   float:left; margin:0 0 5px;
+                  
+               }
+               .cr_bottom>ul>.crbs> strong{
+                   outline:1px #0FF solid; width:173px; height:30px;
+                   margin:5px 0 5px 51px; 
+                   display:block; 
+               }
+               .cr_bottom>ul>.crbs>span{
+                   outline:1px #0FF solid; width:173px; height:30px;
+                   margin-left:51px;
+                   display:block; font-size:12px;
+               }
+           </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div class="h_left">
+                    <img src="http://static.naver.net/newsstand/up/2016/0325/nsd185740259.png" alt="프레시안로고" />
+                </div>
+                <div class="h_right">
+                    <img src="http://adcreative.naver.com/ad3/1004/1004874/468_60_11446516899395.jpg" alt="해피빈 굿액션 바이션 지금 여러분의 콩이 달리기 시작합니다. 달리고 있는 선글라스 끼고 있는 션" />
+                </div>
+                <div class="h_contents">
+                    <button type="button">구독자
+                    </button>
+                    <button type="button">이용자한마디
+                    </button>
+                    <button type="button">소셜보내기
+                    </button>
+                    <span>
+                        2016-05-30
+                    </span>
+                </div>
+            </div>
+            <div class="contents">
+                <div class="cl">
+                    <div class="cl_left">
+                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/001.jpg" alt="반기문과 사람들" />
+                    </div>
+                    <div class="cl_right">
+                        <ul>
+                            <li >
+                                <a href="http://www.pressian.com/news/article.html?no=137249">
+                                    <span class="clr_1_box_a">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/002.jpg" alt="구의역비정규직 사망 추모쪽지" />
+                                    </span>
+                                    <span class="clr_1_text_a">
+                                        구의역 열아홉 비정규직 사망 사고에 '추모 쪽지'
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137211">
+                                    <span class=clr_2_box_a>
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/003.jpg" alt="박근혜대통령이 단발머리여성앞에 앉아있다" />
+                                    </span>
+                                    <span class="clr_2_text_a">
+                                        박근혜가 꽂힌 '코리아 에이드', 정체는?
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137226">
+                                    <span class="clr_3_box_a">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/004.jpg" alt="홍만표씨가 수많은 마이크 앞에 있다." />
+                                    </span>
+                                    <span class="clr_3_text_a">
+                                        왜 LG는 홍만표를 사외이사로 임명했을까?
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137210">
+                                    <span class="clr_4_box_a">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/005.jpg" alt="배에 타고 있는 사람들" />
+                                    </span>
+                                    <span class="clr_4_text_a">
+                                       "뱃머리 들다 세월호 부러질 수 있는데 정부는…"
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <div class="cl_bottom">
+                        <ul>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137230">
+                                    <span class="clb_1_box_b">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/006.jpg" alt="항구에 수많은 컨테이너박스" />
+                                    </span>
+                                    <span class="clb_1_text_b">
+                                        박근혜 가정교사 "구조조정, 책임은 오직 대통령"
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137240">
+                                    <span class="clb_2_box_b">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/007.jpg" alt="국내에서도 싹싹 옥시" />
+                                    </span>
+                                    <span class="clb_2_text_b">
+                                        옥시와 합의를 권한 판사는 누구인가?
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137245">
+                                    <span class="clb_3_box_b">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/008.jpg" alt="노총 노동조합 대표들" />
+                                    </span>
+                                    <span class="clb_3_text_b">
+                                        "'박근혜 워크숍' 앞두고 '서면 이사회' 등 불법 자
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137244">
+                                    <span class="clb_4_box_b">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/009.jpg" alt="바다 위 배에 타 있는사람들" />
+                                    </span>
+                                    <span class="clb_4_text_b">
+                                        이석태 "세월호 특조위 활동 기간, 내년 2월 3일까
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://www.pressian.com/news/article.html?no=137246">
+                                    <span class="clb_5_box_b">
+                                        <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/010.jpg" alt="미국 자유당 정당인 개리존슨" />
+                                    </span>
+                                    <span class="clb_5_text_b">
+                                        힐러리-트럼프 비호감 각축에 '제3 후보' 변수되나?
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cr">
+                    <div class="cr_top">
+                        <ol>
+                            <div class="crt_strong">
+                                <strong>[뉴스클립]</strong>
+                            </div>
+                            <li class="text_a">반기문, 방한 마무리…"제 행동 과대해석 </li>
+                            <li class="text_a">6월 30일 '백년 허리 ' 강연이 있습니다</li>
+                            <li class="text_a">더민주, 개원 첫날 '악성 채권 소각' 퍼포먼</li>
+                            <li class="text_a">박지원 "반기문, 과거 '대권 시나리오'는 야</li>
+                            <li class="text_a">정의당 의원 6명이 내건 20대 국회 입법 과</li>
+                            <li class="text_a">새누리, 사이버 테러 방지법 등 재추진 선언</li>
+                            <li class="text_a">국민의당, 거부권 행사 비난…"대통령이 국</li>
+                            <li class="text_a">'수저론' 굳어질라…교육비 격차 더 벌어져</li>
+                            <li class="text_a">해수부 "세월호 선체, 보존 가치 있는지…"</li>
+                            <li class="text_a">우원식 "혁신안 폐기? 다시 계파 시대로?"</li>
+                        </ol>
+                    </div>
+                    <div class="cr_center">
+                        <ul>
+                            <div class="crc_strong">
+                                <strong>[오늘의 이슈]</strong>
+                            </div>
+                           <li class="crcs">
+                               <strong>여동생을 미끼로 노벨상을 받아 볼까?</strong>
+                               <span>[월요일의 '과학 고전 50'] <이중나선></span>
+                           </li>
+                        </ul>
+                    </div>
+                    <div class="cr_bottom">
+                        <ul>
+                            <div class="crb_strong">
+                                <strong>[오늘의 서평]</strong>
+                            </div>
+                            <li class="crbs">
+                                <img src="http://static.naver.net/newsstand/2016/0530/pressian/182602/011.jpg" alt="당신은 데이터의 주인공이 아니다라는 제목을 가진 책" />
+                                <strong>나는 국정원보다 페이스북이 더 무섭다</strong>
+                                <span>[당신은 데이터의 주인이 아니다] 진짜 '빅 브라더'는 누구인가?</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

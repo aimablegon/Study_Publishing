@@ -1,0 +1,48 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>3단 레이아웃 가변방법</title>
+            <style type="text/css">
+                .contents{
+                    border:1px #F00 solid;
+                    width:1000px;
+                    height:380px;
+                }
+                .left{
+                    width:33.333333%;
+                    height:100%;
+                    float:left;
+                }
+                .line>div{
+                    border-right:1px #00F solid;
+                    padding:20px;
+                    height:340px;
+                    overflow:hidden;
+                }
+                .center{
+                    width:33.333333%;
+                    height:100%;
+                    float:left;
+                }
+                .right{
+                    width:33.333333%;
+                    height:100%;
+                    float:left;
+                }
+            </style>
+    </head>
+    <body>
+         <div class="contents">
+             <div class="left_line">
+                 <div>dniofd</div>
+             </div>
+             <div class="center_line">
+                 <div>dniofd</div>
+             </div>
+             <div class="right_line">
+                 <div style="border:0">dniofd</div>
+             </div>
+         </div>
+    </body>
+</html>

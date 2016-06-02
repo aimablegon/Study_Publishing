@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style type="text/css">
+        /*.test1{outline:1px #F00 solid; width:30px; height:30px;}*/
+        /*.test2 :frist-child{outline:1px #0F0 solid; width:30px; height:30px;}*/
+        /*.test1 li .a{outline:1px #F00 solid; width:30px; height:30px;}*/
+        /*.test4>li+.a{outline:1px #F00 solid; width:30px; height:30px;}*/
+        
+        
+        .test1{border:1px #F00 solid;}
+        .test2 li:first-child{border:1px #F00 solid;}
+        .test3 li.a {border:1px #F00 solid;}
+        .test4 li.a + li{border:1px #F00 solid;}
+        /*.header>.h_left{border:1px #F00 solid;}*/
+        
+        
+        /*선택하봐.*/
+    </style>
+    
+</head>
+<body>
+    
+    
+    <!-- 클래스 선택-->
+    <ul class="test1">
+        <li>text</li>
+        <li class="sub1">text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    
+    <!-- 클래스 선택 후 자식요소  li 중에 첫번째-->
+    <ul class="test2">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    
+    
+    <!-- 클래스 선택 후 자식요소  li 중에 .a 라는 클래스를 가지엘리먼트-->
+    <ul class="test1">
+        <li>text</li>
+        <li class="a">text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    
+    <!-- 클래스 선택 후 자식요소  li 중에 .a 라는 클래스르 가진 다음 엘리먼트-->
+    <ul class="test4">
+        <li>text</li>
+        <li>text</li>
+        <li class="a">text</li>
+        <li>text</li>
+    </ul>
+    
+    
+    
+    
+</body>
+</html>
