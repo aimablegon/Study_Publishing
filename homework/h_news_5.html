@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>매일경제</title>
+          <style type="text/css">
+            *{margin:0; padding:0;}
+            .wrapper{
+                outline:1px #000 solid; width:900px; height:540px;
+                margin:100px auto 0;
+            }
+            .wrapper .header{
+                border-bottom:3px #000 solid; height:55px;
+                margin:0 30px 20px; padding:20px 0 33px;
+            }
+            .header div:first-child{
+                outline:1px #F00 solid; width:260px; height:55px;
+                float:left; margin-bottom:5px;
+            }
+            .header>.h_right{
+                outline:1px #F00 solid; width:468px; height:60px;
+                float:right;
+            }
+            .header div.h_right+div{
+                outline:1px #F00 solid; width:270px; height:25px;
+                clear:left;
+            }
+            
+            
+            
+            
+            .wrapper .contents{
+                outline:1px #000 solid; height:385px;
+                margin:0 30px;
+            }
+            .contents>.cl{
+                border-right:1px #999 solid; width:358px; height:385px;
+                float:left; padding:0 15px 0 0;
+            }
+            .contents>.cl>.cl_top{
+                outline:1px #F00 solid; width:358px; height:186px;
+                padding-bottom: 13px ;
+            }
+            .contents>.cl>.cl_bottom{
+                outline:1px #F00 solid; width:358px; height:176px;
+                padding-top: 10px;
+            }
+            .contents>.cr{
+                outline:1px #F00 solid; width:452px; height:385px;
+                margin-left:388px;
+            }
+            .cr .cr_left{
+                outline:1px #00F solid; width:292px; height:385px;
+                float:left;
+            }
+            .cr_left>.crl_top{
+                outline:1px #00F solid; width:292px; height:135px;
+            }
+            .crl_top div:first-child{
+                outline:1px #00F solid; width:292px; height:20px;
+                padding-top:4px;
+            }
+            .crl_top div.crlt_main + div{
+                outline:1px #00F solid; width:292px; height:111px;
+            }
+            .cr_left>.crl_center{
+                outline:1px #00F solid; width:292px; height:116px;
+                padding-top:12px; margin-bottom:12px;
+            }
+            .cr_left>.crl_bottom{
+                outline:1px #00F solid; width:292px; height:100px;
+                padding-top:10px;
+            }
+            .cr .cr_right{
+                outline:1px #00F solid; width:129px; height:385px;
+                margin-left:323px;
+            }
+            .cr_right>.crr_top{
+                outline:1px #0FF solid; width:129px; height:129px;
+                margin-bottom:16px;
+            }
+            [class="crr_center"],[class="crr_bottom"]{
+                outline:1px #0FF solid; width:129px; height:115px;
+            }
+            .cr_right div.crr_top + div{
+                margin-bottom:10px;
+            }
+            [class="box"]{
+                outline:1px #111 solid; width:129px; height:82px;
+            }
+            [class="text"]{
+                outline:1px #111 solid; width:129px; height:28px;
+                padding-top:5px;
+            }
+          </style>
+      </head>
+      <body>
+        <div class="wrapper">
+          <div class="header">
+            <div class="h_left">h_left</div>
+            <div class="h_right">h_right</div>
+            <div class="h_contents">h_contents</div>
+          </div>
+          
+          <div class="contents">
+            <div class="cl">
+              <div class="cl_top">cl_top</div>
+              <div class="cl_bottom">cl_bottom</div>
+            </div>
+            <div class="cr">
+              <div class="cr_left">
+                <div class="crl_top">
+                  <div class="crlt_main">crlt_main</div>
+                  <div class="crlt_sub">crlt_sub</div>
+                </div>
+                <div class="crl_center">crl_center</div>
+                <div class="crl_bottom">crl_bottom</div>
+              </div>
+              <div class="cr_right">
+                <div class="crr_top">crr_top</div>
+                <div class="crr_center">
+                  <div class="box">crrc_box</div>
+                  <div class="text">crrc_text</div>
+                </div>
+                <div class="crr_bottom">
+                  <div class="box">crrb_box</div>
+                  <div class="text">crrb_text</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+</html>

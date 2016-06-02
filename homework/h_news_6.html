@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>마이데일리</title>
+        <style type="text/css">
+            *{margin:0; padding:0;}
+            
+            .wrapper{
+                outline:1px #000 solid; width:900px; height:540px;
+                margin:100px auto 0;
+            }
+            
+            .wrapper .header{
+                border-bottom:3px #000 solid; height:55px;
+                margin:0 30px 20px; padding:20px 0 33px;
+            }
+            .header div:first-child{
+                outline:1px #F00 solid; width:260px; height:55px;
+                float:left; margin-bottom:5px;
+            }
+            .header div.h_left + div{
+                outline:1px #F00 solid; width:468px; height:60px;
+                float:right;
+            }
+            .header div.h_right + div{
+                outline:1px #F00 solid; width:270px; height:25px;
+                clear:left;
+            }
+            
+            
+            .wrapper .contents{
+                outline:1px #000 solid; height:380px;
+                margin:0 30px;
+            }
+            .contents .cr{
+                outline:1px #F00 solid; width:510px; height:380px;
+                float:left;
+            }
+            .cr>.cr_top{
+                outline:1px #00F solid; height:250px;
+                margin-bottom:10px;
+            }
+            .cr .cr_top div:first-child{
+                outline:1px #0FF solid; width:370px; height:250px;
+                float:left;
+            } 
+            .cr .cr_top div.crt_left + div{
+                outline:1px #0FF solid; width:130px; height:250px;
+                margin-left:380px;
+            }
+            .cr>.cr_bottom{
+                outline:1px #00F solid; height:120px;
+            }
+            .cr_bottom>.crb_left{
+                outline:1px #0FF solid; width:310px; height:120px;
+                float:left;
+            }
+            [class^="crbl_"]>[class="box"]{
+                outline:1px #FF0 solid; width:85px; height:55px;
+                float:left;
+            }
+            [class^="crbl_"]>[class="text"]{
+                outline:1px #FF0 solid; width:215px; height:55px;
+                margin-left:95px;
+            }
+            [class="crbl_top"]{
+                margin-bottom:10px;
+            }
+            .cr_bottom>.crb_right{
+                outline:1px #0FF solid; width:190px; height:120px;
+                margin-left:320px;
+            }
+            
+            
+            
+            .contents .cl{
+                outline:1px #F00 solid; width:320px; height:380px;
+                margin-left:520px;
+            }
+            .cl>.cl_top{
+                outline:1px #00F solid; width:300px; height:230px;
+                padding:10px; margin-bottom:10px;
+            }
+            .cl>.cl_bottom{
+                outline:1px #00F solid; width:320px; height:120px;
+            }
+            [class^="clb_"]{
+                outline:1px #0FF solid; width:320px; height:55px;
+            }
+            [class="clb_top"]{
+                margin-bottom:10px;
+            }
+            [class^="clb_"]>[class="box"]{
+                outline:1px #FF0 solid; width:85px; height:55px;
+                float:left;
+            }
+            [class^="clb_"]>[class="text"]{
+                outline:1px #FF0 solid; width:225px; height:55px;
+                margin-left:95px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div class="h_left">h_left</div>
+                <div class="h_right">h_right</div>
+                <div class="h_contents">h_contents</div>
+            </div>
+            
+            <div class="contents">
+                <div class="cr">
+                    <div class="cr_top">
+                        <div class="crt_left">crt_left</div>
+                        <div class="crt_right">crt_right</div>
+                    </div>
+                    <div class="cr_bottom">
+                        <div class="crb_left">
+                            <div class="crbl_top">
+                                <div class="box">crbl_t_box</div>
+                                <div class="text">crbl_t_text</div>
+                            </div>
+                            <div class="crbl_bottom">
+                                <div class="box">crbl_b_box</div>
+                                <div class="text">crbl_b_text</div>
+                            </div>
+                        </div>
+                        <div class="crb_right">crb_right</div>
+                    </div>
+                </div>
+                <div class="cl">
+                    <div class="cl_top"></div>
+                    <div class="cl_bottom">
+                        <div class="clb_top">
+                            <div class="box">clb_t_box</div>
+                           <div class="text">clb_t_text</div>
+                        </div>
+                        <div class="clb_bottom">
+                            <div class="box">clb_b_box</div>
+                            <div class="text">clb_b_text</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

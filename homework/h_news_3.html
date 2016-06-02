@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>스포탈코리아</title>
+            <style type="text/css">
+                *{margin:0; padding:0;}
+                
+                .wrapper{
+                    outline:1px #000 solid; width:900px; height:540px;
+                    margin:100px auto 0;
+                }
+                .wrapper .header{
+                    border-bottom:3px #000 solid; height:55px;
+                    padding:20px 0 33px; margin:0 30px 20px;
+                }
+                .wrapper>.header>.h_left{
+                    outline:1px #F00 solid; width:260px; height:55px;
+                    float:left; margin-bottom:5px;
+                }
+                .wrapper>.header>.h_right{
+                    outline:1px #F00 solid; width:468px; height:60px;
+                    float:right;
+                }
+                .wrapper>.header>.h_contents{
+                    outline:1px #F00 solid; width:270px; height:25px;
+                    clear:left;
+                    }
+                    
+                    
+                .wrapper .contents{
+                    outline:1px #000 solid; height:380px;
+                    padding:0; margin:0 30px 29px;
+                }
+                .contents .cl{
+                    outline:1px #F00 solid; width:366px; height:380px;
+                    float:left; 
+                }
+                .contents .cl .cl_top{
+                    outline:1px #00F solid; height:214px;
+                }
+                .contents .cl .cl_center{
+                    outline:1px #00F solid; height:51px;
+                }
+                .contents .cl .cl_bottom{
+                    outline:1px #00F solid; height:115px;
+                }
+                
+                .cl_bottom>.clb_1{
+                    outline:1px #0FF solid; width:114px; height:115px;
+                    float:left; 
+                }
+                .cl_bottom>.clb_3{
+                    outline:1px #0FF solid; width:114px; height:115px;
+                    float:right; 
+                }
+                .cl_bottom>.clb_2{
+                    outline:1px #0FF solid; width:114px; height:115px;
+                    margin:0 12px 0 126px;
+                }
+                [class^="clb_"]>[class="box"]{
+                    outline:1px #F0F solid; width:114px; height:84px;
+                }
+                [class^="clb_"]>[class="text"]{
+                    outline:1px #F0F solid; width:104px; height:26px;
+                    padding:5px 5px 0 5px;
+                }
+                
+                
+                .contents .cr{
+                    outline:1px #F00 solid; width:218px; height:380px;
+                    float:right;
+                }
+                .cr>.cr_top{
+                    outline:1px #00F solid; height:260px;
+                }
+                .cr>.cr_bottom{
+                    outline:1px #00F solid; height:110px;
+                    margin-top:10px;
+                }
+                .cr_bottom .crb_1{
+                    outline:1px #0FF solid; width:104px; height:110px;
+                    float:left; 
+                }
+                .cr_bottom .crb_2{
+                    outline:1px #0FF solid; width:104px; height:110px;
+                    margin-left:114px;
+                }
+                [class^="crb_"]>[class="box"]{
+                    outline:1px #F0F solid; width:104px; height:78px;
+                }
+                [class^="crb_"]>[class="text"]{
+                    outline:1px #F0F solid; width:104px; height:32px;
+                    
+                }
+                
+                .contents .cc{
+                    outline:1px #F00 solid; width:236px; height:380px;
+                    margin:0 10px 0 376px;
+                }
+                .cc>.cc_top{
+                    border:2px #00F solid; width:232px; height:185px;
+                    margin-bottom:10px;
+                }
+                .cc>.cc_bottom{
+                    border:2px #00F solid; width:232px; height:161px;
+                    padding:8px 0;
+                }
+            </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div class="h_left">h_left</div>
+                <div class="h_right">h_right</div>
+                <div class="h_contents">h_contents</div>
+            </div>
+            
+            
+            
+            <div class="contents">
+                <div class="cl">
+                    <div class="cl_top">cl_top</div>
+                    <div class="cl_center">cl_center</div>
+                    <div class="cl_bottom">
+                        <div class="clb_1">
+                            <div class="box">clb_1_box</div>
+                            <div class="text">clb_1_text</div>
+                        </div>
+                        <div class="clb_3">
+                            <div class="box">clb_3_box</div>
+                            <div class="text">clb_3_text</div>
+                        </div>
+                        <div class="clb_2">
+                            <div class="box">clb_2_box</div>
+                            <div class="text">clb_2_text</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cr">
+                    <div class="cr_top">cr_top</div>
+                    <div class="cr_bottom">
+                        <div class="crb_1">
+                            <div class="box">crb_1_box</div>
+                            <div class="text">crb_1_text</div>
+                        </div>
+                        <div class="crb_2">
+                            <div class="box">crb_2_box</div>
+                            <div class="text">crb_2_text</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cc">
+                    <div class="cc_top">cc_top</div>
+                    <div class="cc_bottom">cc_bottom</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html

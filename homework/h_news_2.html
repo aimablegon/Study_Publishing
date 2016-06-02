@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>미디어 오늘2</title>
+            <style type="text/css">
+                
+                .wrapper{
+                    outline:1px #000 solid; width:900px; height:540px;
+                    margin:100px auto 0; padding:0;
+                }
+                
+                .wrapper .header{
+                    border-bottom:3px #000 solid; height:55px;
+                    margin:0 30px 20px; padding:20px 0 33px;
+                }
+                [class^="h_"]{
+                    outline:1px #F00 solid; padding:0; margin:0;
+                }
+                .header .h_left{
+                    width:250px; height:55px; 
+                    margin-bottom:5px; float:left; 
+                }
+                .header .h_right{
+                    width:468px; height:60px; 
+                    margin-top:20px; float:right
+                }
+                .header .h_contents{
+                    width:270px; height:25px; 
+                    clear:left;
+                }
+                
+                
+                
+                .wrapper .contents{
+                    outline:1px #000 solid; height:380px;
+                    margin:0 30px 29px; padding:0;
+                }
+                
+                .contents .cl{
+                    outline:1px #F00 solid; width:575px; height:380px; 
+                    float:left; padding:0; margin:0;
+                }
+                [class="main_c"]{
+                    outline:1px #00F solid; width:380px; height:380px;
+                    float:left; padding:0; margin:0;
+                }
+                [class="second_c"]{
+                    outline:1px #00F solid; width:180px; height:380px;
+                    padding:0; margin:0 0 0 395px;
+                }
+                
+                [class^="sc_"]{
+                    outline:1px #0F0 solid; height:180px;
+                    padding:0; margin:0;
+                }
+                .second_c :first-child{
+                    margin-bottom:20px;
+                }
+                
+                
+                
+                .contents .cr{
+                    outline:1px #F00 solid; width:250px; height:380px;
+                    margin:0 0 0 590px; padding:0;
+                }
+                [class^="third_"]{
+                    outline:1px #00F solid; width:120px; height:380px;
+                    margin:0; padding:0;
+                }
+                
+                
+                .cr .third_cl{
+                    float:left;
+                }
+                [class="third_cr"]{
+                    margin-left:130px;
+                }
+                [class^="tcl_"]{
+                    outline:1px #0F0 solid; width:120px; height:120px;
+                    margin:10px 0 0; padding:0;
+                }
+                .cr .third_cl :first-child{
+                    margin-top:0;
+                }
+                
+                
+                [class^="tcr_"]{
+                    outline:1px #0F0 solid; width:120px; height:120px;
+                    margin:10px 0 0; padding:0;
+                }
+                
+                .cr third_cr :frist-child{
+                    margin-top:0;
+                }
+                [class="box"]{
+                    outline:1px #0FF solid; height:80px;
+                    margin:0 0 12px; padding:0;
+                }
+                [class="text"]{
+                    outline:1px #0FF solid; height:28px;
+                    margin:0; padding:0;
+                }
+                
+            </style>
+    </head>
+        <div class="wrapper">
+            <div class="header">
+                <div class="h_left">h_left</div>
+                <div class="h_right">h_right</div>
+                <div class="h_contents">h_contents</div>
+            </div>
+            
+            
+            <div class="contents">
+                <div class="cl">
+                    <div class="main_c">main_c</div>
+                    <div class="second_c">
+                        <div class="sc_1">sc_1</div>
+                        <div class="sc_2">sc_2</div>
+                    </div>
+                </div>
+                <div class="cr">
+                    <div class="third_cl">
+                        <div class="tcl_1">
+                            <div class="box">box</div>
+                            <div class="text">text</div>
+                        </div>
+                        <div class="tcl_2">
+                            <div class="box">box</div>
+                            <div class="text">text</div>
+                        </div>
+                        <div class="tcl_3">
+                            <div class="box">box</div>
+                            <div class="text">text</div>
+                        </div>
+                    </div>
+                    <div class="third_cr">
+                        <div class="tcr_1">
+                            <div class="box">trc_1_box</div>
+                            <div class="text">trc_1_text</div>
+                        </div>
+                        <div class="tcr_2">
+                            <div class="box">trc_2_box</div>
+                            <div class="text">trc_2_text</div>
+                        </div>
+                        <div class="tcr_3">
+                            <div class="box">trc_3_box</div>
+                            <div class="text">trc_3_text</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
