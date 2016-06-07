@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+            <style type="text/css">
+                html,body{height:100%;}
+                *{margin:0; padding:0;}
+                .page_1{height:100%; position:relative; overflow:hidden;}
+                .page_1 video{position:fixed; top:50%; margin-top:-489px; min-width:1920px; z-index:-1;}
+                .page_1 .dptable{display:table; outline:1px #000 solid; width:100%; height:100%; position:absolute; top:0;}
+                .page_1 .dptable-cell{display:table-cell; text-align:center; vertical-align:middle;}
+                h2{font-size:4em;}
+                .page_2{height:100%; position:relative; background-color:rgba(255, 255, 255, 0.7); z-index:1;}
+                .page_2 .dptable{display:table; outline:1px #000 solid; width:100%; height:100%; position:absolute; top:0;}
+                .page_2 .dptable-cell{display:table-cell; text-align:center; vertical-align:middle;}
+                .page_3{height:100%; background-image:url(../images/water.jpg); background-repeat:no-repeat; -webkit-background-size: cover;
+                    background-size:cover; background-attachment: fixed; position:relative; }
+                .page_3 .dptable{display:table; outline:1px #000 solid; width:100%; height:100%; position:absolute; top:0;}
+                .page_3 .dptable-cell{display:table-cell; text-align:center; vertical-align:middle; color:#EEE; text-shadow:0 0 20px #000;}
+                .page_4{height:100%; position:relative; overflow:hidden; z-index: 10;}
+                .page_4 video{min-width:1920px;}
+                .page_4 .dptable{display:table; outline:1px #000 solid; width:100%; height:100%; position:absolute; top:0;}
+                .page_4 .dptable-cell{display:table-cell; text-align:center; vertical-align:middle;color:#EEE; text-shadow:0 0 20px #000;}
+            
+            </style>
+    </head>
+    <body>
+        <div class="page_1">
+            <video width="100%" loop autoplay>
+                <source src="../mov/water.mp4" type="video/mp4"></source>
+            </video>
+            <div class="dptable">
+                <div class="dptable-cell">
+                    <h2 class="page_1_h2">L'eau</h2>
+                    <p>Ce moment, on boit de l'eau.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page_2">
+            <div class="dptable">
+                <div class="dptable-cell">
+                    <h2 page_2_h2>Pour La Santé</h2>
+                    <p>Il faut qu'on boive de l'eau.<br />
+                       On doit boire deux litre de l'eau par un jour.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page_3">
+            <div class="dptable">
+                <div class="dptable-cell">
+                    <h2 page_3_h2>Pour Le régime</h2>
+                    <p>Quand on fait du régime, on doit boire de l'eau pour la circulation du sang.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page_4">
+            <video width="100%" loop autoplay>
+                <source src="../mov/sparkling.mp4" type="video/mp4"></source>
+            </video>
+            <div class="dptable">
+                <div class="dptable-cell">
+                    <h2 page_4_h2>Bon voyage!</h2>
+                    <p>Cet été, on va aller à la mer. </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
