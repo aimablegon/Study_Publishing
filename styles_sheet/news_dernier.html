@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>GQ</title>
+        <style type="text/css">
+        /*reset*/
+            ul,ol,html,body,h1,h2,p,button,b{margin:0; padding:0;}
+            ul,ol{list-style:none;}
+            h1{display:none;}
+            *{font-size:0;}
+            .top_h2 .main_news .news_list{display:none;}
+        /*bg-color*/
+        
+        
+        /*option*/
+           .btn{border:0; cursor:pointer; background-color:transparent; text-indent:-999999px;
+               background-image:url(../images/news-list.png);
+           }
+            .btn_a{border:0; cursor:pointer; background-color:transparent; text-indent:-999999px;
+               background-image:url(../images/news-icon.png);
+           }
+        /*layout*/
+            html,body{height:100%;}
+            body{ min-width:900px; min-height:810px;
+                background-image:url(http://static.naver.net/newsstand/img/20121231/bg_bd.png);}
+            
+            #wrapper{outline:1px #000 solid; height:100%; position:relative;}
+            /*header*/
+            #header{ height:40px; padding:5px 0; 
+                background-image:url(http://static.naver.net/newsstand/img/20121231/bg_hd.png);}
+            
+            h1{text-indent:-999999px; }
+            .h_stand{width:118px; height:34px; margin-left:14px; display: inline-block;}
+            .h_h2{width:118px; height:28px; background-position:0 -89px; display:inline-block;
+                position:relative; top:8px;}
+            
+            .h_p{width:276px; height:27px; background-position:-119px -89px; display:inline-block;
+                cursor:none; position:relative; top:8px; left:4px;}
+            
+            .h_my{width:174px; height:30px; margin-left:87px;
+                display:inline-block; position:absolute; left:40%; right:60%;}
+            .h_my1{width:87px; height:30px; background-position:-1px -184px;  display:inline-block;}
+            .h_my2{width:87px; height:30px; background-position:-87px -150px; display:inline-block;}
+            
+            .h_ul{width:89px; height:28px; position:absolute; right:235px; top:5px;display:inline-block;}
+            .h_li_a{width:46px; height:23px; padding:5px 7px 0 0 ; margin-right:2px; display:inline-block; float:left;}
+            .h_li_login{width:46px; height:20px; background-position:-187px -174px;  display:inline-block;}
+            .h_li_b{ width:16px; height:16px; padding:7px 9px 5px; display:inline-block; float:left;}
+            .h_li_icon{width:16px; height:16px; background-position:-200px -120px; display:inline-block;}
+
+            .h_div{width:230px; height:21px; padding:5px 9px 0 0; float:right;}
+            .refresh{border-left:2px #999 solid; width:66px; height:21px; margin-left:6px; padding:4px 5px 0 10px; display:inline-block;}
+            .h_div_rfsh{width:66px; height:21px; background-position:-255px -63px; display:inline-block;}
+            .setting{border-left:2px #999 solid; width:46px; height:21px; padding:4px 5px 0 10px; display:inline-block; 
+                position:relative; bottom:1px;}
+            .h_div_setting{width:46px; height:21px; background-position:-334px -64px; display:inline-block; position:relative; top:1px;}
+            .Nlogo{border-left:2px #999 solid; width:60px; height:21px; padding:4px 5px 0 10px; display:inline-block; 
+                position:relative; bottom:3px;}
+            .h_div_Nlogo{width:60px; height:18px; background-position:-542px -277px; display:inline-block; 
+                position:relative; top:2px;}
+            
+            /*top*/
+            #top{ width:100%; height:28px; position:relative; }
+            #category{width:505px; height:24; position:absolute; left:35%; right:65%; }
+            .ctg_a{width:72px; height:24px; float:left;}
+            .ctg_a_1{width:72px; height:24px; background-position:-92px -252px; display:inline-block;}
+            .ctg_b{width:68px; height:24px; float:left;}
+            .ctg_b_2{width:68px; height:24px; background-position:-92px -278px;display:inline-block;}
+            .ctg_c{width:68px; height:24px; float:left;}
+            .ctg_c_3{width:68px; height:24px; background-position:-92px -304px;display:inline-block;}
+            .ctg_d{width:32px; height:24px; float:left;}
+            .ctg_d_4{width:32px; height:24px; background-position:-92px -382px;display:inline-block;}
+            .ctg_e{width:52px; height:24px; float:left;}
+            .ctg_e_5{width:51px; height:24px; background-position:-92px -329px;display:inline-block;}
+            .ctg_f{width:79px; height:24px; float:left;}
+            .ctg_f_6{width:79px; height:24px; background-position:-92px -407px;display:inline-block;}
+            .ctg_g{width:89px; height:24px; float:left;}
+            .ctg_g_7{width:89px; height:24px; background-position:-1px -434px;display:inline-block;}
+            .ctg_h{width:40px; height:24px; float:left;}
+            .ctg_h_8{width:40px; height:24px; background-position:-92px -460px;display:inline-block;}
+            
+            
+            
+            /*container*/
+            #container{outline:1px #000 solid; min-width:800px; min-height:600px; position:absolute; 
+                top:49px; bottom:81px;left:0; right:0;}
+            /*content*/
+            #content{outline:1px #000 solid;  min-width:900px; width:100%; height:100%; position:absolute; top:0; left:0;}
+            #main_wrapper{outline:1px #F00 solid; min-width:900px; height:560px; position:relative; top:8%;   margin:0 auto;}
+            #main{outline:1px #F00 solid; width:900px; height:540px; position:absolute; top:0; left:25%;
+                margin:0 30px;  padding:0 15px;
+                background-image:url(http://static.naver.net/newsstand/img/20121231/bg_panel.png);}
+            
+            
+            .main_header{border-bottom:3px #000 solid; width:840px; height:55px; padding:20px 0 33px; margin:0 30px 20px;}
+            .h_left{width:260px; height:55px;  margin-bottom:5px; float:left;}
+            .h_right{width:468px; height:60px; margin-top:10px; float:right;}
+            .h_contents{width:310px; height:25px;clear:left;}
+            .h_contents_user{ width:176px; height:22px; float:left; padding-top:2px; position:relative;}
+            .h_contents_a{width:66px; height:22px; float:left;
+                background-position:-187px -199px;}
+            .h_contents_b{ width:75px; height:22px; margin-left:2px; float:left;
+                background-position:-294px -174px;}
+            .h_contents_c{ width:28px; height:22px; margin-left:5px; float:left; 
+                background-position:-500px -270px;}
+            .h_contents_date{ width:90px; height:14px; margin-top:2px; 
+                padding:6px 0 0 9px; float:left;}
+            .date{margin-right:2px; font-size:11px; line-height:13px; cursor:text;}
+            
+            
+            /*main-contents*/
+            .main_contents{width:840px; height:380px; margin:0 30px;}
+    
+            .premier{width:300px; height:380px; margin-right:20px; float:left;  position:relative;}
+            .premier_text{ width:280px; height:55px; padding:5px 10px 10px; margin:310px; 
+                position:absolute; top:0; left:-310px; background-color:#444444;}
+            .premier_title{font-size:15px; line-height:20px; color: #FFF;}
+            .premier_detail{font-size:12px; line-height:15px;color: #FFF;}
+            .premier_ima{position:absolute; top:0; left:0;}
+            .premier_img>a>img{width:100%;}
+            
+            .deuxieme{ width:520px; height:360px; float:left;}
+            .premier_theme{ width:520px; height:240px;}
+            .content_a{ width:160px; height:240px; margin-right:20px; float:left}
+            .content_a_link>img{border:1px #000 solid; width:158px; height:158px; margin-bottom:10px;}
+            .content_a_title{font-size:15px; line-height:20px;} 
+            .content_a_text{font-size:12px; line-height:15px;}
+            
+            .content_b{ width:160px; height:240px; margin-right:20px; float:left}
+            .content_b_link>img{border:1px #000 solid; width:158px; height:158px; margin-bottom:10px;}
+            .content_b_title{font-size:15px; line-height:20px;} 
+            .content_b_text{font-size:12px; line-height:15px;}
+            
+            .content_c{width:160px; height:240px; float:left}
+            .content_c_link>img{border:1px #000 solid; width:158px; height:158px; margin-bottom:10px;}
+            .content_c_title{font-size:15px; line-height:20px;} 
+            .content_c_text{font-size:12px; line-height:15px;}            
+            
+            
+            
+            .deuxieme_theme{width:500px; height:100px; padding:10px; 
+                background-image: url(http://static.naver.net/newsstand/2016/0603/GQ/190457/008.gif);}
+            .content_left{width:250px; height:100px; float:left;}
+            .content_left_link{width:100px; height:100px; float:left;}
+            .content_left_link>img{width:100%;}
+            .contents_left{ width:120px; height:80px; padding:10px 18px 10px 10px; position:relative; bottom:100px; left:101px; }    
+            .content_left_title{font-size:15px; line-height:20px;}
+            .content_left_text{font-size:12px; line-height:15px; }   
+            
+            .content_right{ width:250px; height:100px; float:right; }
+            .content_right_link{width:100px; height:100px; float:left}           
+            .content_right_link>img{width:100%;}
+            .contents_right{width:120px; height:80px; padding:10px 18px 10px 10px; position:relative; bottom:100px; left:102px; }   
+            .content_right_title{font-size:15px; line-height:20px;}
+            .content_right_text{font-size:12px; line-height:15px;}           
+           
+           
+           
+            .dernier{width:520px; height:16px; margin-top:4px; float:left;}
+            .dernier_logo{width:190px; float:right; overflow:hidden;}
+            
+            
+            
+            
+           /*list-news*/
+            #list-news{width:100%; height:88px; padding:7px 27px 0; outline:1px #000 solid; background-color:transparent;
+                background-image:url(http://static.naver.net/newsstand/img/20140716/bg_nv.png); 
+                position:absolute; bottom:0; left:0;}
+            .list{height:88px; padding:7px 27px 0;  vertical-align:top; position:absolute; left:0; top:0;}
+            .news_list_logo{min-width:800px; height:88px; left:0; overflow:hidden; 
+               margin-right:3px; position:relative;}
+            .news_list>.list_rolling{width:1365px; height:79px; padding:5px 0 13px 3px;
+                position:absolute; right:0; bottom:0;display:list-item;}
+            .rolling{width:89px; height:76px; padding-top:8px; margin-right:3px; 
+                float:left; display:inline-block; text-align:center;}
+            [class^="rolling_img"]>img{width:81px; height:73px; }
+            .rolling_setting{width:89px; height:79px; margin:4px 3px 0 0; 
+                float:left; display:inline-block; text-align:center;}
+            .list_setting{width:89px; height:79px; background-position:0 -489px;}
+            .arrow_left{ width:26px; height:84px; position:absolute; top:12px; left:0;
+                background-position:-253px -236px; display:inline-block; overflow:hidden;}
+            .arrow_right{width:26px; height:84px; position:absolute; top:12px; right:0;
+                background-position:-275px -236px; display:inline-block; overflow:hidden;}
+            
+            
+            
+
+            
+              /*footer*/
+            #footer{height:81px; position:absolute; left:0; right:0; bottom:0; background-color:transparent;
+                background-image:url(http://static.naver.net/newsstand/img/20131014/bg_ft.png); text-align:center;}
+            .notice{outline:1px #F00 solid; height:14px; margin:14px 0 -1px; padding-right:16px; display:inline-block;
+                position:absolute; left:0; right:0;}
+            .ntc{outline:1px #000 solid; width:54px; height:13px; margin-right:6px; display:inline-block;
+                overflow: hidden; color:#ddc196; margin:0 6px 0 0; vertical-align:center; position:absolute; left:35%; right:65%;}
+            .ntc_link{outline:1px #F00 solid; overflow:hidden; color:#e4e2e0; display:inline-block; overflow: hidden;
+                position:absolute; left:35%; right:65%; vertical-align:center; }
+            
+            
+            
+            .copyright{outline:1px #F00 solid; height:16px; padding-top:11px; display:inline-block; overflow: hidden;
+                position:absolute; left:0; right:0; top:29px; text-align:center; font-size: 11px; color: #aca69f; line-height:16px;}
+            
+            .cpr{outline:1px #F00 solid; height:16px; position:absolute; top:57px; left:0; right:0; overflow:hidden;
+                color:#ada7a1; vertical-align:center; display:inline-block; font-size: 9px; line-height:16px;}
+            .naver_crp{outline:1px #FFF solid; width:58px; height:12px; display:inline-block; overflow: hidden;
+                position:absolute; font-size: 9px; color: #c7c2bc; line-height:16px ;}
+            
+        </style>
+    </head>
+    <body>
+        <h1>naver news</h1>
+        <div id="wrapper">
+            <div id="header">
+                <a href="http://newsstand.naver.com/?list=ct1" class="h_stand">
+                    <h2 class="btn h_h2">newsstand</h2>
+                </a>
+                <p class="btn h_p">뉴스스탠드 기사는 각 언론사에서 직접편집합니다.</p>
+                <div class="h_my">
+                    <a href="http://newsstand.naver.com/?list=my">
+                        <button class="btn h_my1">my 뉴스</button>
+                    </a>
+                    <a href="http://newsstand.naver.com/?list=ct1">
+                        <button class="btn h_my2">전체언론사</button>
+                    </a>
+                </div>
+                <ul class="h_ul">
+                    <li class="h_li_a">
+                        <a href="https://nid.naver.com/nidlogin.login">
+                            <button class="btn h_li_login">로그인
+                            </button>
+                        </a>
+                    </li>
+                    <li class="h_li_b">
+                        <a href="#">
+                            <button class="btn_a h_li_icon"></button>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="h_div">
+                    <a href="#" class="refresh">
+                        <span class="btn h_div_rfsh"></span>
+                    </a>
+                    <a href="http://newsstand.naver.com/config.html" class="setting">
+                        <span class="btn h_div_setting"></span>
+                    </a>
+                    <a href="http://www.naver.com/"class="Nlogo">
+                        <span class="btn h_div_Nlogo"></span>
+                    </a>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div id="top">
+                <h2 class="top_h2">뉴스카테고리</h2>
+                        <ul id="category">
+                            <li class="ctg_a">
+                                <a href="http://newsstand.naver.com/?list=ct1" class="btn ctg_a_1"></a>
+                            </li>
+                            <li class="ctg_b">
+                                <a href="http://newsstand.naver.com/?list=ct2" class="btn  ctg_b_2"></a>
+                            </li>
+                            <li class="ctg_c">
+                                <a href="http://newsstand.naver.com/?list=ct3" class="btn  ctg_c_3"></a>
+                            </li>
+                            <li class="ctg_d">
+                                <a href="http://newsstand.naver.com/?list=ct4" class="btn  ctg_d_4"></a>
+                            </li>
+                            <li class="ctg_e">
+                                <a href="http://newsstand.naver.com/?list=ct5" class="btn  ctg_e_5"></a>
+                            </li>
+                            <li class="ctg_f">
+                                <a href="http://newsstand.naver.com/?list=ct6" class="btn ctg_f_6"></a>
+                            </li>
+                            <li class="ctg_g">
+                                <a href="http://newsstand.naver.com/?list=ct7" class="btn  ctg_g_7"></a>
+                            </li>
+                            <li class="ctg_h">
+                                <a href="http://newsstand.naver.com/?list=ct8" class="btn  ctg_h_8"></a>
+                            </li>
+                        </ul>
+                    </div>
+            <div id="container">
+                <div id="content">
+                    <h2 class="main_news">뉴스페이지</h2>
+                        <div id="main_wrapper">
+                            <div id="main">
+                                <div class="main_header">
+                                      <a href="http://www.gqkorea.co.kr/" class="h_left">
+                                          <img src="http://static.naver.net/newsstand/up/2013/0813/nsd11423473.gif" alt="쥐큐로고" />
+                                      </a>
+                                      <a href="http://ad.naver.com/adclick?unit=983F&ac=6669998&src=2691093&br=2150010&rk=V1Vb2ApizUUAAFMCSQAAAAGu&eltts=Bo%2B0E9%2FctHVuxgxBgpCA2w%3D%3D&oid=&&:::cl:::" class="h_right">
+                                          <img src="http://adcreative.naver.com/ad3/1004/1004874/468_60_11446516899395.jpg" alt="해피빈 굿액션 바이션  지금 여러분의 콩ㅣ 달리기를 시작합니다. 안경쓴가수 션" />
+                                      </a>
+                                      <div class="h_contents">
+                                            <div class="h_contents_user"> 
+                                                <a href="http://newsstand.naver.com/?list=ct7#" class="btn h_contents_a"></a>
+                                                <a href="http://cafe.naver.com/ArticleList.nhn?search.clubid=19404258&search.menuid=123&search.boardtype=L" class="btn h_contents_b"></a>
+                                                <a href="http://newsstand.naver.com/?list=ct7#" class="btn h_contents_c"></a>
+                                            </div> 
+                                            <span class="h_contents_date">
+                                              <b class="date">06-03 19:00 편집</b>
+                                            </span>
+                                      </div>
+                                </div>
+                                
+                                <div class="main_contents">
+                                    <div class="premier">
+                                        <div class="premier_text">
+                                            <strong class="premier_title">[우먼] 하얀 비키니라는 환상</strong><br />
+                                            <p class="premier_detail">백기를 든 듯이 눈에 띄고, 속이 비치기 쉬우며, 검열된 화면처럼 보인다. 그럼에도 흰색을 입는 여자가 있다.</p>
+                                        </div>
+                                        <div class="premier_img">
+                                            <a href="http://www.gqkorea.co.kr/?p=55716&_C_=22" class="premier_img_link">
+                                                <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/001.jpeg" alt="하얀비키니 입고 있는  오른쪽에 나침반 문신을 한 단발머리여자" />
+                                            </a>
+                                        </div>
+                                        <div class=""></div>
+                                    </div>
+                                    
+                                    <div class="deuxieme">
+                                        <div class="premier_theme">
+                                            <ul class="theme">
+                                                <li class="content_a">
+                                                    <a href="http://www.gqkorea.co.kr/?p=55810&_C_=22" class="content_a_link">
+                                                        <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/002.jpg" alt="레스토랑에서 한남자는 와인을 따르고 다른 한 사람은 요리를 하고 있다," />
+                                                    </a>
+                                                    <b class="content_a_title">[푸드] 우리 동네 프렌치</b> <br />
+                                                    <span class="content_a_text">메뉴판을 보며 계산을 하지 않아도 되는 가격, 서울의 프렌치.</span>
+                                                </li>
+                                                <li class="content_b">
+                                                    <a href="http://www.gqkorea.co.kr/?p=55795&_C_=22" class="content_b_link">
+                                                        <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/003.jpg" alt="왼쪽은 앞을 보고있는 자동차 오른쪽은 뒤를 보여주는 자동차" />
+                                                    </a>
+                                                    <b class="content_b_title">[카] 진보주의자, A4</b> <br />
+                                                    <span class="content_b_text">단 한 대의 차에 집중했다. 6월의 명예는 뉴 아우디 A4다.</span>
+                                                </li>
+                                                <li class="content_c">
+                                                    <a href="http://www.gqkorea.co.kr/?p=55883&_C_=22" class="content_c_link">
+                                                        <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/004.jpg" alt="빨간 바탕에 클래식한 라이카 카메라" />
+                                                    </a>
+                                                    <b class="content_c_title">[테크] 클래식, 라이카 M-D</b> <br />
+                                                    <span class="content_c_text">LCD를 없애, 사진을 찍는 행위에 극도로 예민하게 접근했다.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="deuxieme_theme">
+                                            <div class="content_left">
+                                                <a href="http://www.gqkorea.co.kr/?p=56194&_C_=22" class="content_left_link">
+                                                    <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/005.jpg" alt="청바비 벨트에 걸려있는열쇠고리"/>
+                                                    <div class="contents_left">
+                                                        <b class="content_left_title">아이템 #키홀더</b> <br />
+                                                        <span class="content_left_text">주렁주렁 위트 넘치는 남자의 액세서리.</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="content_right">
+                                                <a href="http://www.gqkorea.co.kr/?p=55979&_C_=22" class="content_right_link">
+                                                    <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/006.jpg" alt="화장품 종류 6가지" />
+                                                    <div class="contents_right">
+                                                        <b class="content_right_title">태양의 후예</b> <br />
+                                                        <span class="content_right_text">머리부터 발끝까지, 여름에는 여름 화장품.</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dernier">
+                                        <a href="http://www.gqkorea.co.kr/" class="dernier_logo"></a>
+                                    </div>
+                                </div> 
+                            </div>
+                         </div>
+                 </div>
+                <div id="list-news">
+                    <h2 class="news_list">뉴스리스트</h2>
+                    
+                    <div class="list">
+                        <div class="news_list_logo">
+                            <ul class="list_rolling">
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_a">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/042.gif" alt="데일리한국" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_b">
+                                        <img src="http://static.naver.net/newsstand/up/2015/1109/nsd145345.png" alt="한경비지니스" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_c">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/908.gif" alt="국방일보" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_d">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/367.gif" alt="쥐큐" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_e">
+                                        <img src="http://static.naver.net/newsstand/up/2015/1221/nsd15533259.png" alt="디자인정글" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_f">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/363.gif" alt="과학동아" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_g">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/362.gif" alt="카라이프" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_h">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/354.gif" alt="엘르" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_i">
+                                        <img src="http://static.naver.net/newsstand/up/2015/0731/nsd17342449.png" alt="맥스무비" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_j">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/140.gif" alt="씨네 이십일" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_k">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/355.gif" alt="더 사이언스 타임" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_l">
+                                        <img src="http://static.naver.net/newsstand/up/2014/0715/915.gif" alt="르몽드 디플로마틱" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_m">
+                                        <img src="http://static.naver.net/newsstand/up/2015/0506/nsd1815304.gif" alt="헤드라인 뉴스컬처" />
+                                    </a>
+                                </li>
+                                <li class="rolling">
+                                    <a href="#" class="rolling_img_n">
+                                        <img src="http://static.naver.net/newsstand/up/2015/1218/nsd14193119.png" alt="인벤" />
+                                    </a>
+                                </li>
+                                <li class="rolling_setting list_setting btn">
+                                    <a href="http://newsstand.naver.com/config.html" class=""></a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="btn arrow_left"></a>
+                    <a href="#" class="btn arrow_right"></a>
+                </div>
+            </div>
+            
+            <div id="footer">
+                <div class="notice">
+                    <strong class="ntc"></strong>
+                    <a href="http://news.naver.com/main/ombudsman/readView.nhn?notiId=320&notiDel=N" class="ntc_link">
+                    언론사별 주요기사 메인 노출 안내
+                    </a>
+                </div>
+                <p class="copyright">본 콘텐츠의 저작권은 제공처 또는 네이버에 있으며, 이를 무단 이용하는 경우 저장권법 등에 따라법적책임을 질수 있습니다.</p>
+               <div class="cpr">Copyright &copy;
+                    <strong class="naver_cpr">NAVER Corp.
+                        <a href="http://www.navercorp.com/ko/index.nhn" class=""></a>
+                    </strong>All Right Reserved
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
