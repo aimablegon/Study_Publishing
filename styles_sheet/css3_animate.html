@@ -1,0 +1,88 @@
+<!--http://www.justinaguilar.com/animagions/index.html
+구글에서 css3 animation치면 무료로 제공하는 사이트들 많다.-->
+
+
+
+         /*@key치면 이거 다 나온다*/
+         /*@-webkit-keyframes identifier {*/
+             /*-webkit-*/
+         /*    from {  }*/
+         /*    to {  }*/
+         /*}*/
+         /*@-o-keyframes identifier {*/
+             /*-o-*/
+         /*    from {  }*/
+         /*    to {  }*/
+         /*}*/
+         /*@-moz-keyframes identifier {*/
+             /*-moz-*/
+         /*    from {  }*/
+         /*    to {  }*/
+         /*}*/
+         /*@keyframes identifier {*/
+             
+         /*    from {  }*/
+         /*    to {  }*/
+         /*}*/
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            width:100px; 
+            height:100px; 
+            border:1px #F00 solid; 
+            background-color: #000;
+            animation-name:rightmove;
+            animation-duration:1s;
+            /*animation-name:rightmove 1s;이렇게도 사용가능*/
+        }
+        
+         @keyframes rightmove {
+             from {  margin:0;}
+             to { margin-left:100px; }
+         }
+                             /*==============================*/
+         @keyframes rightmove {
+             0% {  margin:0;}
+             10% { margin-left:100px; }
+             20% { margin-top:100px; margin-left:100px; }
+             50% { margin-top:100px; margin-left:0;} 
+             70% { padding:20px;}
+             100% { margin:0; padding:0;}
+         }
+         
+         /*======================================================*/
+         
+         .box{
+            width:100px; 
+            height:100px; 
+            border:1px #F00 solid; 
+            background-color: #000;
+            
+        }
+        .box:hover{
+            animation:rightmove 1s;
+        }
+         
+        @keyframes rightmove {
+             0% {  margin:0;}
+             10% { margin-left:100px; }
+             20% { margin-top:100px; margin-left:100px; }
+             50% { margin-top:100px; margin-left:0;} 
+             70% { padding:20px;}
+             100% { margin:0; padding:0;}
+         }
+            
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+    </div>
+</body>
+</html>
