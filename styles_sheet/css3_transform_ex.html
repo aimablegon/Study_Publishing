@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+        <style type="text/css">
+            *{margin:0; padding:0;}
+            .wrapper{width:600px; height:800px; border:5px #000 solid; background-color:#000; margin:100px auto 0; position:relative;}
+            .a1{width:150px; height:150px; box-sizing:border-box; border:5px #000 solid; background-color:#FFF;
+                position:absolute; top:0; left:0; }
+            .a2{width:150px; height:450px; box-sizing:border-box; border:5px #000 solid; background-color:#FFF;
+                position:absolute; top:150px; left:0; }
+            .a3{width:450px; height:600px; box-sizing:border-box; border:5px #000 solid; background-color:#F00;
+                position:absolute; top:0; right:0; }
+            .a4{width:150px; height:200px; box-sizing:border-box; border:5px #000 solid; background-color:#00F;
+                position:absolute; bottom:0; left:0; }
+            .a5{width:350px; height:200px; box-sizing:border-box; border:5px #000 solid; background-color:#FFF;
+                position:absolute; left:150px; bottom:0;}
+            .a6{width:100px; height:100px; box-sizing:border-box; border:5px #000 solid; background-color:#FFF;
+                position:absolute; right:0; bottom:100px;}
+            .a7{width:100px; height:100px; box-sizing:border-box; border:5px #000 solid; background-color:#FF0;
+                position:absolute; right:0; bottom:0; }
+            
+            .wrapper:hover .a1{animation:box_a1 2s; }
+            .wrapper:hover .a2{animation:box_a2 2s;}
+            .wrapper:hover .a3{animation:box_a3 2s; }
+            .wrapper:hover .a4{animation:box_a4 2s;}
+            .wrapper:hover .a5{animation:box_a5 2s;}
+            .wrapper:hover .a6{animation:box_a6 2s;}
+            .wrapper:hover .a7{animation:box_a7 2s;}
+            
+            
+            @keyframes box_a1 {
+                from {margin:0; }
+                to { margin-left:-100px; margin-top:-100px; transform:rotate(360deg); }
+            }
+            @keyframes box_a2 {
+                from {margin:0;  }
+                to {margin-left:-100px; transform:rotateY(360deg);  }
+            }
+            @keyframes box_a3 {
+                from { margin:0; }
+                to {margin-right:-100px; margin-top:-100px; transform:scale(0.5,0.5) rotate(360deg);}
+            }
+            @keyframes box_a4 {
+                from { margin:0 }
+                to { margin-left:-100px; margin-bottom:-100px; transform:rotate(540deg);}
+            }
+            @keyframes box_a5 {
+                from { margin:0 }
+                to { margin-bottom:-100px; transform:rotateX(360deg) scale(0.8,0.8);}
+            }
+            @keyframes box_a6 {
+                from {margin:0  }
+                to {  margin-right:-100px; transform:skew(10deg,10deg) rotate(360deg);}
+            }
+            @keyframes box_a7 {
+                from { margin:0 }
+                to { margin-right:-100px; margin-bottom:-100px; transform:scale(1.2,1.2);}
+            }
+            
+        </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box a1"></div>
+        <div class="box a2"></div>
+        <div class="box a3"></div>
+        <div class="box a4"></div>
+        <div class="box a5"></div>
+        <div class="box a6"></div>
+        <div class="box a7"></div>
+        <div class="box a8"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!--=
