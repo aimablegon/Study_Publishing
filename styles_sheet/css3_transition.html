@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            width:100px; 
+            height:100px; 
+            border:1px #F00 solid; 
+            background-color: #000;
+            transition:1s;
+            /*엘리먼트에 대한 과정을 이야기 할때, transition을 사용한다.
+            1s=1000ms(a미리세컨즈)*/
+        }
+        .box:hover{
+            background-color: red;
+        }
+        /*==================================================== */
+       .box{
+            width:100px; 
+            height:100px; 
+            border:1px #F00 solid; 
+            background-color: #000;
+            transition:width 1000ms ,height 1000ms
+        }
+        .box:hover{
+            background-color: red;
+            width:300px;
+            height:300px;
+        }
+            /*transition에 width에 시간을과 height에 시간을 넣고 값을 넣어주면 하버했을때, 
+            그 넓이 만큼 늘어나는 과정을보여준다*/
+            
+            
+            /*====================================================*/
+            
+              .box{
+            width:100px; 
+            height:100px; 
+            border:1px #F00 solid; 
+            background-color: #000;
+            transition:width 1000ms ,height 1000ms ease; 
+            /*처음엔 ease로 쓰고, 저장후 게빌지 도구에서 애니메이션을 누른후 
+            cubic-bezier(0, 1.68, 1, -0.54);이렇게 된거 복사해서 넣는다.*/
+            /* duration= 초지정
+            timing-function::liner = 
+            delay= 몇초 있다가 동작됨*/
+        }
+        .box:hover{
+            background-color: red;
+            width:300px;
+            height:300px;
+        }
+        
+            
+            
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+    </div>
+</body>
+</html>
