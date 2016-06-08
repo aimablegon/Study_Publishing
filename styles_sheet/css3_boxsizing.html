@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            /*위드값안에 보더와 패딩값을 포함 시킴, 반응형 웹에 사용 가능*/
+            box-sizing:border-box;
+            width: 200px; height:200px; border:1px #f00 solid; padding:20px;}
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+    
+</body>
+</html>
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            /*상대값으로 표현 가능함 사용빈도 많이 늘어날꺼 같음
+            마진은 포함되지 않는다.
+            호환성 낮음, css3에서 사용가능 */
+            width: 50%; 
+            box-sizing:border-box;
+            height:200px; 
+            outline:1px #f00 solid; 
+            padding:20px;
+            float:left;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+    <div class="box"></div>
+    
+</body>
+</html>
