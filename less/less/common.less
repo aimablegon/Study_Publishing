@@ -131,6 +131,48 @@ background-color:lighten(@bg-default, 20%);
 }
 
 //// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+// 유효범위=지역변수, 로컬변수
 
+// 글로벌 변수= 공통적, 전체적
+// @maxwidth:1000px; 
+// .asideMenu(){
+    
+//     width:@maxwidth;
+// }
 
+// .topmenu(){
+//     width:@maxwidth;
+// }
+// // 지역변수= 안에서만 작용될때, asideMenu안에서만 작동해
+// .asideMenu(){
+//     @maxwidth:1000px;
+//     width:@maxwidth;
+// }
 
+// .topmenu(){
+//     width:@maxwidth;
+//     // asideMeun만 @maxwidth사용 가능, topmenu는 사용 안됨
+// }
+
+// ==========
+// @a:100%;
+// .asideMenu(){
+//     @maxwidth:95%;
+//     width:@maxwidth;
+//     .topmenu(@maxwidth)
+// }
+
+// .topmenu(@a){
+//     height:@a;
+// }
+// // 이것보다, ↓이거 더 많이 씀/
+// @a:100%;
+// .asideMenu(){
+//     @maxwidth:95%;
+//     width:@maxwidth;
+//     .topmenu(@maxwidth)
+// }
+
+// .topmenu(@a){
+//     height:percentage(@a/1000);
+// }
