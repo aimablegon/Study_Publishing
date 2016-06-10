@@ -1,0 +1,41 @@
+*{margin:0; padding:0;}
+body{font-family: "돋움", sans-serif;}
+@x-small:5px;
+@small:10px;
+@middle:15px;
+@large:20px;
+@x-large:15px;
+
+
+
+
+.inline-block(){
+    display:inline-block;
+    *zoom:1;
+    *display:inline;
+}
+
+.radius(@middle:15px){
+    -webkit-border-radius:@middle ;
+    -moz-border-radius:@middle ;
+    border-radius:@middle ;
+}
+
+.btn-style(@line:2px, @width:50px, @height:25px, @font-size:1em){
+    border:@line #000 solid;
+    .inline-block();
+    .radius();
+    line-height:@height - 10;
+    vertical-align:middle;
+    width:@width;
+    height:@height;
+    font-size:@font-size;
+    cursor:pointer;
+    padding:0 10px;
+    text-weight:normal;
+    
+}
+@width:50px;
+.test1{
+    .btn-style(2px, @width - 10, 25px  )
+}
