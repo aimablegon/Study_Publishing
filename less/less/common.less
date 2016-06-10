@@ -1,13 +1,136 @@
-body{margin:0;}
-ul{list-style:none; margin:0; padding:0;}
+body{font-family: "돋움", sans-serif;}
 
-.menu{width:200px; border:1px #ccc; border-radius:20px;
-    overflow:hidden;
-    ul{
-        margin:20px;
-        background-color:#CCC;
-        li{border bottom:1px #CCC solid;
+@small:5px;
+@large:10px;
+@bg-default:#78c4ff;
 
-        }
-    }
+
+
+.radius(@size:10px){
+    -webkit-border-radius: @size;
+    -moz-border-radius: @size;
+    border-radius: @size; 
+    
 }
+
+
+.inline-block(){
+    display:inline-block;
+    *zoom:1;
+    *display:inline;
+}
+
+
+.btn-primary{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+color:#FFF;
+}
+
+.btn-info{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f6f6+0,dbdce2+21,b8bac6+49,dddfe3+80,f5f6f6+100;Grey+Pipe */
+background: #f5f6f6; /* Old browsers */
+background: -moz-linear-gradient(top,  #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
+color:#666;
+}
+
+.btn-waring{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9c667+0,f79621+100;Orange+3D+%234 */
+background: #f9c667; /* Old browsers */
+background: -moz-linear-gradient(top,  #f9c667 0%, #f79621 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f9c667 0%,#f79621 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f9c667 0%,#f79621 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c667', endColorstr='#f79621',GradientType=0 ); /* IE6-9 */
+}
+
+
+.btn-style(@line_width:1px, @height:30px, @font_size:1em, @bgcolor:#CCC){
+    border:@line_width #F00 solid;
+    .inline-block();
+    .radius(@large);
+    vertical-align:middle;
+    line-height:@height;
+    height:@height;
+    text-decoration:none;
+    font-size:@font_size;
+    padding:0 20px;
+    cursor:pointer;
+    font-weight:normal;
+    background:@bgcolor;
+    &:hover{
+        background:#F00;
+    }
+    
+}
+
+.btn{
+    .btn-style()
+}
+
+.btn-point{
+    .btn-style(1px, 40px, 1em, @bg-default)
+}
+
+a.btn{
+    .btn-style(1px, 30px -2, 1em, #CCC)
+    
+}
+
+@color:#CCC;
+.btn-def{
+    background-color: @color;
+    &:hover{background:lighten(@color,10%);}
+    // &:hover{background:darken(@color,10%);} 10% 어둡게
+    //  &:hover{background:@color *3;}칼라 값의 3배수
+}
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+// // 수학함수
+// round(1.64);2
+// //반올림
+// ceil(2.4);3
+// // 올림
+// floor(2.6);2
+// // 버림,절삭
+// percentage(0.5);50%
+// 퍼센트, 연산가능, 가변그리드에서 많이 사용한다.
+
+div.box{
+    widht:percentage(300/1000);
+    height:100px;
+    background-color:@bg-default;
+
+
+// 색상관련함수
+background-color:lighten(@bg-default, 20%);
+// background-color:darken(@bg-default, 20%);
+// background-color:saturate(@bg-default, 20%);
+// // 컬러값보다 20% 채도 높음
+// background-color:desaturate(@bg-default, 20%);
+// // 컬러값보다 20% 채도 낮음
+// background-color:fadein(@bg-default, 20%);
+// // 불투명
+// background-color:fadeout(@bg-default, 20%);
+// // 반투명
+// hover햇을떄 자주 사용한다.
+
+
+
+// background-color:hue(@bg-default);
+// 전체 컬러에 대한 색조값을 뽑아 준다.
+// 색조반환, 샘도 잘 모른데 
+// background-color:saturation(@bg-default);
+// 채도를 반환한다. 전체 컬러에 대한 채도값을 뽑아 준다.
+}
+
+//// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+
+
