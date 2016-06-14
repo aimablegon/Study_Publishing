@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>svg_example</title>
+        <link rel="stylesheet" href="../font/font/flaticon.css" type="text/css" />
+        <style type="text/css">
+            .flaticon-star::before{
+                font-size:100px; color:#FF0; display:inline-block; background:#0FF; border-radius:30%;
+                padding:5px; margin:20px;
+            }
+            .icon{text-align:center;}
+            /*text-align 또는 display:inline-block을 사용한다.*/
+            .icon:hover{transition:1s; transform:rotateY(360deg) scale(1.5,1.5);}
+            .icon:hover .flaticon-star::before{background:#F0F; }
+        </style>
+    </head>
+    <body>
+        <div class="icon">
+            <sapn class="flaticon-star">즐겨찾기</sapn>
+        </div>
+    </body>
+</html>
