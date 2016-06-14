@@ -36,7 +36,7 @@ ol {
 #wrapper .main_image {
   display: none;
 }
-/**/
+/*header*/
 #header {
   width: 100%;
   height: 100px;
@@ -70,6 +70,7 @@ ol {
   outline: 1px #F00 solid;
   float: right;
 }
+/*footer*/
 #footer {
   width: 100%;
   height: 57px;
@@ -153,6 +154,7 @@ ol {
     right: 0;
     bottom: 0;
     width: 100%;
+    z-index: -1;
   }
   #header {
     outline: 1px #000 solid;
@@ -172,6 +174,8 @@ ol {
     display: block;
   }
   #header .h_left .logo {
+    width: 104px;
+    height: 52px;
     background-image: url(../images/mainlogo.png);
     background-position: center;
     background-repeat: no-repeat;
