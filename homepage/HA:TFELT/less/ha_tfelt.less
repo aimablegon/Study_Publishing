@@ -1,0 +1,113 @@
+*{margin:0; padding:0}
+html,body{height:0;}
+body{font-family: 'Oswald', sans-serif;}
+ul,ol{list-style:none;}
+@import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext);
+
+
+
+/*wrapper*/ 
+#wrapper{outline:1px #F00 solid;
+        height:100%; position:relative;
+        
+        .main_video{
+            position:fixed; top:0; right:0; bottom:0; min-width: 100%; min-height: 100%;
+            width: auto;height: auto; z-index:-100; background-size:cover; background-position:center;
+        }
+        .main_image{
+            display:none;
+        }
+}
+
+
+/**/ 
+#header{
+        width:100%; height:100px; position:fixed; left:0; top:0;
+        background-color:rgba(255,255,255,0.1); padding:0 20px; box-shadow:0 1px 7px rgba(0,0,0,0.2);
+        .h_left{
+                float:left; width:104px; height:52px;padding:25px; display:block;  
+                    
+                    .logo{
+                        width:104px; height:52px;
+                        background-image:url(../images/mainlogo.png); background-position:center; background-repeat:no-repeat;
+                        background-size:cover;transition:1s; 
+                            &:hover{transform:rotateY(180deg);
+                            }
+                    }
+                   
+                       
+        }
+        .h_right{outline:1px #F00 solid;
+            float:right;
+                    
+        }
+}
+
+
+
+#footer{width:100%; height:57px; position:fixed; left:0; bottom:0;
+        .footer_box{width:100%; height:57px; padding:0 30px;
+            .footer_left{width:115px; height:45px; float:left; position:relative; left:5%; margin:6px 0;}
+            .jyp_logo>img{width:100%;}
+        
+            .footer_right{width:150px; height:33px; float:right; position:relative; right:5%; margin:13px 0 14px;
+                .SNS{width:32px; height:33px; margin-right:10px; text-decoration:none; display:inline-block;}
+                .footer_right>[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after 
+                    {margin:0;}
+                .flaticon-twitter-logo-silhouette::before{
+                    font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+                .flaticon-facebook-logo::before{
+                    font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+                .flaticon-video::before{
+                    font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+            }    
+            
+        }
+        
+        
+        
+    
+}            
+            
+
+
+
+
+
+
+
+@media screen and (max-width:720px) {
+        #wrapper .main_video{
+            display:none;
+        }
+        #wrapper .main_image{
+            display:inline-block; background-image:url(../images/main-720.jpg); background-position:center; background-repeat:no-repeat;
+            position:fixed; top:0; left:0; right:0; bottom:0; width: 100%;
+        }
+            
+   
+   
+   
+        #header{outline:1px #000 solid;
+               width:100%; height:60px; position:fixed; left:0; top:0;
+               background-color:rgba(255,255,255,0.1); padding:0 20px; box-shadow:0 1px 7px rgba(0,0,0,0.2);
+                .h_left{
+                        float:left; width:104px; height:52px; display:block;  
+                            
+                            .logo{
+                                background-image:url(../images/mainlogo.png); background-position:center; background-repeat:no-repeat;
+                                background-size:cover;transition:1s; transform:scale(0.8,0.8) ;
+                                    &:hover{transform:rotateY(180deg) scale(0.8,0.8);
+                                    }
+                            }
+                }
+            
+        }
+   
+        .footer_box{
+                    width:100%; height:57px; padding:0 30px; 
+                    background-color:rgba(0,0,0,0.7); 
+                }
+   
+    
+}
