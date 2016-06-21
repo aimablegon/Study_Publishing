@@ -1,0 +1,58 @@
+.slideBn{
+    position: relative;
+    width:1141px;
+    height:464px;
+    border:1px #F00 solid;
+    .view{
+        position:relative;
+        text-align:center;
+        overflow:hidden;
+        height:100%;
+        li:first-child img{
+            display:block;
+        }
+        li{
+           
+            display:inline-block;
+            img{
+                position:absolute;
+                left:0;
+                top:0;
+                display:none;
+                
+            }
+            a{
+                position: relative;
+                top:440px;
+                z-index: 1;
+                display:block;
+                width:20px;
+                height:20px;
+                border:1px #F00 solid;
+                text-indent:-9999px
+            }
+        }
+        li.on a{
+            background: #F00;
+        }
+    }
+    .slidebtn-group{
+       button{
+           position:absolute;
+           top:50%;
+           z-index:2; 
+           width:50px;
+           height:100px;
+           margin-top:-50px;
+           border:0;
+       }
+       button.next{
+           right:0;
+           background-color: transparent;
+           background-image: url(/libs/dist/images/slide-arrow-next.png);
+       }
+       button.prev{
+           left:0;
+       }
+    }
+}

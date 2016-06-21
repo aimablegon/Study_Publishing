@@ -1,0 +1,31 @@
+.taps{
+    border-top:2px 
+    @taps-bgcolor solid;
+    margin-bottom:40px;
+    ul{
+        font-size:0;
+        text-align:center;
+        li{
+            font-size:14px;
+            .inline-block();
+            a{
+               display:block; 
+                padding:0 30px;
+                height:40px; 
+                line-height:40px;
+                &:hover{
+                  .taphover(); 
+                }
+            }
+        }
+        li.on{
+            a{
+               .taphover(); 
+            }
+        }
+    }
+    
+    
+}
+
+

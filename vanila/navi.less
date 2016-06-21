@@ -1,0 +1,35 @@
+.navi{
+      height:20px;
+    ol{
+        >li{
+            text-transform: uppercase;
+            padding:0 10px;
+            margin:0 10px;
+            float:left;
+            font-size:12px;
+            line-height:20px;
+        
+        }
+       >li.seletor{
+            background-image:url(../images/seletor_arrow.png);
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            border:1px #CCC solid; 
+            height:20px;
+            padding-right:30px;
+            position:relative;
+            &:hover ul{
+                display:block;
+            }
+            >ul{
+                left:0;
+                position:absolute;
+                display:none;
+                border:1px #CC solid;
+                padding:10px; 
+                min-width:100px;
+            }
+        
+        }
+    }
+}
