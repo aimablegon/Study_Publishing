@@ -25,7 +25,7 @@
             body{ min-width:900px; min-height:810px;
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_bd.png);}
             
-            #wrapper{outline:1px #000 solid; height:100%; position:relative;}
+            #wrapper{outline:1px #000 solid; height:100%; min-height:810px; position:relative;}
             /*header*/
             #header{ height:40px; padding:5px 0; 
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_hd.png);}
@@ -48,7 +48,6 @@
             .h_li_login{width:46px; height:20px; background-position:-187px -174px;  display:inline-block;}
             .h_li_b{ width:16px; height:16px; padding:7px 9px 5px; display:inline-block; float:left;}
             .h_li_icon{width:16px; height:16px; background-position:-200px -120px; display:inline-block;}
-
             .h_div{width:230px; height:21px; padding:5px 9px 0 0; float:right;}
             .refresh{border-left:2px #999 solid; width:66px; height:21px; margin-left:6px; padding:4px 5px 0 10px; display:inline-block;}
             .h_div_rfsh{width:66px; height:21px; background-position:-255px -63px; display:inline-block;}
@@ -83,7 +82,7 @@
             
             
             /*container*/
-            #container{outline:1px #000 solid; min-width:800px; min-height:600px; position:absolute; 
+            #container{outline:1px #000 solid; min-width:800px; min-height:540px;height:100%; position:absolute; 
                 top:49px; bottom:81px;left:0; right:0;}
             /*content*/
             #content{outline:1px #000 solid;  min-width:900px; width:100%; height:100%; position:absolute; top:0; left:0;}
@@ -185,27 +184,30 @@
             
             
             
-
             
-              /*footer*/
-            #footer{height:81px; position:absolute; left:0; right:0; bottom:0; background-color:transparent;
+             /*footer*/
+            #footer{height:81px; position:absolute; left:0; right:0; bottom:-81px; background-color:transparent;
                 background-image:url(http://static.naver.net/newsstand/img/20131014/bg_ft.png); text-align:center;}
-            .notice{outline:1px #F00 solid; height:14px; margin:14px 0 -1px; padding-right:16px; display:inline-block;
-                position:absolute; left:0; right:0;}
+            .notice{outline:1px #F00 solid; height:14px; margin:14px 0 -1px; padding-right:16px; display:block;
+                position:absolute; left:0; right:0; } 
             .ntc{outline:1px #000 solid; width:54px; height:13px; margin-right:6px; display:inline-block;
-                overflow: hidden; color:#ddc196; margin:0 6px 0 0; vertical-align:center; position:absolute; left:35%; right:65%;}
-            .ntc_link{outline:1px #F00 solid; overflow:hidden; color:#e4e2e0; display:inline-block; overflow: hidden;
-                position:absolute; left:35%; right:65%; vertical-align:center; }
+                overflow: hidden; color:#ddc196;     text-align: center; vertical-align: top;
+                line-height:16px; font-size:13px;
+            }
+            .ntc_link{overflow:hidden; color:#e4e2e0; display:inline-block;
+                position:relative; text-align:center; line-height:16px; font-size:13px; text-decoration: none;}
             
             
             
-            .copyright{outline:1px #F00 solid; height:16px; padding-top:11px; display:inline-block; overflow: hidden;
+            .copyright{height:16px; padding-top:11px; display:inline-block; overflow: hidden;
                 position:absolute; left:0; right:0; top:29px; text-align:center; font-size: 11px; color: #aca69f; line-height:16px;}
             
-            .cpr{outline:1px #F00 solid; height:16px; position:absolute; top:57px; left:0; right:0; overflow:hidden;
+            .cpr{height:16px; position:absolute; top:57px; left:0; right:0; overflow:hidden;
                 color:#ada7a1; vertical-align:center; display:inline-block; font-size: 9px; line-height:16px;}
             .naver_crp{outline:1px #FFF solid; width:58px; height:12px; display:inline-block; overflow: hidden;
                 position:absolute; font-size: 9px; color: #c7c2bc; line-height:16px ;}
+            
+
             
         </style>
     </head>
