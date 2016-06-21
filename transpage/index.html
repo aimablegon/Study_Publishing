@@ -4,20 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>twice</title>
+        <link rel="stylesheet" href="twice_font/font/flaticon.css" type="text/css" />
         <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext);
+        
             *{margin:0; padding:0;}
             html,body{height:100%;}
             ul,ol{list-style:none;}
             .wrapper{
-                border:1px #F00 solid; height:100%;
+                height:100%; position:relative;
                 background-image:url(../images/twice.jpg);background-repeat:no-repeat;
                 background-size:cover; -webkit-background-size: cover;
                 background-position:center top;}
             
             .wrapper .logo{
-                border:1px #F00 solid; width:350px; height:350px; 
+                width:350px; height:350px; 
                 background-image:url(../images/twice_mainlogo.png); 
-                position:absolute; top:35%;
+                position:absolute; top:28%;
                 transform:scale(0.9, 0.9); transition:1.5s;}    
             
             .wrapper .logo:hover{
@@ -29,8 +32,16 @@
                 position:fixed; width:100%; left:0; top:0; padding:0 20px; box-sizing:border-box;
                 box-shadow:0 1px 15px #AAA;
             }
+            .wrapper .header .mark{
+                float:left;
+            }
+            
+            .wrapper .header .nav{
+                float:right;
+            }
+            
             .wrapper .header .mark a{
-                display:block; width:104px; height:40px; padding:25px;
+                display:block; width:104px; height:55px; padding:25px;
                 background-image:url(../images/twice_logo.png);
                 background-repeat:no-repeat;
                 background-position:center;
@@ -41,6 +52,52 @@
             }
             
             
+            .wrapper .header .nav button{
+                display:none;
+            }
+            .wrapper .header .nav ul{
+                font-size:0;
+            }
+            .wrapper .header .nav li{
+                display:inline-block; font-size:16px; 
+                vertical-align:top; line-height:100px;
+                font-family: 'Oswald', sans-serif;
+                
+            }
+            .wrapper .header .nav li a{
+                padding:0 10px; display:block; transition:0.3s; color:#08e9d1;
+                text-decoration:none; font-size:1.1em; 
+                font-family: 'Oswald', sans-serif;
+            }
+             .wrapper .header .nav li a:hover{
+                border-top:4px #ffb0b0 solid; color:#ffb0b0;
+            }
+            
+            
+            
+            
+            /*footer*/
+            .footer_1{width:100%; height:57px; position:fixed; left:0; bottom:0;}
+            .footer_2{width:100%; height:57px; padding:0 30px;}
+            
+            .footer_left{width:115px; height:45px; float:left; position:relative; left:5%; margin:6px 0;}
+            .jyp_logo>img{width:100%;}
+            
+            
+            .footer_right{width:208px; height:33px; float:right; position:relative; right:5%; margin:13px 0 14px;}
+            .SNS{width:32px; height:33px; margin-right:10px; text-decoration:none; display:inline-block;}
+            .footer_right>[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after 
+                {margin:0;}
+            .flaticon-instagram-social-network-logo-of-photo-camera::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+            .flaticon-twitter-logo-silhouette::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+            .flaticon-facebook-logo::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+            .flaticon-video::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}    
+            
+            
             
             @media screen and (max-width:768px){
                 .wrapper{
@@ -48,7 +105,7 @@
                     background-position:center center;
                 }
                 .wrapper .logo{
-                    position:relative; margin:0 auto; top:17%;
+                    position:relative; margin:0 auto; top:10%;
                     transform:scale(0.8, 0.8);
                 }
                 
@@ -63,7 +120,44 @@
                     
                     transform:scale(0.7, 0.7) rotateY(180deg);
                 }
+                
+                
+                .wrapper .header .nav button{
+                    display:block; width:180px; padding:17px 40px; border:0;
+                    color:#FFF; background-color:#08e9d1;
+                    text-decoration:none; font-size:0.95em; font-family: 'Oswald', sans-serif;
+                    cursor:pointer;
+                }
+                /*임시 시작*/
+                .wrapper .header .nav button:hover + ul{
+                    display:block;
+                }
+                
+                /*임시끝*/
+                
+                .wrapper .header .nav ul{
+                    display:none; position:absolute; background-color:rgba(255, 255, 255, 0.8);
+                }
+                .wrapper .header .nav ul li{
+                    line-height:55px; text-indent:16px; padding-right:10px;
+                }
+               
+                 .wrapper .header .nav li a:hover{
+                border-left:4px #08e9d1 solid; color:#ffb0b0;
+                }
+                
+                .footer_2{
+                    width:100%; 
+                    height:57px; 
+                    padding:0 30px; 
+                    background-color:rgba(0,0,0,0.7); 
+                }
              }
+             
+             
+             
+             
+             
         </style>
     </head>
     <body>
@@ -72,12 +166,58 @@
                 <div class="mark">
                     <a href="http://twice.jype.com/index.html"></a>
                 </div>
+                <div class="nav">
+                    <button>Main Menu</button>
+                    <ul>
+                        <li>
+                            <a href="http://twice.jype.com/profile.asp">PROFILE</a>
+                        </li>
+                        <li>
+                            <a href="http://twice.jype.com/discography.asp">DISCOGRAPHY</a>
+                        </li>
+                        <li>
+                            <a href="http://twice.jype.com/gallery.asp">GALLERY</a>
+                        </li>
+                        <li>
+                            <a href="http://twice.jype.com/video.asp">VIDEO</a>
+                        </li>
+                        <li>
+                            <a href="http://twice.jype.com/notice.asp">NOTICE</a>
+                        </li>
+                        <li>
+                            <a href="http://twice.jype.com/schedule.asp">SCHEDULE</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class=logo></div>
+            
+            <div class="footer_1">
+                <div class="footer_2">
+                    <span class="footer_left">
+                        <a href="http://www.jype.com/" class="jyp_logo">
+                            <img src="../images/jyplogo-b.png" alt="제이와이피엔터테이먼트로고" />
+                        </a>
+                    </span>
+                    
+                    <span class="footer_right">
+                        <a href="https://www.instagram.com/twicetagram/" class="https://www.youtube.com/c/jypentertainment">
+                        </a>
+                        <a href="https://twitter.com/JYPETWICE" class="SNS flaticon-twitter-logo-silhouette">
+                        </a>
+                        <a href="https://www.facebook.com/JYPETWICE" class="SNS flaticon-facebook-logo">
+                        </a>
+                        <a href="https://www.youtube.com/c/jypentertainment" class="SNS flaticon-video">
+                        </a>
+                    </span>
+                </div>
             </div>
             
             
             
-            <div class=logo></div>
             
         </div>
+        
+        
     </body>
 </html>
