@@ -39,3 +39,121 @@ body{font-family: "돋움", sans-serif;}
 .test1{
     .btn-style(2px, @width - 10, 25px  )
 }
+
+
+
+
+
+
+
+
+
+
+
+// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /
+// 쌤꺼 원더걸스 메인페이지, less
+//변수
+
+@tablet:1024px;
+@mobile:420px;
+
+/*공통요소*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color:#000
+}
+
+ul,ol{
+    list-style:none;
+}
+
+.bd(@color:red){
+    border:1px @color solid;
+}
+
+.transition(@duration,@ease:ease){
+    -webkit-transition:@duration @ease;
+    -moz-transition:@duration @ease;
+    -o-transition:@duration @ease;
+    transition:@duration @ease;
+}
+
+
+
+
+// 헤더내용
+/*wrapper*/
+
+
+/*header*/
+
+
+
+
+.header{
+    .bd();
+    height:80px;
+    padding:0 30px;
+    
+    .mark{
+        margin:0;
+        a{
+            margin:0;
+            &:hover{
+                margin:0;
+            }
+        }
+    }
+    .nav{
+        float:right;
+        ul>li{
+            .bd(blue);
+            float:left;
+            line-height:80px;
+            overflow:hidden;
+            a{
+                .bd(pink);
+                display: block;
+                padding:0 20px;
+                .transition(0.15s);
+                &:hover{
+                   border-top:2px #000 solid; 
+                }
+            }
+        }
+        button{
+            display:none;
+        }
+    }
+}
+
+@media screen and (max-width:@mobile) {
+    
+.header{
+   .nav{
+        float:right;
+            ul>li{
+                float:none;
+            }
+            button{
+                display:inline-block;
+            }
+        }
+    }
+}
+
+
+
+
+
+/*footer*/
+.footer{
+    margin:0;
+}
+
+
