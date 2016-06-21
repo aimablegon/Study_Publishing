@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>신이 당신을 만들 때</title>
+    
+    <script type="text/javascript">
+        var name =prompt("당신은 무엇을 먹어야 할까요?");
+        
+        var text1 = ["월요일", "화요일", "수요일", "목요일", "금요일"];
+        var text2 = ["짜장면", "탕수육", "초밥", "파스타", "닭가슴살샐러드", "햄버거", "치킨", "피자", "부대찌개", "돈까스", "전골", "백반", "뼈해장국", "막국수", "분식"];
+        var text3 = ["선경이가 쏘니까", "미래가 쏘니까", "고은이가 쏘니까", "각자계산하고" ];
+        var text4 = ["배터지게 먹자", "한 스푼만 먹자", "한접시만 먹자", "먹지말고 굶자" ];
+        
+        var ran1 = Math.floor(Math.random() * text1.length);
+        var ran2 = Math.floor(Math.random() * text2.length);
+        var ran3 = Math.floor(Math.random() * text3.length);
+        var ran4 = Math.floor(Math.random() * text4.length);
+      
+      document.write(name+"은 "+text1[ran1]+" "+text2[ran2]+" "+text3[ran3]+" "+text4[ran4]);
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
