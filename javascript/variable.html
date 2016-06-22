@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script type="text/javascript">
+            // 확장자를 <script type="text/javascript" src="js파일">로 불러올수 있다.
+            // 상수 = 변하지 않는 수 
+            // "1"+"1" = 11처럼 표현된다. 문자로 본다. 그래서 연산이 안됨.
+            // 1+1 = 2 연산가능 
+            // "item" 이건 문자, item이것은 변수이다.
+            
+            // 변수 = 변하는 수
+            // 변수 작성방법
+            // 1. var  item;  문자라는 변수를 만들것. 아이템에  하나밖에 값을 못받는다.
+            // 변수선언에 처음에 숫자는 안됨, $와 _(언더바)를 제외한 특수문자 사용하지 말아라.
+           
+            // var item;
+            // item = 400;
+            // console.log(item);
+            
+            // 변수 선언방식
+            // 1. var a,x,y;
+            // a =
+            // x =
+            // y =
+            // 2. 한번에
+            // var x;
+            // 3. 선언과 동시에 사용, 제일 많이 쓴다.
+            // var t = "aa"
+            
+            // 배열 - 개발쪽에서 데이터를 사용할때, 사용
+            // 배열(은 []이다.) 선언방식 
+            // 1. var item_arr = []; 변수에 배열을 넣는 것
+            // 2. var item = new Array();
+            // item =[]
+            
+            // item = new Array(10);
+            //console.log(item);
+            // 10개의 배열을 만들게 나옴
+            
+            
+            // prompt("니가 원하는게 뭐야"); 무언가 적을수 있는것 . 입력한 값이 들어간다.
+            // confirm("취소하겠습니까?");의사를 물어봄확인과 취소. 참과 거짓으로 표현 가능. 
+            // alert("경고한다,"); 경고 메시지
+            
+            // console.log(confirm("취소하겠습니까?"));
+            // var user = prompt("게임 참여하는 사람은 누구?")
+            // console.log(user);
+            
+            
+            // var users = [];
+            // var user = prompt("게임 참여하는 사람은 누구?");
+            // users.push(user);
+            // // 데이터를 추가할때 push사용
+            // console.log(users);
+            //게임참여자에 집어넣은 값이 []배열 안에 문자로 표시된다.
+            
+            // 배열의 속성
+            // push = 추가
+            // splice = 삭제
+            // join = 합체
+            
+            // 배열은 0부터 length 는 1부터 시작
+            var users = ["희지", "하연", "미래"];
+            users.splice(0,1);
+            //  users.splice(0,users.length-1)
+            // splice(시작지점,몇번째인지) 음수값 안됨
+            console.log(users);
+            users[0] = "유지";
+            // 희지를 유지로 바꿀때 사용 함
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+<!--===================================-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        var users = [];
+        function addUser(){
+            var user = prompt("게임 참여자는 누구?");
+        users.push(user);
+        console.log(users);    
+        }
+        
+     </script>
+    
+    
+</head>
+<body>
+    
+    <button onclick="user">인원추가</button>
+    
+</body>
+</html>

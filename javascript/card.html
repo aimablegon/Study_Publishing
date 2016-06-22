@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+       
+        var deck = [];
+        var shape = ["◆","♠","♥","♣"]; 
+        
+        for(i=0; i<4; i++){
+            for(j=1; j<14; j++){
+                deck.push(shape[i]+j)
+            }
+        }
+        
+        console.log(deck);
+        var users=[];
+        rans = Math.floor(Math.random() * deck.length);
+       
+        users.push(deck[rans]);
+       
+        console.log(users);
+       
+        deck.splice(rans,1);
+        console.log(deck);
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
