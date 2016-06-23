@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        var item = ["가위","바위","보"];
+        var select = null;
+        // 변수에 값이 없을 때, 그냥 var select;이라고도 할수 있지만. null이라고 쓴다.
+        function start(){
+            var random = Math.floor(Math.random() * item.length);
+             if(random > 0 && random < 50){
+                select = 0;
+            }else if(random > 51 && random < 80){
+                select = 1;
+            }else if(random > 81 && random < 100){
+                select = 2;
+            };
+            alert(item[random]);
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="start();">시작</button>
+</body>
+</html>
