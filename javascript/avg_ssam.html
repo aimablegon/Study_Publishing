@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+    
+    var member = [];
+    var a;
+   
+    // a가 글로벌 변수가 되야 a가 출력이 가능함.
+    function addUser(){
+        
+        var user = prompt("사용자수를 입력하세요");
+        
+        var i=0;
+        while(i < user){
+             var userscore =  prompt("사용자 점수를 입력하세요");
+        
+             member.push(Number(userscore));    
+            i++
+        };
+        
+        a =  avg(member);
+        b =  vg(member);
+        c =  g(member);
+        // 여기서는 지역변수이기에 출력이 안된다.
+     }
+     
+     function 신영(x){
+         var total = 0 ;
+         
+        for(var i = 0 in x){
+    // x는 x.length만큼이라고 생각하면 된다. x.length만큼 돈다고 생각하면 된다.
+    // for(i=0; i<x.length; i++){ 와 같다.
+            total +=x[i];
+            // += 더하고 대입 내가 값을 지정해서 할수 있다.
+            // ex) i = 0;
+            // i += 10; 10이다.
+            // i += 20; 30이다.
+            // i += 30; 60이다.
+        }
+        return total /x.length;
+          
+     }
+     function vg(x){
+         var total = 0 ;
+         
+        for(var i = 0 in x){
+    // x는 x.length만큼이라고 생각하면 된다. x.length만큼 돈다고 생각하면 된다.
+    // for(i=0; i<x.length; i++){ 와 같다.
+            total +=x[i];
+            // += 더하고 대입 내가 값을 지정해서 할수 있다.
+            // ex) i = 0;
+            // i += 10; 10이다.
+            // i += 20; 30이다.
+            // i += 30; 60이다.
+        }
+        return total /x.length;
+          
+     }
+     function g(x){
+         var total = 0 ;
+         
+        for(var i = 0 in x){
+    // x는 x.length만큼이라고 생각하면 된다. x.length만큼 돈다고 생각하면 된다.
+    // for(i=0; i<x.length; i++){ 와 같다.
+            total +=x[i];
+            // += 더하고 대입 내가 값을 지정해서 할수 있다.
+            // ex) i = 0;
+            // i += 10; 10이다.
+            // i += 20; 30이다.
+            // i += 30; 60이다.
+        }
+        return total /x.length;
+          
+     }
+     
+     
+     
+    
+    </script>
+</head>
+<body>
+<button onclick="addUser();">사용자 점수입력</button>
+<button onclick="alert(a);">평균출력</button>
+<button onclick=";">점수 계산 </button>
+</body>
+</html>

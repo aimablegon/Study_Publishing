@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 익명함수= 이름이 없는 함수
+        // 변수에 값을 대입시킨다.
+        // var aa = function(){
+        // 
+        // }
+        // 보통 이름을 붙여주던가 값을 넣어준다.
+        
+        
+        
+        
+        // 함수
+        // 이름이 있는 함수는 라인에 상관없이 불러올수 있다.
+        // function sum(){
+        //      alert(왜?)
+        // }
+        // sum() 호출해서 사용 위에 있던 아래 있던 상관 없다.
+        // 1. 필요할 떄 불러올수 있다.
+        // 2. 재사용이 가능하다.
+                
+                
+                
+                
+                
+                
+        // 클로져
+        // 콜백 - 제이쿼리에서 많이 사용
+    </script>
+</head>
+<body>
+        <button onclick="sum();">눌러</button>    
+</body>
+</html>
+
+
+
+
+
+
+======================================================================
+<!--(void) 보이드 함수 - 반환값 없음.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+    
+  
+    
+    
+    function sum(){
+        alert("왜?")
+    }
+    
+    </script>
+</head>
+<body>
+    <button onclick="sum();">눌러</button> 
+</body>
+</html>
+========================================================================
+<!--보이드 함수 - 반환값 없음.-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+    
+  
+    
+    
+    function sum(){
+        alert("왜?")
+    }
+    
+    </script>
+</head>
+<body>
+<button onclick="alert('sdfsfsdfdsfsdfsfsdfsdffd');">눌러</button>    
+</body>
+</html>
+
+=========================================
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+    
+    var a = 10;
+    var b = 20;
+    var z = null
+    
+    function sum(){
+        z =a+b
+    }
+    // 비효율적.
+    // sum() 호출 안해서 z는 null이다,
+    console.log(z)
+    
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+=============================================================
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+    
+    function sum(x,y){
+        alert(x+y)
+    }
+    sum(10,30)
+    
+    // 이렇게 쓰면 반환이 안된다.
+    // 보이드 함수이다. 반환되는 함수 아니야,
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+======================================================
+<!--리턴 함수와 보이드 함수의 차이-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+    
+    function sumv(x,y){
+        alert(x+y)
+    }
+    
+    function sumr(x,y){
+        return x+y
+    }
+    var a,b,c,d,e,f;
+    
+    
+    
+    a = sumv(1,1)
+    b = sumv(10,30)
+    c = sumv(20,30)
+    d = a+b+c
+    e = d + sumv(10,30)
+    f = sumv(a,30)
+    
+    console.log(f)
+    // <!--보이보여주고 끝. 리턴은 반환 했기 때문에 연산이 가능.  ]-->
+     a = sumr(1,1)
+    b = sumr(10,30)
+    c = sumr(20,30)
+    d = a+b+c
+    e = d + sumr(10,30)
+    f = sumr(a,30)
+    
+    console.log(f)
+    
+    
+    
+    alert()
+    
+    
+    
+    </script>
+</head>
+<body>
+</body>
+</html>
+==================================================================
+
+
+

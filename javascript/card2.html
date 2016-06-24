@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script type="text/javascript">
+            
+            
+            
+            var shape = ["♥","♣","♠","◆"];
+            var space = [];
+            
+            
+            function reset(){
+                space = [];
+                for(i=0; i<4; i++){
+                    
+                    for(j=0; j<13; j++){
+                        
+                        if(j == 0){
+                            space.push(shape[i]+"A");
+                        }else if(j == 10){
+                            space.push(shape[i]+"J");
+                        }else if(j == 11){
+                            space.push(shape[i]+"Q");
+                        }else if(j == 12){
+                            space.push(shape[i]+"K");
+                        }else{
+                          space.push(shape[i]+(j+1)); 
+                        };
+                    };
+                };
+                 console.log(space);
+                
+            }
+            
+            
+            
+            var user = [];
+            
+            
+            function addcard(){
+                
+            //랜덤으로 수를 발생킨다.(space 갯수 범위)
+                var ran = Math.floor(Math.random()*space.length);
+            //space에서 랜덤 수의 카드를 user 배열에 추가한다
+                user.push(space[ran]);
+                console.log(user);
+            //space에서 랜덤수의 카드를 제거한다
+                space.splice(ran,1);
+                console.log(space);
+            
+            
+            }
+   
+        </script>
+        
+    </head>
+    <body>
+        <button onclick="reset();">카드정리</button>
+        <button onclick="addcard();">카드주기</button>
+    </body>
+</html>
