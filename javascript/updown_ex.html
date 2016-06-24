@@ -14,20 +14,28 @@
         
             
             for(i=0; i<4; i++){
-                
-                if(number < rans){
-                    alert("더 큰 수입니다.");
-                    var number = prompt("1-100 중 다시 숫자를 입력하세요");
-                }else if(number > rans){
-                    alert("더 작은 수입니다.");
-                    var number = prompt("1-100 중 다시 숫자를 입력하세요");
-                }else if(rans){
-                    alert("축하합니다 정답입니다.");
-                    break;
-                }
+                if(i < 4)
+                    if(number < rans){
+                        alert("더 큰 수입니다.");
+                        var number = prompt("1-100 중 다시 숫자를 입력하세요");
+                    }else if(number > rans){
+                        alert("더 작은 수입니다.");
+                        var number = prompt("1-100 중 다시 숫자를 입력하세요");
+                    }else if(rans == number){
+                        alert("축하합니다 정답입니다.");
+                        break;
+                    };
+                };
                 if(i == 3){
-                    alert("게임 오버");
-                    break;
+                    if(number < rans){
+                        alert("더 큰 수입니다. 게임 오버");
+                    }else if(number > rans){
+                        alert("더 작은 수입니다. 게임 오버");
+                    }else if(rans == number){
+                        alert("축하합니다"+rans+" 정답입니다.");
+                        break;
+                    };
+                    
                 };
                 
                 
