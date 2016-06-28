@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 랜덤수를 뽑는다.
+        // 홀인지 짝인지 입력을 받는다.
+        // 숫자를 홀수인지 짝수인지 구분한다.
+        // 맞히면 정답, 틀리면 꺼져. 다른것 입력시 오류
+        // var ran =Math.floor(Math.random()*100);
+       
+       
+        var oe = {
+            // random:Math.random()*100,
+            // ran:Math.floor(Math.random()*100),
+            text:prompt("홀 또는 짝을 입력하세요."),
+            num:{
+                ran:Math.floor(Math.random()*100),
+                rans:function(){
+                   return  this.ran%2;
+                },
+            },
+            
+            oddevn:function(){
+                if(this.num.rans() == 0){
+                    if(oe.text == "짝"){
+                         alert("정답입니다. 좋겠네요.");
+                    }else if(oe.text == "홀"){
+                
+                         alert("꺼져.");
+                    }else{
+                        console.log();
+                         alert("알아들을 수 없으니 꺼져.");
+                    };
+                }else if(this.num.rans() == 1){
+                    if(oe.text == "홀"){
+                        console.log();
+                         alert("정답입니다. 좋겠네요.");
+                    }else if(oe.text == "짝"){
+                        console.log();
+                         alert("꺼져.");
+                    }else{
+                        console.log();
+                         alert("알아들을 수 없으니 꺼져.");
+                    }
+                };
+            },
+        }
+        
+        // oe.text
+        // oe.oddevn()
+        // console.log(ran);
+        // console.log(oe.random);
+        // console.log(oe.ran);
+        console.log(oe.text);
+        // console.log(oe.num);
+        // console.log(oe.num.ran);
+        // console.log(oe.num.rans());
+        // console.log(oe.oddevn);
+        console.log(oe.oddevn());
+    </script>
+    
+    
+    
+</head>
+<body>
+    
+</body>
+</html>
