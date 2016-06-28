@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 객체 = 오브젝트
+        
+        
+        // 인스턴스 = new Date; 
+        // 뉴데이타라는 기능을 가진 객체
+        // css에서의 클래스와 비슷함.
+        
+        // 배열
+        // ["값", "값"]
+        // 객체는 {} dlfjgrp vytl gksek.
+        // {
+        //      "지시자": "값"
+        // 지시자에는 다른 문법의 변수라고 생각하면 좋다.
+        //      "지시자": "값"
+        // }
+        
+        // ex{
+        //      "지시자": function(){}
+        //      "지시자": []
+        // }
+        // e대체적으로 플러그인에서 사용 가능.
+        var car = {
+               color:'red',
+               size:['S','M','L'],
+               strong:['S','M','L'],
+               fill:function(){
+                    alert('어떻게 칠할까?' +this.color + "강도" + this.strong[0]);
+                    // 자기 안에서 붙일땐 this
+               }
+        };
+           
+        console.log(car.color)
+        console.log(car.size)
+        // 또는  console.log(car.size[1,1])이런식으로도 쓸수 있따.
+        console.log(car.fill())
+        
+        
+        // =================
+        
+        var remot = {
+               color:'red',
+               strong:['S','M','L'],
+               fill:function(x,y){
+                   alert('어떻게 칠할까?'+this.x + "강도"+ this.y[0]);
+               }
+           };
+           
+           
+        console.log(car.fill())
+        
+        // 또는
+        var remot = {
+              'color':'red',
+              'strong':['S','M','L'],
+              'fill':function(x,y){
+                   alert('어떻게 칠할까?'+this.x + "강도"+ this.y[0]);
+               }
+           };
+           
+           
+           
+        console.log(remot.fill())
+        
+        
+        
+        
+        // ==================================
+        
+        
+        var remot = {
+           color:'red',
+           strong:['S','M','L'],
+           fill:function(x,y){
+               alert('어떻게 칠할까?'+this.x + "강도"+ this.y[0]);
+           },
+        };
+       
+        var aa = "color"
+       
+       
+        remot[aa]
+           
+        console.log(remot["color"])
+        
+        
+        
+        
+        // =============================================
+        var remot = {
+               color:'red',
+               strong:['S','M','L'],
+               fill:function(){
+                   alert('어떻게 칠할까?'+this.color + "강도"+ this.strong[0]);
+               },
+               obj:{
+                   size:"big"
+               },
+        };
+           
+           var aa = "color"
+           
+           
+           console.log(remot.obj.size)
+           console.log(remot["color"])
+        
+        // 이것으로 자료 구조를 만들수 있따.color
+        // 객체에 배열이 있는 구조 = 제이슨 구조, 
+        // var data ={
+        //      aa:[{},{},{}]
+        // }
+        // 심플한 자료구조가 된다. 백쪽에서 들어온 데이터를 차례대로 쌓인다. 
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
