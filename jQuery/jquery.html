@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-제일 위에있음.부트스트랩은 거의 아래쪽에 있음--->
+    <script type="text/javascript">
+ 
+    $(document).ready(function(){
+// 문서가 준비되면 실행해, 라는 의미 레디 안쓰고 바로 사용할 바디안에 사용해도 되지만 지저분해보임.
+
+        //document.getElementByClass('btn').innerHtml('확인');
+        $('.btn').html('확인');
+        // document.getElementByclass('box').getAttribute('style').style()
+        // $('.box').css('border','1px #F00 solid') 한개 선택
+        // 두개 이상 선택시 객체사용.
+        $('.box').css({
+            'border':'1px #F00 solid',
+            'width':'100px',
+            'height':'100px'
+        });
+    })    
+    
+    
+    // 제이쿼리에서 제일 중요한것은, 선!택!자! 선택자가 거의 75%차지
+    // 제이쿼리에 선택자와 씨에스에스의 선택자와 비슷.
+    
+    
+    
+    </script>
+</head>
+<body>
+    <button class="btn">눌러</button>
+    <div class="box"></div>
+</body>
+</html>
