@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        // function location(){
+        //     location.href = "http://www.naver.com"
+        //     // 내가 가고 싶은 사이트로 연동된다.
+            
+        // }
+        
+        
+        
+        // // =====
+        // var url = "abc?kre?lfjg?alkldf";
+        
+        // var urlcut = url.split("?");
+        // console.log(urlcut)
+        
+        // //======
+        // var url = window.location.href;
+        
+        // console.log(url)
+        // var urlcut = url.split("/");
+        // console.log(urlcut)
+        
+        
+        // //=========== 
+        // //  var url = window.location.href;
+        
+        // var url = "http://nillavanilla.firstmall.kr/goods/brand?code=0116"
+        
+        // var urlcut = url.split("?");
+        // // split - 절삭
+        // urlcut = urlcut[1].split('=');
+        
+        
+        // var subtext = urlcut[1].substring(1,4);
+        // // substring = 자르고 싶은 영역만 자름
+        // console.log(subtext);
+        // ↑또는↓ 
+        //  var floorNum = Math.floor(urlcut[1]);
+        // console.log(floorNum);
+        
+  
+  
+        var url ="https://www.myrealtrip.com/themes/126"
+        var urlcut = url.split("/");
+        console.log(urlcut);
+        var subtext  = urlcut[4].substring(0,2)
+        console.log(subtext);
+        
+    </script>
+    
+</head>
+<body>
+    <button onclick="location.href = "http://www.naver.com";">이동</button>
+</body>
+</html>
