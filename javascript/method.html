@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        //setTimeout(function,duration);
+        // 몇초있다 실행해.
+        setTimeout(function(){
+            alert("나왔다.")
+        },5000)
+        // ==============
+        setTimeout(이름,500)
+        function 이름(){
+            console.log('실행')
+            // 반복적으로 사용할 때, 함수가 자기 스스로 호출 한다. 
+            setTimeout(이름,500)
+        }
+        // =======================
+        var i = 0
+        
+        function 이름(){
+            console.log(i++)
+            // 반복적으로 사용할 때, 함수가 자기 스스로 호출 한다. 
+            setTimeout(이름,500)
+        }
+        
+        
+        //setInterval(function,duration);
+        // 반복적으로, 간격을 가지고, 
+        var i = 0
+        setInterval(이름,500)
+        
+        function 이름(){
+            console.log('i++')
+            // 반복적으로 사용할 때, 함수가 자기 스스로 호출 한다. 
+            
+        }
+        
+       
+        var i = 0
+        var head = setInterval(test,500);
+        // var head=>핸들러를 붙여서 컨트롤 하는게 좋음
+        // 애니메이션에서 많이 쓴다. 메모리 많이 잡아먹는다.
+        function test(){
+            
+            console.log(i++);
+            
+            if(i == 10){
+                clearInterval(head)
+            }
+            
+        }
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
