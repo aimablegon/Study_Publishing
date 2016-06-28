@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        function 이름(){
+            //void
+        }
+        
+        //변수 = 결과 = 이름() 
+        function 이름(){
+            //return function
+            return 
+        }
+        
+        //인자함수
+        function 계산(arg1,arg2){
+            
+        }
+        
+        
+        //클로저 p139
+        function test(name){
+            var output = "hello "+ name + 'world';
+            
+            return function(){
+                alert(output);
+            }
+            
+        }
+        
+        //var mesg = prompt();
+        
+       
+        //익명함수
+        var 이름 = function(){
+            alert('hi~~~');
+        }
+        // *함수 자체를 변수에 담는 함수 = 이름 없는 함수 = 즉시 실행 함수  = 익명함수 
+        // *호출을 한상태에서 변수를 넣어야 바로 실행이 가능.
+        // *변수생성 이전에 호출을 하면  없는 것으로 간주해서 실행이 안된다.
+        //  (익명 함수를 사용할 때, 변수 생성 이후에 사용해야 변수 호출시 실행이 된다.)
+        // - 익명함수는 변수의 이름(); 일렇게 사용하면 된다. 
+
+        
+        //변수 유효범위
+        //지역변수 전역변수
+        var x
+        
+        //기능1(10)
+        
+        function 기능1(){
+            x = 0 
+            alert(기능2(x,20))
+        }
+        
+        
+        function 기능2(x,y){
+            
+            return x+y
+        }
+        
+        // 리턴과 같다.
+        var tv = 0;
+        texts()
+        function texts(){
+            tv = 10
+            alert(tv)    
+            
+        }
+        
+         var tv = 0;
+        texts()
+        function texts(tv){
+            var tv = 10
+            // 지역변수가 우선이다. 
+            // (인자)가 있으면 위에 글로벌 변수가 선언되어있어도 함수안에 있는 인자(변수)가 우선이다.
+            alert(tv)    
+            
+        }
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
