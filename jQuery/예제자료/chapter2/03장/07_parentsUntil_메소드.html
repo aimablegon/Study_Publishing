@@ -13,7 +13,8 @@
 		</style>
 		<script>
 			$(document).ready(function(){
-				
+				var el = $('#wrapper #childEl');
+				el.parentsUntil('#parentEl').css('color','#F00');
 			});
 		</script>
 	</head>

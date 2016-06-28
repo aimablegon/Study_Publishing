@@ -13,7 +13,12 @@
 		</style>
 		<script>
 			$(document).ready(function(){
-				
+				var el = $('#wrapper ul li').is('#nextEl');
+				if(el){
+					alert('있습니다.')	
+				}else{
+					alert('없습니다.')
+				};
 			});
 		</script>
 	</head>

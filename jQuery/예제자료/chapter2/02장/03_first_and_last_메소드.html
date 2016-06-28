@@ -13,7 +13,13 @@
 		</style>
 		<script>
 			$(document).ready(function(){
+				var el = $('#wrapper ul li');
 				
+				var firstEl = el.first();
+				firstEl.css('color','#F00');
+				
+				var lastEl = el.last();
+				lastEl.css('color', '#FF0');
 			});
 		</script>
 	</head>

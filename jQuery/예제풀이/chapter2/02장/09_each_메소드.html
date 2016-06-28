@@ -20,6 +20,34 @@
 					$(this).css('color', 'red');
 				});
 			});
+			// 자동으로 선택된다. 
+				$(document).ready(function(){
+				
+				for(var i = 0; i< $('#wrapper > ul > li').length; i++){
+					
+					 $('#wrapper > ul > li').eq(i)
+				};
+			
+				
+				
+				
+				$.each($('#wrapper > ul > li'),function(i,e){
+					$('#wrapper > ul > li').eq(i)
+					$(e)
+				});
+				
+				$('#wrapper > ul > li').each(,function(i,e){
+					$('#wrapper > ul > li').eq(i)
+					console.log($(e))
+				
+		
+				});
+			
+			
+			
+			
+			
+			
 		</script>
 	</head>
 	

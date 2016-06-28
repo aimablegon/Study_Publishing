@@ -14,7 +14,10 @@
 		<script>
 			$(document).ready(function(){
 				var el = $('#wrapper > ul > li').eq(2);
-				el.css('color', 'red');
+				// el.css('color', 'red');
+				// 변수에 담는 경우 
+				// var el = $('#wrapper > ul > li') 뒤에 eq는 안된다.
+				// el.eq(2).css('color', 'red')
 				console.log($('#wrapper > ul > li'));
 			});
 		</script>

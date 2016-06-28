@@ -14,7 +14,27 @@
 		</style>
 		<script>
 			$(document).ready(function(){
+				// var el = $('#wrapper ul li');
+				// $.each(el,function(i,e){
+				// 	$(e).css('color','#F00');
+					
+				// })
 				
+				// for문
+				// for(i=0;i<$('#wrapper li').length;i++){
+				// 	$('#wrapper li').eq(i).css('color','red');
+				// }
+				
+				
+				var el = $('#wrapper ul li');
+				// el.each(function(i,e){
+				// 	$(e).css('color','#F00');
+				// });
+				
+				// $.each(el,function(인덱스,엘리먼트){각각반복적으로 실행});
+				$.each(el,function(i,e){
+					$(e).css('color','#00F');
+				});
 			});
 		</script>
 	</head>
