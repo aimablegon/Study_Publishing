@@ -16,10 +16,17 @@
 			$(document).ready(function(){
 				
 				$(window).resize(function(){
-					
+					var box = $('#wrapper')
+					console.log($('#width').text(box.width()));
+					console.log($('#height').text(box.height()));
+					console.log($('#innerWidth').text(box.innerWidth()));
+					console.log($('#innerHeight').text(box.innerHeight()));
+					console.log($('#outerWidth').text(box.outerWidth(true)));
+					console.log($('#outerHeight').text(box.outerHeight(true)));
 				});
 				
 				$(window).trigger('resize');
+				// $(window).resize(); 이렇게 사용해도 된다.
 			});
 		</script>
 	</head>

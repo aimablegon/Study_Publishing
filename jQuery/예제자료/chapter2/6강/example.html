@@ -18,62 +18,47 @@
 			#input input { float:left; margin-right:5px; }
 		</style>
 		<script>
+// 			$(document).ready(function(){
+// 				var value;
+// 				var applyElement = $('.css_prop_value');
+// 				var el =$('#el');
+				
+				
+// 				$('.css_prop').change(function(){
+// 					value = $(this).val();
+// 					real = el.css(value);
+// 					applyElement.val(real);
+// 				} );
+				
+				
+				
+// 				$('.button').click(function(){
+// 					var val = applyElement.val();
+// 					el.css(value,val);
+// 				});
+// 			});
+
+
 			$(document).ready(function(){
-				var input = $('#input');
-				var select = input.children('.css_prop');
-				var inputText = input.children('.css_prop_value');
-				var button = input.children('.button');
-				var contents = $('#el');
-				
-				select.change(function(){
-					var cssTypeName = $(this).val();
-					if(cssTypeName != ''){
-						inputText.val(contents.css(cssTypeName));
-					}
-				});
-				
-				button.click(function(){
-					var cssTypeName = select.val();
-					contents.css(cssTypeName, inputText.val());
-				});
-			});
-			
-			// ===============================================
-			$(document).ready(function(){
-				var valueReq = function(){
-					//누른놈의 벨류값을 가저온다
-					var value = $(this).val();
-					//가저온 벨류값에 해당하는 css를 #el 엘리먼튼의 값을 가져온다
-					var real = $('#el').css(value);
-					//가저온 값을 표시한다 .
-					$('.css_prop_value').val(real)
-				} 
-				
-				$('.css_prop').change(valueReq);
-					
-				
-			});
-			
-			// ======================================================
-			$(document).ready(function(){
+			   var value;
+			   var el =$('#el');
+			   var prop = $('.css_prop_value');
+			   
 				$('.css_prop').change(function(){
 					
-					var value = $(this).val();
-					var cssValue = $('#el').css(value);
-					$('.css_prop_value').val(cssValue)
-					
+					value = $(this).val();
+					var cssValue = el.css(value);
+				    prop.val(cssValue);
 				})
-			});
+				
+	            $('.button').click(function(){
+	                console.log(prop);
+	                prop.val();
+	                el.css(value,prop.val());
+	            })
 			
-			
-			
-			
+			})
 		
-			
-			
-			
-			
-			
 		</script>
 	</head>
 	

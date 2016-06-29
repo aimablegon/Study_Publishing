@@ -64,8 +64,31 @@
 					
 				})
 			});
-			
-			
+			// ==============================================
+			$(document).ready(function(){
+					
+				
+				var value;
+				var applyElement = $('.css_prop_value');
+				var el =$('#el');
+				
+				
+				$('.css_prop').change(function(){
+					value = $(this).val();
+					real = el.css(value);
+					applyElement.val(real);
+				} );
+				
+				
+				
+				$('.button').click(function(){
+					var val = applyElement.val();
+					el.css(value,val);
+				});
+				
+					
+				
+			});
 			
 			
 		

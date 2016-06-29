@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>03_스크롤위치_읽고설정하기</title>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<style>
+			.wrapper{position:relative;width:1000px; height:3000px; border:1px #F00 solid;}
+			.fly{position:absolute; top:0;width:100px; height:300px; border:1px #F00 solid;}
+		</style>
+		<script>
+			$(document).ready(function(){
+				
+				
+				$('.wrapper').css({
+					left:'50%',
+					marginLeft: -$('.wrapper').width()/2
+				});
+				// wrapper에 대한 css를 정의한다.
+				// wrapper전체 값의 left를 50% 갖는다.
+				// wrapper가 가지고 있는 width값의 나누기 2값의 음수값을 마진레프트 값으로 갖는다. 
+				
+				$(window).resize(function(){
+					spot()
+				})
+				// 기본 브라우저인 윈도우의 크기 변환기능을 실행시킨다.
+				// spot() 이라는 함수를 크기변환이벤트에서 실생시킨다.
+				
+				$(window).trigger('resize');
+				// 윈도우의 크기변환이벤트를 키자마자 사용한다.
+				function spot(){
+					var offset = $('.wrapper').offset().left 
+					
+					var wrapwidth = $('.wrapper').width()
+					$('.fly').css({
+						left:offset+wrapwidth+20
+					})	
+				}
+				// spot이라는 익명함수를 사용하여 정의한다.
+				// wrapper의 전체 화면의 left값을 offset이라는 변수에 담는다.
+				// wrapper의 width값을 wrapwidth라는 변수에 담는다.
+				// fly의 css를 정의 한다.
+				// css의 객체안에서 레프트:offset+wrapwidth+20을 실행한다.
+				$(window).scroll(function(){
+					
+					var sct = $(this).scrollTop()
+						$('.fly').stop().animate({
+							top:sct
+						})
+				})
+				// 윈도우의 스크롤이벤트를 실행한다.
+				// 윈도우의 스크린의제일위의 값을 sct라는 변수에 담는다.
+				// fly의 모든 애니메이션을 정지시키고 다시 css에 있는 top의 변수 sct에 대한  애니메이션을 실행시킨다.
+			
+			});
+		</script>
+	</head>
+	
+	<body>
+	
+	<div class="wrapper"></div>
+	<div class="fly"></div>
+	
+	
+	
+	
+	</body>
+</html>
