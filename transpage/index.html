@@ -109,7 +109,7 @@
                     position:relative; margin:0 auto; top:10%;
                     transform:scale(0.8, 0.8);
                 }
-                
+                s
                 .wrapper .header{
                     height:55px; padding:0; background-color:#FFF;
                 }
@@ -169,7 +169,17 @@
                     $(this).next('ul').slideToggle(1000)
                 })
                 
+                $(window).resize(function(){
+                    if($(this).width() < 768){
+                        $('.nav ul').css('display','none');
+                    }else if($(this).width()>767){
+                        $('.nav ul').css('display','block')
+                    }
+                })
+                
+                
             })
+            
             
         </script>
         
