@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>twice</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <link rel="stylesheet" href="twice_font/font/flaticon.css" type="text/css" />
         <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext);
@@ -129,9 +130,9 @@
                     cursor:pointer;
                 }
                 /*임시 시작*/
-                .wrapper .header .nav button:hover + ul{
-                    display:block;
-                }
+                /*.wrapper .header .nav button:hover + ul{*/
+                /*    display:block;*/
+                /*}*/
                 
                 /*임시끝*/
                 
@@ -159,6 +160,27 @@
              
              
         </style>
+        
+        
+        
+        <script>
+            $(function(){
+                $('.nav>button').click(function(){
+                    $(this).next('ul').slideToggle(1000)
+                })
+                
+            })
+            
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </head>
     <body>
         <div class="wrapper">
