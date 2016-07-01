@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style type="text/css">
+        body,html{height:100%;}
+        *{margin:0; padding:0;}
+        ul{list-style:none;}
+        .nav{background-color: #000; text-align:center; position:fixed; width:100%; z-index:10;}
+        .nav li {display:inline-block;}
+        .nav li a{color:#FFF; font-size:20px; line-height:30px; text-decoration:none;}
+        .section{position:relative;}
+        .section,.section>div{height:100%;  background-repeat:no-repeat; background-position:50%; }
+        .section>div:nth-child(1){background-image:url(../images/arbre_a.jpg);background-size:cover;position:relative;}
+        .section>div:nth-child(2){background-image:url(../images/arbre_b.jpg);background-size:cover;position:relative;}
+        .section>div:nth-child(3){background-image:url(../images/arbre_c.jpg);background-size:cover;position:relative;}
+        .section>div:nth-child(4){background-image:url(../images/arbre_f.jpg);background-size:cover;position:relative;}
+        .section>div:nth-child(5){background-image:url(../images/arbre_e.jpg);background-size:cover;position:relative;}
+        
+        
+    </style>
+    
+    
+    <script>
+        
+        
+        $(function(){
+            
+           $('.nav li a').click(function(){
+               var idx =$(this).parent().index();
+               
+            //   $('.section div').eq(idx).offset().top;
+               
+               $('body,html').scrollTop($('.section div').eq(idx).offset().top)
+               
+           })
+            
+        })  
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">Menu1</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">Menu2</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">Menu3</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">Menu4</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">Menu5</a>
+            </li>
+        </ul>
+    </div>
+    <div class="section">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
