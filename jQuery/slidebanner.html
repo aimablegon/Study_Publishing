@@ -84,7 +84,8 @@
                 if(idx <0){
                     idx = $('.slide li').length-1;
                     $('.slide li').eq(idx).children('img').css({
-                        left:-slideWidth
+                        left:-slideWidth,
+                        display:'block'
                     }).stop().animate({
                         left:'0'
                     })
