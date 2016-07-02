@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script>
+        
+        $(function(){
+            function atty(x,y){
+                z=x+y
+                return z
+            }
+            
+            
+            function att(x,y){
+                return x * y +'px'
+            }
+            $('.tt').html(atty("효재","이해해"))
+            
+            $('boby').append("<div class = 'tt'></div>")
+            
+            $('.box').css({
+                marginLeft:att(50,3),
+                marginTop:att(50,2)
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
