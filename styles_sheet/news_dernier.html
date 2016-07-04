@@ -25,7 +25,7 @@
             body{ min-width:900px; min-height:810px;
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_bd.png);}
             
-            #wrapper{outline:1px #000 solid; height:100%; min-height:810px; position:relative;}
+            #wrapper{outline:1px #000 solid; min-height:810px; position:relative;}
             /*header*/
             #header{ height:40px; padding:5px 0; 
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_hd.png);}
@@ -82,11 +82,11 @@
             
             
             /*container*/
-            #container{outline:1px #000 solid; min-width:800px; min-height:540px;height:100%; position:absolute; 
-                top:49px; bottom:81px;left:0; right:0;}
+            #container{outline:1px #000 solid; min-width:900px; min-height:540px; position:absolute; 
+                top:85px; bottom:81px;left:0; right:0;}
             /*content*/
-            #content{outline:1px #000 solid;  min-width:900px; width:100%; height:100%; position:absolute; top:0; left:0;}
-            #main_wrapper{outline:1px #F00 solid; min-width:900px; height:560px; position:relative; top:8%;   margin:0 auto;}
+            #content{outline:1px #000 solid;  min-width:900px; min-height:540px; width:100%; position:absolute; top:0; left:0;  margin:0 auto;}
+            #main_wrapper{outline:1px #F00 solid; min-width:900px; height:560px; position:relative; }
             #main{outline:1px #F00 solid; width:900px; height:540px; position:absolute; top:0; left:25%;
                 margin:0 30px;  padding:0 15px;
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_panel.png);}
@@ -166,11 +166,10 @@
             #list-news{width:100%; height:88px; padding:7px 27px 0; outline:1px #000 solid; background-color:transparent;
                 background-image:url(http://static.naver.net/newsstand/img/20140716/bg_nv.png); 
                 position:absolute; bottom:0; left:0;}
-            .list{height:88px; padding:7px 27px 0;  vertical-align:top; position:absolute; left:0; top:0;}
-            .news_list_logo{min-width:800px; height:88px; left:0; overflow:hidden; 
-               margin-right:3px; position:relative;}
-            .news_list>.list_rolling{width:1365px; height:79px; padding:5px 0 13px 3px;
-                position:absolute; right:0; bottom:0;display:list-item;}
+            .list{min-width:900px;height:88px; padding:7px 27px 0;  vertical-align:top; position:absolute; left:0; top:0;}
+            .news_list_logo{min-width:840px; height:88px; left:0;  margin-right:3px; position:relative;}
+            .news_list_logo>.list_rolling{width:1365px; height:88px; padding:5px 0 13px 3px; overflow:hidden;
+                position:relative; left:0; bottom:5px; display:list-item;}
             .rolling{width:89px; height:76px; padding-top:8px; margin-right:3px; 
                 float:left; display:inline-block; text-align:center;}
             [class^="rolling_img"]>img{width:81px; height:73px; }
@@ -186,12 +185,12 @@
             
             
              /*footer*/
-            #footer{height:81px; position:absolute; left:0; right:0; bottom:-81px; background-color:transparent;
+            #footer{height:81px; position:absolute; left:0; right:0; bottom:0; background-color:transparent;
                 background-image:url(http://static.naver.net/newsstand/img/20131014/bg_ft.png); text-align:center;}
-            .notice{outline:1px #F00 solid; height:14px; margin:14px 0 -1px; padding-right:16px; display:block;
+            .notice{ height:14px; margin:14px 0 -1px; padding-right:16px; display:block;
                 position:absolute; left:0; right:0; } 
-            .ntc{outline:1px #000 solid; width:54px; height:13px; margin-right:6px; display:inline-block;
-                overflow: hidden; color:#ddc196;     text-align: center; vertical-align: top;
+            .ntc{width:70px; height:16px; margin-right:6px; display:inline-block;
+                overflow: hidden; color:#ddc196;     text-align: center; position:relative;
                 line-height:16px; font-size:13px;
             }
             .ntc_link{overflow:hidden; color:#e4e2e0; display:inline-block;
@@ -204,8 +203,8 @@
             
             .cpr{height:16px; position:absolute; top:57px; left:0; right:0; overflow:hidden;
                 color:#ada7a1; vertical-align:center; display:inline-block; font-size: 9px; line-height:16px;}
-            .naver_crp{outline:1px #FFF solid; width:58px; height:12px; display:inline-block; overflow: hidden;
-                position:absolute; font-size: 9px; color: #c7c2bc; line-height:16px ;}
+            .naver_cpr{width:58px; height:12px; display:inline-block; overflow: hidden;
+                position:relative; top:1px;font-size: 9px; color: #c7c2bc; line-height:16px ;}
             
 
             
@@ -468,16 +467,16 @@
             
             <div id="footer">
                 <div class="notice">
-                    <strong class="ntc"></strong>
+                    <strong class="ntc">공지사항 ▶</strong>
                     <a href="http://news.naver.com/main/ombudsman/readView.nhn?notiId=320&notiDel=N" class="ntc_link">
                     언론사별 주요기사 메인 노출 안내
                     </a>
                 </div>
                 <p class="copyright">본 콘텐츠의 저작권은 제공처 또는 네이버에 있으며, 이를 무단 이용하는 경우 저장권법 등에 따라법적책임을 질수 있습니다.</p>
                <div class="cpr">Copyright &copy;
-                    <strong class="naver_cpr">NAVER Corp.
+                    <strong class="naver_cpr">NAVER Corp. 
                         <a href="http://www.navercorp.com/ko/index.nhn" class=""></a>
-                    </strong>All Right Reserved
+                    </strong>&nbsp;All Right Reserved
                 </div>
             </div>
         </div>
