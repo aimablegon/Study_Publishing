@@ -11,13 +11,14 @@
         .slide button{position:absolute; top:50%; z-index:1;}
         .slide button.next{right:-100px; z-index:1;}
         .slide button.prev{left:-100px;}
-        .slide banner{position:relative; overflow:hidden;}
+        .slide .banner{position:relative; overflow:hidden;width:500px; height:300px;}
         .slide ul{text-align:center;}
         .slide li{display:inline-block;}
-        .slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 1; border:1px #F00 solid;  color:#000; top:340px; }
+        .slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 100; border:2px #CCC solid;  
+            color:#FFF; font-weight:bold; top:260px; text-decoration:none; border-radius:50%;}
         .slide li img{width:100%; position:absolute; left:0; top:0; display:none; }
         .slide li:first-child img{display:block;}
-        .slide li.on a{background-color: #F00;}
+        .slide li.on a{background-color: #BF9BDE; border-radius:50%;}
     </style>
     <script type="text/javascript">
         $(function(){
@@ -26,7 +27,7 @@
             // 초기값을 가지는 변수 idx라는 변수 를 만들어 0을 만든다.
             // 움직이기 위해 움직일 이미지를 선택한다.
             // 애니메이트를 주어서 좌우로 움직인다.
-            //  이미지를 움직이는지 않움직이는지 확인해본다.
+            // 이미지를 움직이는지 않움직이는지 확인해본다.
             // 레프트로 갈 위치를 정해준다.
             // 그다음이미지의 경로를 정해준다.
             // 그 다음이미지가 display :none의 상태임으로 블락으로css를 변경시켜준다.
@@ -41,12 +42,12 @@
             $('.next').click(function(){
                 // console.log('aaa')
                 
-                $('.slide li').eq(idx).children('img').animate({
+                $('.slide li').eq(idx).removeClass('on').children('img').animate({
                     left:-slideWidth,
                     // left:'-500px',
                     // left:-$('.slide').width()
                     
-                }).parent().next().children('img').css({
+                }).parent().next().addClass('on').children('img').css({
                     display:'block',
                     // left:$('.slide').width()
                     left:slideWidth
@@ -63,7 +64,7 @@
                         left:slideWidth
                     }).stop().animate({
                         left:'0'
-                    })
+                    }).parent().addClass('on').siblings().removeClass('on')
                 }
             })
             
@@ -71,9 +72,9 @@
             
             $('.prev').click(function(){
                 
-                $('.slide li').eq(idx).children('img').animate({
+                $('.slide li').eq(idx).removeClass('on').children('img').animate({
                     left:slideWidth
-                }).parent().prev().children('img').css({
+                }).parent().prev().addClass('on').children('img').css({
                     display:'block',
                     left:-slideWidth
                 }).stop().animate({
@@ -89,11 +90,117 @@
                         display:'block'
                     }).stop().animate({
                         left:'0'
-                    })
+                    }).parent().addClass('on').siblings().removeClass('on')
                 }
             })
             
-        })
+            
+            
+            // ===================================================================================
+            
+            // $('.slide div li a').click(function(){
+       
+            //   var idx = $(this).parent().index();
+            //   var hisidx = $('.slide div li.on').index();
+               
+               
+            //   슬라이드 안에 디아이브이 안에 엘아이안에 에이를 클릭했을때, 
+            // 클릭한 에이의 부모엘아이를 제외한 다른 엘아이는 리무브 클라스를 준다.
+            // 클라스 온이 클릭한 에이의 부모엘아이에게 온클래스를 준다.
+            // 
+            //   $(this).parent().addClass('on').siblings().removeClass('on').children('img').animate({
+            //       left:slideWidth
+            //   });
+               
+            //   $('.on').eq(hisidx).children('img').css({
+            //       display:'block',
+            //       left:-slideWidth
+            //   })
+             
+               
+               
+            //   console.log(idx,hisidx)
+               
+               
+               
+               
+               
+            //   console.log($(this).eq(hisidx).parent().removeClass('on').chlidren('img').animate({
+            //       left:slideWidth
+            //   }).parent().eq(idx).addClass('on').chlidren('img').css({
+            //       left:slideWidth,
+            //       display:'block'
+            //   }))
+             
+            //     return false;
+            // });
+            
+            
+            
+            // ====================================================
+            $('.slide div li a').click(function(){
+       
+               idx = $(this).parent().index();
+               var hisidx = $('.slide div li.on').index()
+               
+               if(idx > hisidx){
+               
+                $('.slide div li').eq(idx).addClass('on').children('img').css({
+                    'left':slideWidth,
+                    'display':'block'
+                }).animate({
+                    left:0
+                })
+                
+                $('.slide div li').eq(hisidx).removeClass('on').children('img').animate({
+                    left:-slideWidth
+                })
+               }else if(idx < hisidx){
+                   
+                 $('.slide div li').eq(idx).addClass('on').children('img').css({
+                    'left':-slideWidth,
+                    'display':'block'
+                }).animate({
+                    left:0
+                })
+                
+                $('.slide div li').eq(hisidx).removeClass('on').children('img').animate({
+                    left:slideWidth
+                })  
+                   
+               }
+               
+               
+               
+               
+               
+                return false;
+            });
+            
+            
+            
+            
+            var play = setInterval(function(){
+                $('.next').click();
+                
+            },1000)
+            
+            
+            $('.slide').mouseenter(function(){
+                
+                clearInterval(play)
+            }).mouseleave(function(){
+                
+                play = setInterval(function(){
+                $('.next').click();
+                
+                },1000)
+                
+            })
+            
+            
+            
+    })
         
         
         

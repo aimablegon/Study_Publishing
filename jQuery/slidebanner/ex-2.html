@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style:none}
+        .slide{width:500px; height:300px; border:1px #F00 solid; position:relative; margin:0 auto;}
+        .slide button{position:absolute; top:50%; z-index:1;}
+        .slide button.next{right:-100px; z-index:1;}
+        .slide button.prev{left:-100px;}
+        .slide .banner{position:relative; overflow:hidden;width:500px; height:300px;}
+        .slide ul{text-align:center;}
+        .slide li{display:inline-block;}
+        .slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 100; border:2px #CCC solid;  
+            color:#FFF; font-weight:bold; top:260px; text-decoration:none; border-radius:50%;}
+        .slide li img{width:100%; position:absolute; left:0; top:0; display:none; }
+        .slide li:first-child img{display:block;}
+        .slide li.on a{background-color: #D0D; border-radius:50%;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            
+           
+                // --------방법
+                // 넥스트 버튼을 클릭했을때, 클릭이벤트 작동하게 한다.
+                // 슬라이드 안에 베너안에 유엘 안에 엘아이의 이미지가 인덱스만큼 늘어나면 이미지도 옆으로 옮긴다.
+                // 인덱스의 기준은?
+            var idx = 0;    
+            var sbw = $('.slide').width();    
+            // 넥스트 버튼을 클릭했을때, 오른쪽으로 넘어가게
+            
+            
+            
+            $('.next').click(function(){
+                // 넥스트 버튼을 클릭했을때, 실행한다/
+                // console.log('aa')
+                
+                $('.slide .banner ul li').eq(idx).removeClass('on').children('img').animate({
+                    left:-sbw
+                    // 슬라이드 안에 배너 안에 유엘 안에 엘아이 안에 idx라는 줄에 있는 자식요소(children)안의 이미지에 에니메이트 준다.
+                    // 왼쪽으로 마이너스 슬라이드클라스의 위드값만큼.보낸다,
+                    // idx라는 줄에 있는 on클라스를 지워준다.
+                }).parent().next().addClass('on').children('img').css({
+                    'display':'block',
+                    'left':sbw
+                    // 자식의 부모의 다음의 자식요소에게 씨에스에스를 준다.
+                    // 디스플레이를 블락으로 바꿔주고, 레프트를 슬라이드클라스의 위드값을 기준점으로 잡아준다.
+                    // idx의 줄 다음 엘아이에 on클라스를 부여한다.
+                }).stop().animate({
+                    'left':0
+                    // 한번 자른다는 의미에서 stop을 하고 에니메이트효과를 준다.
+                    // 넥스트 다음에 오는 이미지를 옮긴다.
+                })
+                // 클라스를 지워주고 줘야 한다. 
+                
+                
+                
+                idx++ //idx를 하나씩 올리면서 바꿔준다.
+                // 맨 마지막 사진 다음에 아무것도 안오기때문에 if문을 써서 맨마지막에 왔을때 사진을 오도록 한다.
+                
+                
+                if(idx == $('.slide .banner ul li').length){
+                    // 만약 idx가 .slide .banner ul li의 랭스와 같다면,
+                    idx = 0 //idx가 0인 이유는 0번째 사진이 와야 하므로,
+                    $('.slide .banner ul li').eq(idx).children('img').css({
+                        'left':sbw,
+                        'display':'block'
+                        // 슬라이드 안에 배너 안에 유엘 안에 엘아이의 idx의 줄에 있는 자식요소의 이미지에 씨에스에스를 준다.
+                        // 슬라이드클라스의 위드값을 레프트로 기준점을 갖는다.
+                    }).stop().animate({
+                        'left':0
+                        // 한번 자른다는 의미에서 스탑을 사용하고 에니메이트효과를 준다.
+                        // 레프트를 0으로 보낸다.
+                    }).parent().addClass('on').siblings().removeClass('on')
+                    // 이미지의 부모요소(결국 엘아이다.)에게 on 클라스를 부여하고, 부여한 부모요소를 제외한 나머지에 on클라스를 제거한다.
+                }
+            })
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            // 프리브 버튼을 클릭했을때, 왼쪽으로 넘어가게
+            $('.prev').click(function(){
+                // 프리브 버튼을 클릭했을때, 실행한다/
+                // console.log('aa')
+                
+                $('.slide .banner ul li').eq(idx).removeClass('on').children('img').animate({
+                    left:sbw
+                    // 슬라이드 안에 배너 안에 유엘 안에 엘아이 안에 idx라는 줄에 있는 자식요소(children)안의 이미지에 에니메이트 준다.
+                    // 왼쪽으로 슬라이드클라스의 위드값만큼.보낸다.(넥스트와 반대)
+                    // idx라는 줄에 있는 on클라스를 지워준다.
+                }).parent().prev().addClass('on').children('img').css({
+                    'display':'block',
+                    'left':-sbw
+                    // 자식의 부모의 전에 해당하는 자식요소에게 씨에스에스를 준다.
+                    // 디스플레이를 블락으로 바꿔주고, 레프트를 슬라이드클라스의 위드값의 마이너스을 기준점으로 잡아준다.
+                    // idx의 줄 다음 엘아이에 on클라스를 부여한다.
+                }).stop().animate({
+                    'left':0
+                    // 한번 자른다는 의미에서 stop을 하고 에니메이트효과를 준다.
+                    // 넥스트 다음에 오는 이미지를 옮긴다.
+                })
+                // 클라스를 지워주고 줘야 한다. 
+                
+                
+                
+                idx-- //idx를 하나씩 내려주며 바꿔준다.
+                // 맨 마지막 사진 다음에 아무것도 안오기때문에 if문을 써서 맨마지막에 왔을때 사진을 오도록 한다.
+                // console.log(idx)
+                
+                if(idx < 0 ){
+                    // 만약 idx가 .0보다 작다면
+                    idx =  $('.slide .banner ul li').length-1;
+                    //idx가 거꾸로 가서 2,1,0,-1까지 오기때문에
+                    $('.slide .banner ul li').eq(idx).children('img').css({
+                        'left':-sbw,
+                        'display':'block'
+                        // 슬라이드 안에 배너 안에 유엘 안에 엘아이의 idx의 줄에 있는 자식요소의 이미지에 씨에스에스를 준다.
+                        // 슬라이드클라스의 위드값을 레프트로 기준점을 갖는다.
+                    }).stop().animate({
+                        'left':0
+                        // 한번 자른다는 의미에서 스탑을 사용하고 에니메이트효과를 준다.
+                        // 레프트를 0으로 보낸다.
+                    }).parent().addClass('on').siblings().removeClass('on')
+                    // 이미지의 부모요소(결국 엘아이다.)에게 on 클라스를 부여하고, 부여한 부모요소를 제외한 나머지에 on클라스를 제거한다.
+                }
+            })
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            // 숫자를 눌렀을때, 사진 각 수에 맞게 넘어가게
+            $('.slide .banner ul li a').click(function(){
+                
+                idx =$(this).parent.index();
+                // 클릭한 녀석의 부모의 인덱스 값을 idx로 한다.
+                var onidx = $('.slide .banner ul li.on').index();                
+                // 슬라이드 안에 배너 안에 유엘 안에 엘아이중의 온클라스를 갖는 녀석의 인덱스를 onidx로 한다.
+                
+                
+                if(idx > sbw){
+                    $('.slide .banner ul li').eq(idx).addClass('on').children('img').css({
+                        'display':'block',
+                        'left':sbw
+                    }).animate({
+                        'left':0
+                    });
+                    $('.slide .banner ul li').eq(onidx).removeClass('on').chilren('img').animate({
+                        'left':-sbw
+                    })
+                    //슬라이드안에 배너 안에 유엘안에 엘아이의 index의 줄에 온클라스를 부여하고. 그 자식요소의 이미지에 씨에스에스 효과를 준다.
+                    // 디스플레이 블락, 슬라이드의 위드값을 왼쪽에 맞춘다.
+                    // 그리고 애니메이션을 실행한다.
+                    // 슬라이드를 왼쪽 0으로 보낸다.
+                    // 슬라이드안에 배너 안에 유엘 안에 엘아이의 온틀라스를 가지고 있는 줄에 온클라스를 지우고, 그 자식요소의 이미지에 애니메이션을 실행한다.
+                    // 이미지를 왼쪽으로 보내는데, 슬라이드의 위드값의 마이너스 만큼 보낸다.$
+                    
+                    // 이것을 비교문으로 만들어서 작은숫자일땐 왼쪽에서 오도록, 큰숫자는 오른쪽에서 오도록 한다.
+                }else if(idx < sbw){
+                    $('.slide .banner ul li').eq(idx).addClass('on').children('img').css({
+                        'display':'block',
+                        'left':-sbw
+                    }).animate({
+                        'left':0
+                    });
+                    $('.slide .banner ul li').eq(onidx).removeClass('on').chilren('img').animate({
+                        'left':sbw
+                    })
+                }
+                
+                
+                return false;
+                // a태그 사용시 a 태그 안에 "javascript:void(0);" 넣거나, 함수안에서 return false를 적는다.
+            })
+            
+            
+            
+            
+            // 자동으로 넘어가게 하기
+              var play = setInterval(function(){
+                $('.next').click();
+                
+                },1000)
+                // 셋인터벌로 자동으로 슬라이드가 넘어가도록 실행함수를 만든다.
+                // 이미 해놓은 실행함수 넥스트 클릭을 함수 안에 넣는다.
+                // 초를 지정한다.
+                // 그리고 핸들러를 사용하기 위하여 이 함수자체를 변수play로 지정한다.
+                
+                $('.slide').mouseenter(function(){
+                    
+                    clearInterval(play)
+                }).mouseleave(function(){
+                    
+                    play = setInterval(function(){
+                        $('.next').click();
+                        
+                        },1000)
+                // 슬라이드에 마우스를 올렸을때 (마우스엔터를 사용하여)의 함수를 정의한다.
+                // 클리어인터벌을 사용하여 인터벌을 멈춘다. 안에 변수 play를 넣어서
+                // 마우스리브를 사용하여 다시 마우스를 슬라이드 안에서 벗어났을 때, 플레이를 사용하여, 다시 셋 인터벌을 돌도록 한다.
+                })
+              
+             // 마우스 리브했을때, 자동으로 넘어가게
+        })
+    
+    </script>
+
+</head>
+<body>
+    
+    <div class="slide">
+        
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        
+        <div class ="banner">
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../../images/b1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../../images/b2.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../../images/b5.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../../images/b4.jpg">
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>

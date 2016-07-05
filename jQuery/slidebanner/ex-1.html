@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style:none}
+        .slide{width:500px; height:300px; border:1px #F00 solid; position:relative; margin:0 auto;}
+        .slide button{position:absolute; top:50%; z-index:1;}
+        .slide button.next{right:-100px; z-index:1;}
+        .slide button.prev{left:-100px;}
+        .slide .banner{position:relative; overflow:hidden;width:500px; height:300px;}
+        .slide ul{text-align:center;}
+        .slide li{display:inline-block;}
+        .slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 100; border:2px #CCC solid;  
+            color:#FFF; font-weight:bold; top:260px; text-decoration:none; border-radius:50%;}
+        .slide li img{width:100%; position:absolute; left:0; top:0; display:none; }
+        .slide li:first-child img{display:block;}
+        .slide li.on a{background-color: #abe; border-radius:50%;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            
+            // 넥스트 버튼을 클릭했을때, 오른쪽으로 넘어가게
+                // --------방법
+                // 넥스트 버튼을 클릭했을때, 클릭이벤트 작동하게 한다.
+                // 슬라이드 안에 베너안에 유엘 안에 엘아이의 이미지가 인덱스만큼 늘어나면 이미지도 옆으로 옮긴다.
+                // 인덱스의 기준은?
+                
+            
+            var idx = 0;    
+            var slideWidth = $('.slide').width()
+            $('.next').click(function(){
+                // console.log('aa');
+                $('.slide .banner ul li').eq(idx).removeClass('on').children('img').animate({
+                    left:-slideWidth
+                }).parent().next().addClass('on').children('img').css({
+                    left:slideWidth,
+                    display:'block'
+                }).stop().animate({
+                    left:0
+                })
+                
+                idx++
+                
+                if(idx == $('.slide .banner ul li').length){
+                    // console.log($('.slide .banner ul li').length)
+                    // 왜 idx =0 이지?
+                    idx = 0
+                    $('.slide .banner ul li').eq(idx).children('img').css({
+                        left:slideWidth
+                    }).stop().animate({
+                        left:0
+                    }).parent().addClass('on').siblings().removeClass('on')
+                }
+                
+            })
+            
+            
+            
+            
+            
+            
+            
+            
+            // 프리브 버튼을 클릭했을때, 왼쪽으로 넘어가게
+            
+            $('.prev').click(function(){
+                // console.log('aa');
+                $('.slide .banner ul li').eq(idx).removeClass('on').children('img').animate({
+                    left:slideWidth
+                }).parent().prev().addClass('on').children('img').css({
+                    left:-slideWidth,
+                    display:'block'
+                }).stop().animate({
+                    left:0
+                })
+                
+                idx--
+                
+                if(idx < 0){
+                    
+                    idx =  $('.slide .banner ul li').length-1
+                    $('.slide .banner ul li').eq(idx).children('img').css({
+                        left:-slideWidth
+                    }).stop().animate({
+                        left:0
+                    
+                    }).parent().addClass('on').siblings().removeClass('on')
+                    
+                }
+                
+            })
+            
+            // 숫자를 눌렀을때, 사진 각 수에 맞게 넘어가게
+            $('.slide .banner ul li a').click(function(){
+                // console.log('aa')
+                idx = $(this).parent().index();
+                var onidx  = $('.slide .banner ul li.on').index();
+                console.log(idx,onidx)
+                
+                if(idx > onidx){
+                    $('.slide .banner ul li').eq(idx).addClass('on').children('img').css({
+                        left:slideWidth,
+                        display:'block'
+                    }).animate({
+                        left:0
+                    });
+                    $('.slide .banner ul li').eq(onidx).removeClass('on').children('img').animate({
+                        left:-slideWidth
+                    })
+                }else if(idx < onidx){
+                    $('.slide .banner ul li').eq(idx).addClass('on').children('img').css({
+                        left:-slideWidth,
+                        display:'block'
+                    }).animate({
+                        left:0
+                    });
+                    $('.slide .banner ul li').eq(onidx).removeClass('on').children('img').animate({
+                        left:slideWidth
+                    })
+                }
+               
+                return false;
+                // // a태그 사용시 a 태그 안에 "javascript:void(0);" 넣거나, 함수안에서 return false를 적는다.
+            })
+            
+            
+            
+            // 자동으로 넘어가게 하기
+            var play = setInterval(function(){
+                 $('.next').click()
+            },2000) //핸들러로 사용하기 위해, 변수로 만든다.
+            
+            // 마우스엔터 했을때, 멈추고
+            $('.slide').mouseenter(function(){
+                clearInterval(play)
+            })
+            $('.slide').mouseleave(function(){
+                play = setInterval(function(){
+                    $('.next').click()
+                },2000)
+            })// 마우스 리브했을때, 자동으로 넘어가게
+        })
+    
+    </script>
+
+</head>
+<body>
+    
+    <div class="slide">
+        
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        
+        <div class ="banner">
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../../images/b1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../../images/b2.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../../images/b5.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../../images/b4.jpg">
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>

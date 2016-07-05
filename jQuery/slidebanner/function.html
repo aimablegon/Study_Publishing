@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style:none}
+        .slide{width:500px; height:300px; border:1px #F00 solid; position:relative; margin:0 auto;}
+        .slide button{position:absolute; top:50%; z-index:1;}
+        .slide button.next{right:-100px; z-index:1;}
+        .slide button.prev{left:-100px;}
+        .slide .banner{position:relative; overflow:hidden;width:500px; height:300px;}
+        .slide ul{text-align:center;}
+        .slide li{display:inline-block;}
+        .slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 100; border:2px #CCC solid;  
+            color:#FFF; font-weight:bold; top:260px; text-decoration:none; border-radius:50%;}
+        .slide li img{width:100%; position:absolute; left:0; top:0; display:none; }
+        .slide li:first-child img{display:block;}
+        .slide li.on a{background-color: #abe; border-radius:50%;}
+    </style>
+    <script type="text/javascript">
+        $(function(){                
+     
+        var idx = 0;
+        // 0인 값을 갖는 idx라는 변수를 지정한다.
+        function movement(start,end,selector){
+            // 익명함수인 movement라는 이름을 가진 인자3개를 넣은 함수를 만든다. 
+            // 스타트(시작시점), 엔드(끝나는 시점), 셀렉터(선택한것)라는 인자를 정한다.
+            $('.slide li').eq(selector).addClass('on').siblings().removeClass('on').children('img').css({
+                'display':'block',
+                'left':start
+            }).stop().animate({
+                'left':end
+            })//.parent().addClass('on').siblings().removeClass('on')이렇게 넣어도 된다.
+            // 슬라이드 안에 엘아이의 셀렉터라는 줄을 가진 곳에 온클래스를 주고 나머지의 것에 온클래스를 없애고, 
+            // 그 온클래스를 준 것의 자식요소의 이미지에 css효과를 준다.
+            // 디스플레이 블락, 레프트의 위치는 스타트
+            // 잠시멈췄다가. 애니메이트 효과를 준다.
+            // 이미지를 왼쪽 끝나는 시점으로 보내준다.
+            if(selector == $('.slide li').length){
+                idx = 0
+                movement("100%","0",idx)
+            }else if(selector < 0){
+                idx = $('.slide li').length -1;
+                movement("-100%","0",idx)
+            }
+            // 만약 셀렉터가 슬라이드 안에 엘아이 랭스와 같다면
+            // idx 는 0을 주고.
+            // 무브먼트 함수를 사용한다(각각의 인자값을 넣어준다.)
+            // 셀렉터가 0보다 작으면 
+            // 인덱스는 슬라이드안에 엘아이의 랭스보다 1작은수를 준다.
+            // 무브먼트 함수를 사용한다(각각의 인자값을 넣어준다.)
+         }
+     
+        $('button.next').click(function(){
+            movement("0","-100%",idx);
+            idx ++
+            movement("100%","0",idx);
+        })
+        // 넥스트를 클릭했을떄, 실행할 함수를 정의한다.
+        // 무브먼트함수를 사용한다.(각각의 인자값을 넣어준다)
+        // idx를 1씩 증가 시킨다.
+         // 무브먼트함수를 사용한다.(각각의 인자값을 넣어준다)
+        
+        $('button.prev').click(function(){
+            movement("0","100%",idx);
+            idx --
+            movement("-100%","0",idx);
+        })
+        // 프라이브를 클릭했을떄, 실행할 함수를 정의한다.
+        // 무브먼트함수를 사용한다.(각각의 인자값을 넣어준다)
+        // idx를 1씩 감소 시킨다.
+         // 무브먼트함수를 사용한다.(각각의 인자값을 넣어준다)
+        
+        $('.slide li a').click(function(){
+            idx = $(this).parent().index();
+            var his = $('.slide li.on').index();
+            
+             
+                 movement("0","-100%",his);
+                 movement("100%","0",idx);
+                 
+           
+            
+             
+             return false;
+            
+            
+        })
+        // 슬라이드안에 엘아이 안에 에이를 클릭했을 했의 실행할 함수를 정의 한다.
+        // 슬라이드안에 엘아이 안에 에이의 부모의 인덱스를 idx에게 준다.
+        // 슬라이드안에 엘아이의 온클라스를 갖은 인덱스를 his라는 변수에 담는다.
+        // 만약 인덱스가 히스보다 크면
+        // 무브먼트함수를 사용한다.(각각의 인자값을 넣어준다)
+        // 인덱스가 히스보다 작으면 
+        // 무브먼트함수를 사용한다.(각각의 인자값을 넣어준다)
+        // a태그는 리턴이 안되므로, return false를 적는다.
+        // 자동으로 넘어가게 하기
+          var play = setInterval(function(){
+            $('.next').click();
+            
+            },1000)
+            // 셋인터벌로 자동으로 슬라이드가 넘어가도록 실행함수를 만든다.
+            // 이미 해놓은 실행함수 넥스트 클릭을 함수 안에 넣는다.
+            // 초를 지정한다.
+            // 그리고 핸들러를 사용하기 위하여 이 함수자체를 변수play로 지정한다.
+            
+            $('.slide').mouseenter(function(){
+                
+                clearInterval(play)
+            }).mouseleave(function(){
+                play = setInterval(function(){
+                    $('.next').click();
+                    
+                    },1000)
+                // 슬라이드에 마우스를 올렸을때 (마우스엔터를 사용하여)의 함수를 정의한다.
+                // 클리어인터벌을 사용하여 인터벌을 멈춘다. 안에 변수 play를 넣어서
+                // 마우스리브를 사용하여 다시 마우스를 슬라이드 안에서 벗어났을 때, 플레이를 사용하여, 다시 셋 인터벌을 돌도록 한다.
+            })
+              
+    })
+    </script>
+
+</head>
+<body>
+    
+    <div class="slide">
+        
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        
+        <div class ="banner">
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../../images/b1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../../images/b2.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../../images/b5.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../../images/b4.jpg">
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
