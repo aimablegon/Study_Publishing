@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style:none}
+        .slide{width:500px; height:300px; border:1px #F00 solid; position:relative; margin:0 auto;}
+        .slide button{position:absolute; top:50%; z-index:1;}
+        .slide button.next{right:-100px; z-index:1;}
+        .slide button.prev{left:-100px;}
+        .slide .banner{position:relative; overflow:hidden; width:500px; height:300px;}
+        .slide ul{text-align:center;}
+        .slide li{display:inline-block;}
+        .slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 100; border:2px #CCC solid;  
+            color:#FFF; font-weight:bold; top:260px; text-decoration:none; border-radius:50%;}
+        .slide li img{width:100%; position:absolute; left:0; top:0; display:none; }
+        .slide li:first-child img{display:block;}
+        .slide li.on a{background-color: #BF9BDE; border-radius:50%;}
+    </style>
+    <script type="text/javascript">
+        $(function(){                
+         
+             var idxarr = [];
+             
+             
+             $('body .slide').each(function(i,e){
+                //  i=index, e=element
+                 idxarr.push(0);
+                //  슬라이드의 인덱스의 값을 초기로 사용함
+                //  console.log(idxarr)
+             })
+            //  슬라이드의 배열을 각각에 담는다. 
+            // 최소의 0부터 시작하라고 0부터 넣어준다.
+            
+            function movement(start,end,selector,target){
+                 $('body .slide').eq(target).find('li').eq(selector).children('img').css({
+                     left:start,
+                     'display':'block'
+                 }).stop().animate({
+                     left:end
+                 }).parent().addClass('on').siblings().removeClass('on')
+                //  익명함수 무브먼트를 정의한다. (스타트점, 끝나는점, 선택자,타겟)
+                // 바디 안에 슬라이드의 타겟의 위치의 줄의 엘아이의 선택자의 위치의 줄의 이미지에 css효과를 준다.
+                // 왼쪽의 기준점을 스타트로 잡고, 디스플레이 블락을 시킨다.
+                // 한번 끊고 간다는 의미에서 스탑을 하고, 애니메이트 효과를 준다.
+                // 왼쪽으로 끝나는 지점까지 보낸다.
+                if(idxarr[target] == $('body .slide').eq(target).find('li').length ){
+                    idxarr[target] = 0 ;
+                    console.log(idxarr)
+                    movement("100%","0",idxarr[target],target)
+                }else if(idxarr[target] < 0 ){
+                    idxarr[target] = $('body .slide').eq(target).find('li').length-1
+                    console.log(idxarr)
+                    movement("-100%","0",idxarr[target],target)
+                }
+            
+            }
+            
+            
+            
+           
+            $('.slide .next').click(function(){
+                 selectorIdx = $(this).parent().index();
+                // 슬라이드의 넥스트를 클릭했을 때 이벤트를 실행한다.
+                //  next의 부모인(슬라이드)의 인덱스를 뽑는다.
+                // console.log(selectorIdx)
+                //  movement(start,end, idxarr[selectorIdx],selectorIdx)
+                 movement('0','-100%', idxarr[selectorIdx],selectorIdx)
+                  console.log(idxarr)
+                 idxarr[selectorIdx]++
+                 movement('100%','0', idxarr[selectorIdx],selectorIdx)
+                // 무브 먼트함수를 이용한다.(스타트점, 끝나는 점, 선택자, 타겟)
+                    // 선택자의 자리에 넥스트의 부모의 인덱스를 idxarr의 배열을 담은 것을 넣는다.
+                        // 각각의 인덱스에 맞게 배열에 담에 있기 떄문에 이것을 사용/움직일 이미지
+                    // 타겟의 자리에는 넥스트의 부모의 인덱스를 선택하는 selectorIdx를 사용한다.
+                            // 슬라이드의 인덱스를 사용함으로 선택한 인덱스를 사용하는 것이다.슬라이트 선택
+                    // 결국 selectorIdx를 선택하여  idxarr[selectorIdx]를 보여주는 것이다.
+                // idxarr[selectorIdx]의 숫자를 하나씩 올려준다.
+                // 스타트 점과 끝나는 점이 달라졌으므로 변경시겨 준다.
+                    
+                    
+                // console.log(idxarr)
+                // if(idxarr[selectorIdx] == $(this).parent().find('li').length ){
+                //     idxarr[selectorIdx] = 0 ;
+                   
+                //     movement("100%","0",idxarr[selectorIdx],selectorIdx)
+                // }else if(idxarr[selectorIdx] < 0 ){
+                //     idxarr[selectorIdx] = $(this).parent().find('li').length-1
+                //     console.log(idxarr)
+                //     movement("-100%","0",idxarr[selectorIdx],selectorIdx)
+                // }
+                
+                
+                
+            })
+         
+            $('.slide .prev').click(function(){
+                 selectorIdx = $(this).parent().index();
+                // 슬라이드의 넥스트를 클릭했을 때 이벤트를 실행한다.
+                //  next의 부모인(슬라이드)의 인덱스를 뽑는다.
+                // console.log(selectorIdx)
+                //  movement(start,end, idxarr[selectorIdx],selectorIdx)
+                 movement('0','100%', idxarr[selectorIdx],selectorIdx)
+                  console.log(idxarr)
+                 idxarr[selectorIdx]--
+                 movement('-100%','0', idxarr[selectorIdx],selectorIdx)
+            })
+         
+         
+         
+         
+            $('.slide li a').click(function(){
+                var tar =$(this).parents('.slide').index();
+                
+                console.log(tar)
+                
+                idxarr[tar] = $(this).parent().index();
+                var his = $(this).parents('ul').find('.on').index();
+                
+                console.log(his)
+                    if(idxarr[tar] > his){
+                        movement("0","-100%",his,tar);
+                        movement("100%","0",idxarr[tar],tar);
+                    }else if(idxarr[tar] < his){
+                        movement("0","100%",his,tar);
+                        movement("-100%","0",idxarr[tar],tar);
+                    }
+                    
+                console.log(idxarr)
+                // if(idxarr[idx] >idxarr[his]){
+                //      movement("0","-100%",idxarr[idx],);
+                //      movement("100%","0",idxarr[],);
+                // }else if(idxarr[selectorIdx] < idxarr[his]){
+                //     movement("0","100%",idxarr[],);
+                //      movement("-100%","0",idxarr[],);
+                // }
+               
+                
+                 
+                 return false;
+                
+                
+            })
+         
+         
+         
+         
+         
+         
+         
+        })
+        
+    
+    
+</script>
+
+</head>
+<body>
+    <!--이미지의 갯수가 다르기 때문에 , 각각의 인덱스의 값이 다르다. 그래서 각기 다 만들어 주고, 배열에 담는다.-->
+    <div class="slide">
+        
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        
+        <div class='banner'>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/b1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/b2.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../images/b4.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../images/b5.jpg">
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+   
+    <div class="slide">
+        
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        
+        <div class='banner'>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/b2.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/b4.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../images/b5.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../images/b6.jpg">
+                </li>
+               <li>
+                    <a href="">5</a>
+                    <img src="../images/b1.jpg">
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+   
+    <div class="slide">
+        
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        
+        <div class='banner'>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/b4.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/b5.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../images/b6.jpg">
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+    
+    <div class="slide">
+        
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        
+        <div class='banner'>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/a1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/arbre_b.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../images/a3.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../images/arbre_c.jpg">
+                </li>
+                
+                <li>
+                    <a href="">5</a>
+                    <img src="../images/a5.jpg">
+                </li>
+                <li>
+                    <a href="">6</a>
+                    <img src="../images/arbre_a.jpg">
+                </li>
+                <li>
+                    <a href="">7</a>
+                    <img src="../images/a2.jpg">
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
