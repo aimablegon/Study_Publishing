@@ -25,7 +25,7 @@
             body{ min-width:900px; min-height:810px;
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_bd.png);}
             
-            #wrapper{outline:1px #000 solid; min-height:810px; position:relative;}
+            #wrapper{ min-height:810px; position:relative;}
             /*header*/
             #header{ height:40px; padding:5px 0; 
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_hd.png);}
@@ -82,12 +82,12 @@
             
             
             /*container*/
-            #container{outline:1px #000 solid; min-width:900px; min-height:540px; position:absolute; 
+            #container{ min-width:900px; min-height:600px; position:absolute; 
                 top:85px; bottom:81px;left:0; right:0;}
             /*content*/
-            #content{outline:1px #000 solid;  min-width:900px; min-height:540px; width:100%; position:absolute; top:0; left:0;  margin:0 auto;}
-            #main_wrapper{outline:1px #F00 solid; min-width:900px; height:560px; position:relative; }
-            #main{outline:1px #F00 solid; width:900px; height:540px; position:absolute; top:0; left:25%;
+            #content{min-width:900px; min-height:540px; width:100%; position:absolute; top:0; left:0;  margin:0 auto;}
+            #main_wrapper{ min-width:900px; height:540px; position:relative; margin:0 auto;}
+            #main{width:900px; height:540px; position:absolute; top:0; left:25%;
                 margin:0 30px;  padding:0 15px;
                 background-image:url(http://static.naver.net/newsstand/img/20121231/bg_panel.png);}
             
@@ -103,7 +103,7 @@
                 background-position:-294px -174px;}
             .h_contents_c{ width:28px; height:22px; margin-left:5px; float:left; 
                 background-position:-500px -270px;}
-            .h_contents_date{ width:90px; height:14px; margin-top:2px; 
+            .h_contents_date{ width:95px; height:14px; margin-top:2px; 
                 padding:6px 0 0 9px; float:left;}
             .date{margin-right:2px; font-size:11px; line-height:13px; cursor:text;}
             
@@ -115,7 +115,7 @@
             .premier_text{ width:280px; height:55px; padding:5px 10px 10px; margin:310px; 
                 position:absolute; top:0; left:-310px; background-color:#444444;}
             .premier_title{font-size:15px; line-height:20px; color: #FFF;}
-            .premier_detail{font-size:12px; line-height:15px;color: #FFF;}
+            .premier_detail{font-size:1px; line-height:15px;color: #FFF;}
             .premier_ima{position:absolute; top:0; left:0;}
             .premier_img>a>img{width:100%;}
             
@@ -123,18 +123,18 @@
             .premier_theme{ width:520px; height:240px;}
             .content_a{ width:160px; height:240px; margin-right:20px; float:left}
             .content_a_link>img{border:1px #000 solid; width:158px; height:158px; margin-bottom:10px;}
-            .content_a_title{font-size:15px; line-height:20px;} 
-            .content_a_text{font-size:12px; line-height:15px;}
+            .content_a_title{font-size:13px; line-height:16px;} 
+            .content_a_text{font-size:11px; line-height:13px;}
             
             .content_b{ width:160px; height:240px; margin-right:20px; float:left}
             .content_b_link>img{border:1px #000 solid; width:158px; height:158px; margin-bottom:10px;}
-            .content_b_title{font-size:15px; line-height:20px;} 
-            .content_b_text{font-size:12px; line-height:15px;}
+            .content_b_title{font-size:13px; line-height:16px;} 
+            .content_b_text{font-size:11px; line-height:13px;}
             
             .content_c{width:160px; height:240px; float:left}
             .content_c_link>img{border:1px #000 solid; width:158px; height:158px; margin-bottom:10px;}
-            .content_c_title{font-size:15px; line-height:20px;} 
-            .content_c_text{font-size:12px; line-height:15px;}            
+            .content_c_title{font-size:13px; line-height:16px;} 
+            .content_c_text{font-size:11px; line-height:13px;}            
             
             
             
@@ -159,16 +159,30 @@
             .dernier{width:520px; height:16px; margin-top:4px; float:left;}
             .dernier_logo{width:190px; float:right; overflow:hidden;}
             
+            .prev{width: 59px; height: 82px; background-position:0 0; position:absolute; top:50%; left:-60px;}
+            .next{width: 59px; height: 82px; background-position:-64px 0; position:absolute; top:50%; right:-60px;}
             
-            
+            .button{width:900px; height:25px; position:absolute; bottom:-30px;}
+            .button_left{ width:500px; height:24px; float:left;}
+            .auto{width:48px; height:18px; display:inline-block;background-position:-525px -300px; text-align:center;line-height:24px;}
+            .off{width:90px; height:24px; display:inline-block;background-position:-435px -455px;}
+            .button_right{ width:105px; height:24px; float:right;}
+            .number{width:60px; height:24px; float:left;text-align:center;display:inline-block}
+            .num_first{display: inline-block;width: 10px;height: 13px;background-position: -187px -116px; margin-top:6px;}
+            .num_bar{display: inline-block;width: 10px;height: 13px;background-position: -321px -132px; margin-top:6px;}
+            .num_second{display: inline-block;width: 10px;height: 13px;background-position: -214px -132px; margin-top:6px;}
+            .num_third{display: inline-block;width: 10px;height: 13px;background-position:-201px -132px;  margin-top:6px;}
+            .petitArrow{width:44px; height:22px; float:right;text-align:center;display:inline-block} 
+            .petit_left{float: left; width:22px;height:23px;background-position: -435px -585px;margin-top:1px;}
+            .petit_right{float:right;width:22px;height:23px;background-position: -460px -585px;margin-top:1px;}
             
            /*list-news*/
-            #list-news{width:100%; height:88px; padding:7px 27px 0; outline:1px #000 solid; background-color:transparent;
+            #list-news{width:100%; height:88px; padding:7px 0; background-color:transparent;
                 background-image:url(http://static.naver.net/newsstand/img/20140716/bg_nv.png); 
-                position:absolute; bottom:0; left:0;}
-            .list{min-width:900px;height:88px; padding:7px 27px 0;  vertical-align:top; position:absolute; left:0; top:0;}
+                position:absolute; bottom:-50px; left:0;overflow:hidden;}
+            .list{min-width:900px;height:88px; padding:7px 27px 0;  vertical-align:top; position:absolute; left:0; top:0; }
             .news_list_logo{min-width:840px; height:88px; left:0;  margin-right:3px; position:relative;}
-            .news_list_logo>.list_rolling{width:1365px; height:88px; padding:5px 0 13px 3px; overflow:hidden;
+            .news_list_logo>.list_rolling{width:1500px; height:88px; padding:5px 0 13px 3px; 
                 position:relative; left:0; bottom:5px; display:list-item;}
             .rolling{width:89px; height:76px; padding-top:8px; margin-right:3px; 
                 float:left; display:inline-block; text-align:center;}
@@ -185,7 +199,7 @@
             
             
              /*footer*/
-            #footer{height:81px; position:absolute; left:0; right:0; bottom:0; background-color:transparent;
+            #footer{height:81px; position:absolute; left:0; right:0; bottom:-50px; background-color:transparent;
                 background-image:url(http://static.naver.net/newsstand/img/20131014/bg_ft.png); text-align:center;}
             .notice{ height:14px; margin:14px 0 -1px; padding-right:16px; display:block;
                 position:absolute; left:0; right:0; } 
@@ -281,10 +295,9 @@
                                 <a href="http://newsstand.naver.com/?list=ct7" class="btn  ctg_g_7"></a>
                             </li>
                             <li class="ctg_h">
-                                <a href="http://newsstand.naver.com/?list=ct8" class="btn  ctg_h_8"></a>
                             </li>
                         </ul>
-                    </div>
+            </div>
             <div id="container">
                 <div id="content">
                     <h2 class="main_news">뉴스페이지</h2>
@@ -335,10 +348,10 @@
                                                 </li>
                                                 <li class="content_b">
                                                     <a href="http://www.gqkorea.co.kr/?p=55795&_C_=22" class="content_b_link">
-                                                        <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/003.jpg" alt="왼쪽은 앞을 보고있는 자동차 오른쪽은 뒤를 보여주는 자동차" />
+                                                        <img src="http://static.naver.net/newsstand/2016/0705/GQ/170804/003.jpg" alt="신발이 진열되어 있다." />
                                                     </a>
-                                                    <b class="content_b_title">[카] 진보주의자, A4</b> <br />
-                                                    <span class="content_b_text">단 한 대의 차에 집중했다. 6월의 명예는 뉴 아우디 A4다.</span>
+                                                    <b class="content_b_title">[컬처] 스니커 공화국</b> <br />
+                                                    <span class="content_b_text">세계 최초의 나이키 스니커 콘셉트 숍이 문을 열었다.</span>
                                                 </li>
                                                 <li class="content_c">
                                                     <a href="http://www.gqkorea.co.kr/?p=55883&_C_=22" class="content_c_link">
@@ -360,11 +373,11 @@
                                                 </a>
                                             </div>
                                             <div class="content_right">
-                                                <a href="http://www.gqkorea.co.kr/?p=55979&_C_=22" class="content_right_link">
-                                                    <img src="http://static.naver.net/newsstand/2016/0603/GQ/190457/006.jpg" alt="화장품 종류 6가지" />
+                                                <a href="http://www.gqkorea.co.kr/?p=57751&_C_=22" class="content_right_link">
+                                                    <img src="http://static.naver.net/newsstand/2016/0705/GQ/170804/006.jpg" alt="바다사진" />
                                                     <div class="contents_right">
-                                                        <b class="content_right_title">태양의 후예</b> <br />
-                                                        <span class="content_right_text">머리부터 발끝까지, 여름에는 여름 화장품.</span>
+                                                        <b class="content_right_title">바다가 들린다</b> <br />
+                                                        <span class="content_right_text">문을 열면 바다와 해변이 보이는 호텔.</span>
                                                     </div>
                                                 </a>
                                             </div>
@@ -373,8 +386,32 @@
                                     <div class="dernier">
                                         <a href="http://www.gqkorea.co.kr/" class="dernier_logo"></a>
                                     </div>
+                                    
                                 </div> 
+                                <div class="btn next"></div>
+                                <div class="btn prev"></div>
+                                <div class="button">
+                                    <div class="button_left">
+                                        <div class="btn auto"></div>
+                                        <div class="btn off"></div>
+                                    </div>
+                                    <div class="button_right">
+                                        <div class="number">
+                                            <span class="number_count">
+                                                <strong class="btn num_first"></strong>
+                                                <span class="btn num_bar"></span>
+                                                <span class="btn num_second"></span>
+                                                <span class="btn num_third"></span>
+                                            </span>
+                                        </div>
+                                        <div class="petitArrow">
+                                            <div class="btn petit_left"></div>
+                                            <div class="btn petit_right"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            
                          </div>
                  </div>
                 <div id="list-news">
