@@ -78,10 +78,13 @@
             idx = $(this).parent().index();
             var his = $('.slide li.on').index();
             
-             
+             if(idx > his){
                  movement("0","-100%",his);
                  movement("100%","0",idx);
-                 
+             }else if(idx < his){
+                 movement("0","100%",his);
+                 movement("-100%","0",idx);
+             }                 
            
             
              
@@ -133,7 +136,7 @@
         
         <div class ="banner">
             <ul>
-                <li class="on">
+                <li >
                     <a href="">1</a>
                     <img src="../../images/b1.jpg">
                 </li>
