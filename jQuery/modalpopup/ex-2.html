@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(function(){
+        var blind = function(){
+            var prep ="";
+            prep += '<div class="blind">';
+            prep += '</div>'
+            $('body').prepend(prep);
+            $('.blind').css({
+                'position':'absolute',
+                'top':0,
+                'right':0,
+                "bottom":0,
+                'left':0,
+                'backgroundColor':'#000',
+                'display':'none'
+            }).fadeTo(1000,0.4);
+            
+            positionCenter($('.popup'));
+            
+            $('.popup').show(1000);
+        }
+        
+        function positionCenter(target){
+            target.css({
+                'top':'50%',
+                'marginTop':function(){
+                    var aa = $(this).css('height')
+                    
+                    return -parseInt(aa)/2 + 'px'
+                },
+                'left':'50%',
+                'marginLeft':function(){
+                    var aa = $(this).css('width')
+                    
+                    return -parseInt(aa)/2 +'px'
+                }
+            })
+        }
+        
+        
+        var closeEvent = function(){
+            $('.popup').hide(1000);
+            $('.blind').fadeOut(1000,function(){
+                $(this).remove()
+            })    
+        }
+        
+        
+        $('.open').click(blind);
+        $('.closebtn').click(closeEvent)
+       
+    });
+    </script>
+    
+    <style>
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <button class="open">열어</button>
+    
+    <div class="popup">
+        <button class="closebtn">닫기</button>
+    </div>
+</body>
+</html>

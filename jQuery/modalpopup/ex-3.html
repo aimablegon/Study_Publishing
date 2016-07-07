@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+    $(function(){
+        //오픈을 클릭하면 실행되게 한다.
+        // blindFn 함수를 만든다.
+            //변수를 이용하여 blinddiv를 만든다.
+            // 만든 블라인드클라스의 css효과를 넣는다.
+            // 포지션, 백그라운드컬러,디스플레이등등
+            // 페이드투로 마무리 효과를 준다.
+        // popMaker라는 함수를 만든다.
+            // 변수를 이용하여 popup div와 닫기 버튼 태크를 만든다.
+            // 바디안에 어펜드를 이용하여 변수를 담는다.
+            // 팝업에 관해 포지션을 움직인다.
+        // positionCenter라는 함수를 만든다.
+            // 인자에 target을 넣는다.
+            // 타겟의 css효과를 넣는다.(위치를 중앙으로 하기 위해)
+            // 레프트, 탑의 값을 준다.
+            // 마진레프트와 마진탑의 값을 준다(함수로 줄수도 있다)- 알고있으면 그냥 숫자로써도됨
+                // 함수로 줄땐, 이것의 css의 width값/ height값을 변수에 담는다.
+                // parseInt()<모든값을 정수로 바로 나오게 한다>을 사용하여, (변수)를 담아 나누기 2를 한 값에 + 'px'을 한다.
+                // 그 값을 리턴으로 반환 시킨다
+        // openPopUp에 blindFn 함수와 popMaket 함수을 호출하고, 팝업을 쇼로 보여준다.
+        // 바디안에 .closebtn을 클릭하면, closeEvent를 사용해라.
+        // closeEvent의 변수에 담아서 함수를 만든다.
+            // 팝업을 감추고
+            // 블라인드를 페이드 아웃시키고. 이것을 없애버려,
+    });
+    </script>
+    <style>
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    
+    <button class="open">열어</button>
+    
+    
+    
+    
+</body>
+</html>

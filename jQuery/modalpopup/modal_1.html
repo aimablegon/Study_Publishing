@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(function(){
+        // 장막이벤트내용
+        var blind = function(){
+            // $('body').prepend('<div class="blind"></div>');
+            // 이렇게 쓰거나.↓아래와 같이 사용한다. 아래와 같이 사용하는 이유는 나중에 그 안에 태그를 사용하기도 하기때문에
+            
+            var bl_Tag = ""; //지역변수지만 글로벌 변수로 사용해도 된다.
+            bl_Tag += '<div class="blind">';
+            bl_Tag += '</div>';
+            $('body').prepend(bl_Tag);
+            // 장막생성 스타일
+            $('.blind').css({
+               position:'absolute',
+               backgroundColor:'#000',
+               left:0,
+               right:0,
+               top:0,
+               bottom:0,
+               display:'none' 
+            }).fadeTo(1000, 0.3); //반투명정도를 나타남, (1초동안, 0.3정도의 반투명)
+            // $('.blind').css({
+            //   position:'absolute',
+            //   backgroundColor:'#000',
+            //   left:0,
+            //   right:0,
+            //   top:0,
+            //   bottom:0,
+            //   opacity:0
+            //   }).animate({
+            //       opacity:0.5
+            //   },10) 
+            // 오파시티 사용하면, 애니메이트를 사용한다. 
+            
+            $('.popup').slideDown();
+            // slideDown대신, fadeIn(), show()으로 사용해도 된다.
+            
+        }
+       
+        //닫기
+        var closeEvent = function(){
+            // display none으로 만들면 안된다. 왜? 태그가 중첩적으로 생기기 때문에
+           
+            $('.popup').hide(1000);
+            $('.blind').fadeOut(1000,function(){
+                $(this).remove()
+            })
+        }
+       
+       
+      
+        //클릭이벤트    
+        $('.open').click(blind);
+        // 닫기 이벤트
+        $('.closebtn').click(closeEvent);
+       
+       
+       
+       
+       
+    });
+    </script>
+    <style>
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <button class="open">열어</button>
+    
+    <div class="popup">
+        <button class="closebtn">닫기</button>
+    </div>
+</body>
+</html>

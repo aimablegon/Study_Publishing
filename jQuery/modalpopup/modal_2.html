@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(function(){
+        // 장막이벤트내용
+        var blind = function(){
+            
+            var bl_Tag = ""; 
+            bl_Tag += '<div class="blind">';
+            bl_Tag += '</div>';
+            $('body').prepend(bl_Tag);
+           
+            // 장막생성 스타일
+            $('.blind').css({
+               position:'absolute',
+               backgroundColor:'#000',
+               left:0,
+               right:0,
+               top:0,
+               bottom:0,
+               display:'none' 
+            }).fadeTo(1000, 0.3); 
+            
+            centerPosition($('.popup'))
+            
+            $('.popup').show();
+            // 슬라이드 - 상하배치 안됨
+            // 쑈에 값을 넣으면 조금 더 아래에 팝업창이 열린다.
+            // 위드값이 쇼로 펼쳐지기때문에.
+            
+            //  centerPosition(target);
+            //  centerPosition($('.popup')) //이걸 팝업 열리기 전으로 올린다.
+            
+        }
+       
+        function centerPosition(target){
+        //   target.css({
+        //       left:"50%",
+        //       marginLeft:'-$(this).width()/2' + 'px',
+        //       top:"50",
+        //       marginTop:'-$(this).height()/2' + 'px'
+        //   })
+            // target.css({
+            //       left:"50%",
+            //       marginLeft:function(){
+            //           var aa = $(this).width()
+                       
+            //           return -aa/2 + 'px'
+            //       },
+            //       top:"50%",
+            //       marginTop:function(){
+            //           var aa = $(this).height()
+                       
+            //           return -aa/2 + 'px'
+            //       }
+            //   })
+            // target.css({
+            //   left:"50%",
+            //   marginLeft:function(){
+            //       var aa = $(this).css('width')
+            //       console.log(aa)
+                   
+            //       return -aa/2 + 'px'
+            //   },
+            //   top:"50%",
+            //   marginTop:function(){
+            //       var aa = $(this).css('height')
+            //       console.log(parseInt(aa)) //parseInt = 문자를 지우고 숫자만 나옴
+                   
+            //       return -aa/2 + 'px'
+            //   }
+            // })
+            
+            
+            // 가운데 정렬 
+            target.css({
+               left:"50%",
+               marginLeft:function(){
+                   
+                   var aa = $(this).css('width');
+                //   css 값을 뽑아서 사용한다.
+                   return -parseInt(aa)/2 + 'px';
+                   
+               },
+               top:"50%",
+               marginTop:function(){
+                   
+                   var aa = $(this).css('height');
+                   return -parseInt(aa)/2 + 'px';
+                   
+               }
+           }) 
+       }
+       
+       
+       
+        //닫기
+        var closeEvent = function(){
+            
+            $('.popup').hide(1000);
+            $('.blind').fadeOut(1000,function(){
+                $(this).remove()
+            })
+        }
+       
+       
+      
+        //클릭이벤트    
+        $('.open').click(blind);
+        // 닫기 이벤트
+        $('.closebtn').click(closeEvent);
+       
+       
+       
+       
+       
+    });
+    </script>
+    <style>
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <button class="open">열어</button>
+    
+    <div class="popup">
+        <button class="closebtn">닫기</button>
+    </div>
+</body>
+</html>

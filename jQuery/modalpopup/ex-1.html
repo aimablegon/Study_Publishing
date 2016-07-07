@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(function(){
+        //오픈을 누르면, 전체화면이 어두워 진다.
+        $('.open').click(function(){
+            $('body').prepend('<div class=blind></div>');
+            $('.blind').css({
+                position:'absolute',
+                left:0,
+                right:0,
+                top:0,
+                bottom:0,
+                display:'none',
+                backgroundColor:'#000'
+            }).fadeTo(1000,0.3);
+            $('.popup').fadeIn(1000)
+        // 오픈클라스를 눌렀을때, 실행하자
+        // 바디안에 젤 위쪽에 디아이브이를 만들자
+        // 블라인드 안에 씨에스에스 효과를 준다. 
+        // 포지션 엡솔, 레프트/라이트/탑/바텀=0, 디스플레이 논, 백그라운드컬러는 검정색
+        // 그 후 페이트인드로 반투명도를 준다.
+        // 팝업클라스에 fadeIn/show/slideDown을 주어 팝업창을 띄운다.
+        // 어두워진 화면위로 팝업창이 하나 생긴다
+        })
+        
+        
+        // 생긴 팝업창의 닫기 버튼을 누르면 원래 상태로 된다
+        $('.closebtn').click(function(){
+            $('.popup').hide(1000);
+            $('.blind').fadeOut(1000,function(){
+                $(this).remove()
+            })
+            // 클로즈비티엔클라스를 클릭하면, 실행하자
+            // popup은 닫고(숨기고),
+            // 블라인드를 페이드아웃시키고 콜백으로 삭제 시킨다.
+        })
+    });
+    </script>
+    <style>
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <button class="open">열어</button>
+    
+    <div class="popup">
+        <button class="closebtn">닫기</button>
+    </div>
+</body>
+</html>
