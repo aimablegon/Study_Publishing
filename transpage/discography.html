@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>twice</title>
+         <link rel="stylesheet" href="twice_font/font/flaticon.css" type="text/css" />
         <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin-ext);
         @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -63,12 +64,12 @@
             }
             /*header 끝*/
             
+           
+           
             /*content*/
             
             #content{
-                width:100%; height:100%; margin-top:100px;
-                padding:0 0 50px; position:relative;
-            }
+                width:100%; height:100%; margin-top:100px; padding:0 0 50px; position:relative;}
             .discography{
                 height:60px; margin:0 auto; padding:20px 0;
                 background-color: #f4f4f4;
@@ -78,25 +79,15 @@
             }
             
             
-            .contents{
-                max-width:1000px;width:85%; padding:50px 0px; margin:0 auto;
-                position:relative; 
-            }
+            .contents{max-width:1000px;width:85%; padding:50px 0px; margin:0 auto; position:relative; }
             
-           .contents .center{margin:20px auto 0;
-            }
-            
-            
-            
+            .contents .center{margin:20px auto 0;}
             .box_left,.box_right{ display:table-cell; vertical-align:top;}
-            
-            
             .box_left{width: 350px; }
             .box_left .box_left_top{position:relative;bottom:25px;}
             .box_left .box_left_top a{width: 10px;height: 11px;padding:5px 5px;text-decoration:none;
                                      border:1px #000 solid;border-radius:50%;background-image: url(../images/page_two_bgc.png);
                                      color:white;font-size:6px;}
-            
             .box_left .main_album{outline:1px #CCCCCC solid; width:352px; height:352px; position:relative;bottom:10px;}
             
             .album_list{padding:10px 0px 10px 0;  line-height:1.1em; color:#3F3F3F;}
@@ -108,27 +99,44 @@
             
             
             .box_right{width: 100%; height:100%; }
-            .box_right .box_right_album{
-                margin-left:10px; padding:10px;   text-align:justify; 
-            }
+            .box_right .box_right_album{margin-left:10px; padding:10px;   text-align:justify; }
             .box_right .box_right_album .album_title {width: 100%;height: 58px;
                 background-image: url(../images/page_two_bgc.png);
-                color:white; display:inline-block;
-            }
-           .box_right .box_right_album .album_title h2{float:left;margin:10px 0 10px 10px;}
-           .box_right .box_right_album .album_title p{float:right;margin:20px 10px 0 0 ; color:white;}
+                color:white; display:inline-block; }
+            .box_right .box_right_album .album_title h2{float:left;margin:10px 0 10px 10px;}
+            .box_right .box_right_album .album_title p{float:right;margin:20px 10px 0 0 ; color:white;}
            
             
-            .contents .bottom{ min-width: 70%; max-width: 700px; margin: 0 auto; padding: 40px 0 10px 0;
-                position:relative; 
-            }
+            .contents .bottom{ min-width: 70%; max-width: 700px; margin: 0 auto; padding: 40px 0 10px 0;position:relative; }
             .contents .bottom .img_list{position:relative; margin:0; padding:0; }
-            .contents .bottom .img_list li{max-width:150px; margin:0 10px; display:inline-block; overflow:hidden;
-            }
-            .contents .bottom .img_list .sub_img_2{position:relative; top:0; left:50%;
-            }
-            .contents .bottom .img_list .sub_img_1{position:absolute; top:0; right:50%;
-            }
+            .contents .bottom .img_list li{max-width:150px; margin:0 10px; display:inline-block; overflow:hidden;}
+            .contents .bottom .img_list .sub_img_2{position:relative; top:0; left:50%;}
+            .contents .bottom .img_list .sub_img_1{position:absolute; top:0; right:50%;}
+            
+            /*content 끝*/
+            
+            /*footer*/
+            .footer_1{width:100%; height:57px; position:fixed; left:0; bottom:0;}
+            .footer_2{width:100%; height:57px; padding:0 30px;}
+            
+            .footer_left{width:115px; height:45px; float:left; position:relative; left:5%; margin:6px 0;}
+            .jyp_logo>img{width:100%;}
+            
+            
+            .footer_right{width:208px; height:33px; float:right; position:relative; right:5%; margin:13px 0 14px;}
+            .SNS{width:32px; height:33px; margin-right:10px; text-decoration:none; display:inline-block;}
+            .footer_right>[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after 
+                {margin:0;}
+            .flaticon-instagram-social-network-logo-of-photo-camera::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+            .flaticon-twitter-logo-silhouette::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+            .flaticon-facebook-logo::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}
+            .flaticon-video::before{
+                font-size:20px; color:#000; display:inline-block; background:#FFF; border-radius:25%; padding:5px 6px;}    
+            /*footer 끝*/
+            
             
             @media screen and (max-width:768px){
                
@@ -185,7 +193,14 @@
                
                .box_right .box_right_album{
                 margin:0px; padding:0px;   text-align:justify; transition:1s;
-            }
+                }
+                
+                .footer_2{
+                    width:100%; 
+                    height:57px; 
+                    padding:0 30px; 
+                    background-color:rgba(0,0,0,0.7); 
+                }
              
              }
              
@@ -307,6 +322,26 @@
                 </div>    
             </div>
             
+            <div class="footer_1">
+                <div class="footer_2">
+                    <span class="footer_left">
+                        <a href="http://www.jype.com/" class="jyp_logo">
+                            <img src="../images/jyplogo-b.png" alt="제이와이피엔터테이먼트로고" />
+                        </a>
+                    </span>
+                    
+                    <span class="footer_right">
+                        <a href="https://www.instagram.com/twicetagram/" class="https://www.youtube.com/c/jypentertainment">
+                        </a>
+                        <a href="https://twitter.com/JYPETWICE" class="SNS flaticon-twitter-logo-silhouette">
+                        </a>
+                        <a href="https://www.facebook.com/JYPETWICE" class="SNS flaticon-facebook-logo">
+                        </a>
+                        <a href="https://www.youtube.com/c/jypentertainment" class="SNS flaticon-video">
+                        </a>
+                    </span>
+                </div>
+            </div>
         </div>
     </body>
 </html>
