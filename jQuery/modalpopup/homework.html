@@ -1,652 +1,866 @@
-/*popup*/
-	$('.propop').on({
-		click:function(){
-			blind();
-			$('body').append('<div class="product_popup mobile"><button>열기</button></div>')
-			$('.product_popup > button').addClass('close')
-			
-			centerpop($('.product_popup'))
-			
-			var content_targent = '.'+$(this).attr('id');
-			var target_html = $(content_targent).html();
-			
-			$('.product_popup').append('<div class="pro-pop-wrap">'+target_html+'<div>');
-			
-			$('.close').click(function(){
-				$('.product_popup').animate({
-					'top':$(window).scrollTop()+$(window).height()
-				},function(){
-					$(this).remove()
-					$('.blind').fadeOut(function(){
-						$(this).remove()
-					})
-					
-				})
-				
-			})
-			return false;
-		}
-		
-	})
-	
-	
-	$(window).resize(function(){
-		
-		centerpop($('.product_popup'))
-	})
-	
-	
-	function centerpop(targent){
-		
-		targent.css({
-			
-			'margin-left':'50%',
-			'left':-(targent.width()/2)+'px',
-			'top':$(window).scrollTop()+$(window).height()
-				
-		}).show().animate({
-			'top':$(window).scrollTop()+40
-		})
-	}
-	window._centerpop = centerpop;
-	
-	
-	
-	
-	
-	
-	+++++++++++++++++read 2
-	
-	
-	
-	
-	
-	
-	
-	
-var __onbodyclick = function(){};
-var __onscroll = function(){};
-$(function(){
-	
-	/*gnb*/
-	$('.first_lnb>li>a').on({
-		
-		click:function(){
-			
-			if ($(this).attr("href") == "") {
-				$(this).parent().children('div').slideToggle().parent('li').addClass('on').siblings('li').removeClass('on').children('div').hide();
-				return false;
-			}
-		}
-	
-	});
-	
-	$('.mobilegnb').click(function(){
-		$(this).next('nav').slideToggle()
-	})
-	
-	$(window).resize(function(){
-		var width = $(this).width()
-		if(width > 736){
-			$('.gnb nav').show()
-		}else{
-			$('.gnb nav').hide()
-		}
-		
-	})
-	
-	/* gnb mouseleave event */
-	var sub_open = false;
-	$('.first_lnb>li>div').mouseleave(function(){
-		sub_open = true;
-	});
-	
-	__onbodyclick = function(){
-		if($('.first_lnb>li').is('.on') && sub_open){
-			$('.first_lnb>li>div').slideUp()
-			sub_open = false;
-		}
-	};
-	
-	$('body').click(__onbodyclick);
-	
-	
-	/* main slide event */
-	jQuery(function(){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript" src="">
+    /*popup*/
+  	$('.propop').on({ //여러가지의 이벤트를 가질수 있다.가독성을 위해 on 을 사용하면 좋다.
+      // propop의 클라스 이름을 가진 녀석에서 on이벤트를 실행한다.
+  		click:function(){
+        // propop을 클릭할떄 실행해라
+  			blind();
+        // blind함수를 호출해라
+  			$('body').append('<div class="product_popup mobile"><button>열기</button></div>')
+        // body안에서 맨뒤에 마크업을 넣는다( product_popup, mobile의 클라스를 가진 div 안에 button 안에 열기를 작성한 것을 넣는다)
+  			$('.product_popup > button').addClass('close')
+        // product_popup 안에 button에게 close라는 클라스 이름을 부여한다.
+  			
+  			centerpop($('.product_popup'))
+  			// product_popup의 클라스를 갖는 녀석을 인자로 사용하여 centerpop 함수를 실행한다.
+  			var content_targent = '.'+$(this).attr('id');
+        // 선택한 이것의 id속성을 가지고와서 .(클라스)을 붙인것을 content_targent의 변수에 담는다
+  			var target_html = $(content_targent).html();
+        // content_targent의 html을 가지고 오는 것을 target_html의 변수에 담는다.
+  			
+  			$('.product_popup').append('<div class="pro-pop-wrap">'+target_html+'<div>');
+        // product_popup안에서의 맨뒤에 마크업을 넣는다(pro-pop-wrap이라는 클래스 안에 target_html을 넣은 것을 넣는다.)
+  			
+  			$('.close').click(function(){
+          // close라는 클라스를 클릭하면, 실행해라
+  				$('.product_popup').animate({
+            // product_popup이라는 클라스에 animate를 실행해라
+  					'top':$(window).scrollTop()+$(window).height()
+            // 윈도우의 스크롤의 수직위치 +윈도우의 높이값을 top으로 본낸다.
+  				},function(){
+            //  콜백함수르 사용하여, 위의 내용이 끝난후 함수를 실행한다.
+  					$(this).remove()
+            // 이것(.product_popup라는 클라스)을 지운다
+  					$('.blind').fadeOut(function(){
+              // blind라는 클라스를 가진것을 서서히 사라지게 하면 실행해라
+  						$(this).remove()
+              // 이것(blind라는 클라스)를 지워라
+  					})
+  					{}
+  				})
+  				
+  			})
+  			return false;
+        // 보이드 함수였으므로 return false를 사용하여 반환한다.
+  		}
+  			
+  	})
+  	
+  	  	function centerpop(targent){
+  		// tatgent이라는 인자를 가진 centerpop이라는 함수
+	  		targent.css({
+	  			// targent에게 css 효과를 준다.
+	  			'margin-left':'50%',
+	        // 왼쪽마진을 50%주고
+	  			'left':-(targent.width()/2)+'px',
+	        // targent의 가로의 반값의 -px값 만큼 왼쪽으로 보낸다.
+	  			'top':$(window).scrollTop()+$(window).height()
+	        // 윈도우의 스크롤의 수직위치 + 윈도우의 높이값 만큼 top을 준다.
+	        // 현재 윈도우 스크린탑의 위치 값 + 보고있는 윈도우의 높이 값 만큼 top를 준다.
+	  				
+	  		}).show().animate({
+	        // 보여주고 animate로 보낸다.
+	  			'top':$(window).scrollTop()+40
+	        // 윈도우의 스크롤의 수직 위치 +40 만큼 top으로 보낸다.
+	        // 밑에서튀어나오게 하려고. 위치값이 바닥에 둔다. 
+	  		})
+	  	}
+	  	window._centerpop = centerpop;
+	  	// 윈도우의 _centerpop이라는 클라스는 centerpop과 같다.
+	  	// 윈도우의 _centerpop이라는 객체의 값을 centerpop으로 지정한다.(?) - 익명함수와 비슷??
+	  	//  var window = {} 객체로 만들어 놓고, 그안에 넣어 놓고 불러오는거??
+	  	
+	  	
+	  	
+	  		// +++++++++++++++++read 2
+  	
 
-	    var visual = $('#slide > div');
-	    var button = $('.page_btn > ul > li');
-	    var current = 0;
-	    var setIntervalId;
-
-	    button.on({
-	        click:function(){
-	            var tg = $(this);
-	            var i = tg.index();
-
-	            button.removeClass('on');
-	            tg.addClass('on');
-
-	            move(i);
-	        }
-	    });
-	    
-	    $(".page_btn").on({
-	        mouseover:function(){
-	            clearInterval(setIntervalId);
-	        },
-	        mouseout:function(){
-	            timer();
-	        }
-	    });
-	    
-	    timer();
-	    function timer(){
-	        setIntervalId = setInterval(function(){
-	            var n = current + 1;
-	            if(n == visual.size()){
-	                n = 0;
-	            }
-	            
-	            button.eq(n).trigger('click');
-	        }, 4500);
-	    }
-	    
-	    function move(i){
-	        var currentEl = visual.eq(current);
-	        var nextEl = visual.eq(i);
-	        
-	        currentEl.fadeOut();
-	        nextEl.fadeIn("fast");
-
-	        current = i;     
-	    }
-	});	
-	
-	
-	/* main button event*/
-	$('.default_btn').hover(function(){
-		$(this).stop().animate({
-			'padding':'0 40px'
-		},500);
-	},function(){
-		$(this).stop().animate({
-			'padding':'0 10px'
-		},500);
-	});
-	
-	
-	
-	/* main radisu btn event*/
-	$('.radius_btn').hover(function(){
-		$(this).find('span:eq(1)').stop().animate({
-			'padding':'0 20px'
-		},500);
-	},function(){
-		$(this).find('span:eq(1)').stop().animate({
-			'padding':'0'
-		},500);
-	});
-	
-	/*top gnb script*/
-	var gnb_height = $('.gnb').height();
-	
-	
-	__onscroll = function(){
+  	
+		  var __onbodyclick = function(){};
+		  // 함수를 __onbodyclick이라는 변수에 담는다.
+		  var __onscroll = function(){};
+		  // 함수를  __onscroll이라는 변수에 담는다.
+		  $(function(){
+		  	// 함수를 실행한다.
+		    
+		  	/*gnb*/
+		  	$('.first_lnb>li>a').on({
+		  		//first_lnb이라는 클라스 안에 li안에 a에 on이벤트를 실행한다. 
+		  		click:function(){
+		  			// a를 클릭하면, 함수를 실행해라
+		  			if ($(this).attr("href") == "") {
+		          // 만약 이것(a)의 herf라는 것의 속성이 ""과 같다면
+		  				$(this).parent().children('div').slideToggle().parent('li').addClass('on').siblings('li').removeClass('on').children('div').hide();
+		          // 이것(a)의 부모의 자식의 div에게 slideToggle(클릭하면 펼치거나 접는 이벤트)을 실행하고, 그의 부모인 li에게 on클래스를 부여하고 그 외의 li에겐 on클래스를 지우고 지운 li의 자식 div는 감춘다. 
+		  				return false;
+		          // a태그는 반환을 안함으로 반한시키기 위해 return false을 사용한다
+		  			}
+		  		}
+		  	
+		  	});
+		  	
+		  	$('.mobilegnb').click(function(){
+		      // mobilegnb 라는 클라스를 클릭하면 함수를 실행해라
+		  		$(this).next('nav').slideToggle()
+		      // 이것(mobilegnb)의 다음에 오는 형제 (nav)에게 slideToggle(클릭하면 펼치거나 접는 이벤트)을 실행한다.
+		  	})
+		  	
+		  	$(window).resize(function(){
+		      // 윈도우의 사이즈를 조절할 떄, 함수를 실행해라
+		  		var width = $(this).width()
+		      // 이것(윈도우)의 가로의 값을 width라는 변수에 담는다.
+		  		if(width > 736){
+		        // 만약 변수 width가 736보다 크면 실행해라
+		  			$('.gnb nav').show()
+		        // gnb라는 클라스의 nav태그를 show로 보여줘라
+		  		}else{
+		        // 그 외의 경우에 실행해라
+		  			$('.gnb nav').hide()
+		        // gnb라는 클라스의 nav태그를 hide로 감추어라
+		  		}
+		  		
+		  	})
+		  	
+  			
+		  	/* gnb mouseleave event */
+		  	var sub_open = false;
+		    // false라는 값을 sub_open이라는 변수에 담는다
 		
-		var sct = $(this).scrollTop();
+		    $('.first_lnb>li>div').mouseleave(function(){
+		      // first_lnb이라는 클라스 안에 li안에 div에 마우스가 div영역에서 벗어났을떄 실행해라.
+		  		sub_open = true;
+		      // sub_open의 값을 true로 바꿔라
+		  	});
+		  	
+		  	__onbodyclick = function(){
+		      // __onbodyclick의 함수를 실행한다.
+		  		if($('.first_lnb>li').is('.on') && sub_open){
+		        // 만약 first_lnb클라스 안에 li 안에 on클래스가 있으면서 변수 sub_open값이 ture라는 값과 같으면 실행해라
+		  			$('.first_lnb>li>div').slideUp()
+		        // first_lnb이라는 클라스 안에 li안에 div를 slideUp(슬라이드를 올리는 효과)를 준다
+		  			sub_open = false;
+		        // sub_open의 값을 false로 바꾼다.
+		  		}
+		  	};
+		  	
+		  	$('body').click(__onbodyclick);
+		  	// body를 클릭했을때 __onbodyclick함수를 실행해라
+		  	
+		  	/* main slide event */
+		  	jQuery(function(){
+		    // 함수를 실행해라
+		  	    var visual = $('#slide > div');
+		        // slide라는 아이디를 가진 녀석 인에 있는 div를 viwual이라는 함수에 담는다.
+		  	    var button = $('.page_btn > ul > li');
+		        // page_btn이라는 클라스 안에 ul안에 li를 button이라는 변수에 담는다.
+		  	    var current = 0;
+		        // current의 변수의 값을 0으로 준다
+		  	    var setIntervalId;
+		        // setIntervalId을 변수로 만든다
 		
+		  	    button.on({
+		          // 변수 button에 on이벤트를 실행한다.
+		  	        click:function(){
+		              // button을 클릭했을때, 실행해라
+		  	            var tg = $(this);
+		                // 이것(button이라는 변수)를 tg라는 변수에 담는다
+		  	            var i = tg.index();
+		                // tg의 index(줄수)를 i라는 변수에 담는다.
+		  	            button.removeClass('on');
+		                // button이라는 변수에 있는 on이라는 클라스를 지운다.
+		  	            tg.addClass('on');
+		                // tg라는 변수에 on이리는 클라스를 준다.
 		
-		if(sct > 80 && !$('header').is('.sct_active') && $(window).width() > 736){
+		  	            move(i);
+		                // i라는 인자를 가진 move라는 함수를 호출한다.
+		  	        }
+		  	    });
+		  	    
+		  	    $(".page_btn").on({
+		          // page_btn이라는 클라스를 가진 녀석에게 on이벤트를 실행한다.
+		  	        mouseover:function(){
+		              // 선택한 클라스에 마우스 오버(마우스를 올렸을때) 함수를 실행해라.
+		  	            clearInterval(setIntervalId);
+		                // setIntervalId라는 인자를 가진 clearInterval(실행중인 이벤트 정지)을 실행한다.
+		  	        },
+		  	        mouseout:function(){
+		              // 선택한 클라스에 마우스아웃(마우스가 떠났을때) 함수를 실행해라
+		  	            timer();
+		                // timer()라는 함수를 호출해라
+		  	        }
+		  	    });
+		  	    
+		  	    timer();
+		        // timer() 라는 함수를 호출해라
+		        
+		  	    function timer(){
+		          // timer라는 이름을 가진 함수를 정의한다.
+		  	        setIntervalId = setInterval(function(){
+		              // setInterval이라는 함수를 setIntervalId라는 변수에 담는다.
+		              //setIntervalId 는 핸들러
+		  	            var n = current + 1;
+		                // currentr+1이라는 값을 변수 n에 담는다.
+		  	            if(n == visual.size()){
+		                  //만약 변수 n이 visual이라는 변수의 size와 같다면, 
+		  	                n = 0;
+		                    // 변수 n은 0이다.
+		  	            }
+		  	            
+		  	            button.eq(n).trigger('click');
+		                // 변수 button의 n번째 줄의 trigger를 사용하여 click이벤트를 발생시킨다.
+		  	        }, 4500);
+		            // 4.5초 동안(4.5초에 한번씩.)
+		  	    }
+		  	    
+		  	    function move(i){
+		          // i라는 인자를 가진 move라는 함수
+		  	        var currentEl = visual.eq(current);
+		            // visual이라는 변수의 current의 줄을 currentEl이라는 변수에 담는다.
+		  	        var nextEl = visual.eq(i);
+		            // visual이라는 변수의 i 라는 인자의 줄을 nextEl이라는 변수에 담는다.
+		  	        
+		  	        currentEl.fadeOut();
+		            //변수 currentEl을 fadeOut(서서히 사라지게 하고)
+		  	        nextEl.fadeIn("fast");
+		            // 변수 nextEl을 빠르게 fadeIn(서서히 보이게 )한다.
+		
+		  	        current = i;     
+		            // 변수 current과 i는 같다
+		  	    }
+		  	});	
+  			
+  			
+  			
+  			/* main button event*/
+		  	$('.default_btn').hover(function(){
+		      // default_btn라는 클라스에 hover이벤트를 실행한다
+		  		$(this).stop().animate({
+		        // 이것(default_btn)을 멈추고, animate효과를 준다.
+		  			'padding':'0 40px'
+		        // 위아래 0, 좌우 40px의 패딩값을 준다
+		  		},500);
+		      // 0.5초에 거쳐 보낸다.
+		  	},function(){
+		      // ()콜백 함수를 이용)animate가 끝난후, 함수를 실행한다 
+		  		$(this).stop().animate({
+		        // 이것(default_btn)을 멈추고 animate 효과를 준다.
+		  			'padding':'0 10px'
+		        // 위아래 0, 좌우 10px의 패딩값을 준다
+		  		},500);
+		      // 0.5초에 거쳐 보낸다.
+		  	});
+  			
+  			
+  			/* main radisu btn event*/
+		  	$('.radius_btn').hover(function(){
+		      // radius_btn이라는 클라스의 hover이벤트를 실행한다.
+		  		$(this).find('span:eq(1)').stop().animate({
+		        // 이것(radius_btn)에서 find를 이용하여 span의 1번줄에 해당하는 녀석을 멈추고 animate효과를 준다.
+		  			'padding':'0 20px'
+		        // 위아래 0, 좌우 20px의 패딩값을 준다
+		  		},500);
+		      // 0.5초에 거쳐 보낸다.
+		  	},function(){
+		      // ()콜백 함수를 이용)animate가 끝난후, 함수를 실행한다 
+		        $(this).find('span:eq(1)').stop().animate({
+		          // 이것(radius_btn)에서 find를 이용하여 span의 1번줄에 해당하는 녀석을 멈추고 animate효과를 준다.
+		  			'padding':'0'
+		        // 위아래좌우 0의 패딩값을 준다
+		      },500);
+		      // 0.5초에 거쳐 보낸다.
+		  	});
+  			
+  			
+  			
+  			/*top gnb script*/
+			  var gnb_height = $('.gnb').height();
+			 //gnb라는 클라스를 가진 것의 높이값을 gnb_height라는 변수에 담는다 
+			 
+			  __onscroll = function(){
+			 //   __onscroll라는 변수에 담은 함수
+			  var sct = $(this).scrollTop();
+			 //이것의 스크롤의 수직위치의 값을 sct 라는 변수에 담는다
+			 
+			  if(sct > 80 && !$('header').is('.sct_active') && $(window).width() > 736){
+			 //만약 sct의 변수가 80보다 크고 태그header에 sct_actuve클라스가 없고 윈도우의 가로값이 736보다 크면 실행해라
+			  $('header').addClass('sct_active');
+			// 태그 header에 sct_active 라는 클라스를 넣는다
+			  $('.gnb').css({
+			 //gnb라는 클라스에 css효과를 준다
+			  "position":"relative",
+			  "z-index":"10"
+			//포지션을 리렉티브를 주고 제트인덱스를 10준다
+			  }).before('<div class="header_bg"></div>');
+			// 이클라스 앞에 header_bg라는 클라스를 갖는 div를 만든다. 
 			
-			$('header').addClass('sct_active');
+			  $('.header_bg').css({
+			//header_bg라는 클라스에 css효과를 준다. 
+			  "height":"90px",
+			  "background":"#000",
+			  "position":"absolute",
+			  "top":"0",
+			  "z-index":"5",
+			  "width":"100%",
+			  "display":"none"
+			//높이 값을 90px. 백그라운드는 검정색. 포지션은 엡솔루트. 탑의 위치는 0. 제트인덱스는 5. 가로값은 100%. 디스플레이는 논
+			  }).fadeTo(500,0.5);
+			//fadeTo(투명도 조절)을 이용하여 0.5초동안 50% 투명도를 준다. 
+			 
+			  }else if(sct < 80 && $('header').is('.sct_active') && $(window).width() >763){
+			  //만약 sct의 변수가 80보다 작고 태그header에 sct_actuve클라스가 잇고 윈도우의 가로값이 736보다 크면 실행해라
+			  $('header').removeClass('sct_active');
+			 //태그 header안에 sct_active라는 클래스를 지운다
+			  $('.header_bg').fadeOut(500,function(){
+			//headet_bg라는 클래스에 fadeOut(서서히 사라지게하기)을 0.5초에 걸쳐실행 한후 (콜백함수)다음 함수를 실행해라
+			  $('.header_bg').remove();
+			  });
+			 //header_bg라는 클라스를 지운다. 
+			  }
+			 
+			  };
+			  $(window).on("scroll", __onscroll);
+			 //윈도우안에 __onscroll을 scroll 시킨다. 
+			 
+			  //媛쒕컻�� 留욊쾶 �섏젙 �꾩슂
+			  $('.arrow-box').hide()
+			//arrow-box라는 클라스를 숨긴다
+			  $('.ckecked_btn').click(function(){
+			 //ckeckes_btn이라는 클라스를 클릭했을때. 함수를 실행해라
+			  /*
+			  $('.arrow-box').show().css({
+			// arrow-box라는 클라스를 보여주고 css 효과를 준다. 
+			  'top':$(this).position().top - 5,
+			  'left':$(this).position().left + $(this).innerWidth()
+			 //이것(arrow-box라는 클라스)의 포지션 탑의 -5의 값을 탑에게 준다. 
+			//이것(arrow-box라는 클라스)의 포지션 레프트 + 이것(arrow-box라는 클라스)의 innerWidth(패딩을 포함한) 값을 레프트에게 준다
+			 
+			  })
+			  return false;
+			//return false 을 이용하여 반환시킨다
+			  */
+			  })
+			 
+			 
+			 
+			  /*faq*/
+			  $('.faqlist>ul>li').click(function(){
+			 //faqlist 라는 클라스 안에 ul안에 li를 클릭했을때 실행해라
+			$('.faqlist>ul>li').children('div').stop().slideUp()
+			 //faqlist안에 ul 안에 li 안에 div라는 자식요소를 멈추고 slideUp(지정한것을 올리는 효과)을 준다
+			$(this).children('div').stop().slideToggle()
+			  })
+			  //faqlist안에 ul 안에 li 안에 div라는 자식요소를 멈추고 slideToggle(지정한 것을 말아 올리거나 펼치는효과)을 준다. 
+			 
+			 
+			 $('.propop').on({
+		      // propop의 클라스 이름을 가진 녀석에서 on이벤트를 실행한다.
+		  		click:function(){
+		        // propop을 클릭할떄 실행해라
+		  			blind();
+		        // blind함수를 호출해라
+		  			$('body').append('<div class="product_popup mobile"><button>열기</button></div>')
+		        // body안에서 맨뒤에 마크업을 넣는다( product_popup, mobile의 클라스를 가진 div 안에 button 안에 열기를 작성한 것을 넣는다)
+		  			$('.product_popup > button').addClass('close')
+		        // product_popup 안에 button에게 close라는 클라스 이름을 부여한다.
+		  			
+		  			centerpop($('.product_popup'))
+		  			// product_popup의 클라스를 갖는 녀석을 인자로 사용하여 centerpop 함수를 실행한다.
+		  			var content_targent = '.'+$(this).attr('id');
+		        // 선택한 이것의 id속성을 가지고와서 .(클라스)을 붙인것을 content_targent의 변수에 담는다
+		  			var target_html = $(content_targent).html();
+		        // content_targent의 html을 가지고 오는 것을 target_html의 변수에 담는다.
+		  			
+		  			$('.product_popup').append('<div class="pro-pop-wrap">'+target_html+'<div>');
+		        // product_popup안에서의 맨뒤에 마크업을 넣는다(pro-pop-wrap이라는 클래스 안에 target_html을 넣은 것을 넣는다.)
+		  			
+		  			$('.close').click(function(){
+		          // close라는 클라스를 클릭하면, 실행해라
+		  				$('.product_popup').animate({
+		            // product_popup이라는 클라스에 animate를 실행해라
+		  					'top':$(window).scrollTop()+$(window).height()
+		            // 윈도우의 스크롤의 수직위치 +윈도우의 높이값을 top으로 본낸다.
+		  				},function(){
+		            //  콜백함수르 사용하여, 위의 내용이 끝난후 함수를 실행한다.
+		  					$(this).remove()
+		            // 이것(.product_popup라는 클라스)을 지운다
+		  					$('.blind').fadeOut(function(){
+		              // blind라는 클라스를 가진것을 서서히 사라지게 하면 실행해라
+		  						$(this).remove()
+		              // 이것(blind라는 클라스)를 지워라
+		  					})
+		  					
+		  				})
+		  				
+		  			})
+		  			return false;
+		        // 보이드 함수였으므로 return false를 사용하여 반환한다.
+		  		}
+		  			
+		  	})
+		  	
+		  	  	function centerpop(targent){
+		  		// tatgent이라는 인자를 가진 centerpop이라는 함수
+			  		targent.css({
+			  			// targent에게 css 효과를 준다.
+			  			'margin-left':'50%',
+			        // 왼쪽마진을 50%주고
+			  			'left':-(targent.width()/2)+'px',
+			        // targent의 가로의 반값의 -px값 만큼 왼쪽으로 보낸다.
+			  			'top':$(window).scrollTop()+$(window).height()
+			        // 윈도우의 스크롤의 수직위치 + 윈도우의 높이값 만큼 top을 준다.
+			  				
+			  		}).show().animate({
+			        // 보여주고 animate로 보낸다.
+			  			'top':$(window).scrollTop()+40
+			        // 윈도우의 스크롤의 수직 위치 +40 만큼 top으로 보낸다.
+			  		})
+			  	}
+			  	window._centerpop = centerpop;
+			  	// 윈도우의 _centerpop이라는 클라스는 centerpop과 같다.
+	  	
+	  	
+	  	
+	  	
+	  	
+			  /*address*/
+			  $('.pop-open').on({
+			//pop-open에 on이벤트를 실행한다. 
+			  click:function(){
+			 //pop-open을 클릭하면  함수 실행
+			  blind();
+			//blind 라는 함수 호출
+			  centerpop($('.addpop'));
+			//addpop라는 클라스를 인자로 갖는 centerpop 이라는 함수 호출. 
+			  return false
+			 // return false 을 사용하여 함수값을 반환시킨다. 
+			  }
+			  })
+			 
+			  $('.addpop .close').on({
+			//addpop이라는 클라스 안에 close 라는 클라스에 on이벤트를 준다 
+			  click:function(){
+			 //addpop이라는 클라스 안에 close 라는 클라스를 클릭햇을 때 함수를 실행한다. 
+			  $('.blind').remove()
+			//blind 라는 클라스를 remove시킨다. 
+			  $('.addpop').hide()
+			// addpop 이라는 클라스를 숨긴다 
+			  return false
+			//return false 을 사용하여 함수값을 반환 시킨다.   
+			  }
+			  })
+			 
+			 
+			 
+			 
+			 
+			  /*address*/
+			  	var addnumber = null;
+			  	var addstring = null;
+			  	var refaddres = null;
+			  	
+			    $('.addtable tbody tr').on({
+			 // addtable클라스 안에 tbody안에 tr에 on 이벤트를 준다
+			   click:function(){
+			  //tr을 클릭하면 실행해라
+			   addnumber = $(this).find('td:eq(0)').html();
+			 //변수 addnumber는 이것(tr)의 td의 0번째줄을 find를 사용하여 찾아서 html를 넣는다
+			   addstring = $(this).find('td:eq(1)').html();
+			   //변수 addstring는 이것(tr)의 td의 첫번째줄을 find를 사용하여 찾아서 html를 넣는다
+			   refaddres = $(this).find('td:eq(2)').html();
+			   //변수 refaddres는 이것(tr)의 td의 두번째줄을 find를 사용하여 찾아서 html를 넣는다
+			  
+			   }
+			   });
+			  
+			  	
+			  	
+			  	
+			  	$('.old-addconfim').on({
+			      // old-addconfim라는 클라스에 on 이벤트를 준다.
+			  		click:function(){
+			  			// old-addconfim클라스를 클릭했을때, 함수를 실행해라.
+			  			if(addnumber == null && addstring==null){
+			  				// 만약 변수 addnumber가 null의 값을 가지고, 변수 addstring의 값이 null 과 같으면 실행해라.
+			  				$('.blind').remove();
+			          //  blind라는 클라스를 지운다
+			  				$('.addpop').hide();
+			          // addpop이라는 클라스를 숨긴다.
+			  			}else if(addnumber != null&&addstring != null){
+			  				// 그것이 아니라면, 변수 addnumber가 null의 값이 아니고, 변수 addstring의 값이 null이 아니라면
+			  				var stnum = String(addnumber);
+			          // 변수 addnumber이라는 인자를 갖는 String이라는 함수를 변수 stnum에 담는다.
+			  				var firstnum = stnum.substring(0,3);
+			          // 변수 stnum의 substring(문자열 자르기)을 이용하여 0번열부터 3번열까지의 글자를 firstnum이라는 변수에 담는다.
+			  				var lastnum = stnum.substring(4,7);
+			          // 변수 stnum의 substring(문자열 자르기)을 이용하여 4번열부터 7번열까지의 글자를 lastnum이라는 변수에 담는다.
+			  				var address_test = addstring;
+			          // addstring이라는 변수는 address_test이라는 변수에 담는다.
+			  				
+			  				$('.addfirstnum').val(firstnum);
+			          // addfirstnum라는 클라스에 firstnum이라는 value값을 가지고 온다.
+			  				$('.addlastnum').val(lastnum);
+			          // addlastnum라는 클라스에 lastnum이라는 value값을 가지고 온다.
+			  				$('.address_type1').val(address_test);
+			          // address_type1이라는 클라스에 address_test라는 value값을 가지고 온다.
+			  				$('.blind').remove();
+			          // blind라는 클라스는 지운다.
+			  				$('.addpop').hide();
+			          // addpop이라는 클라스를 숨긴다.
+			  				
+			  			}
+			  			
+			  			return false;
+			  			// return false로 함수 값을 반환시킨다.
+			  		}
+			  	})
+			  	
+			  	$('.new-addconfim').on({
+			  		// new-addconfim이라는 클라스에 on이벤트를 실행한다.
+			  		click:function(){
+			  			// new-addconfim을 클릭했을때 함수를 실행한다.
+			  			if(addnumber == null && addstring==null){
+			  				// 만약 변수 addnumber값이 null이면서 addstring값이 null이면
+			  				$('.blind').remove();
+			  				// blind클라스를 지우고
+			  				$('.addpop').hide();
+			  				// addpop을 숨긴다.
+			  			}else if(addnumber != null&&addstring != null){
+			  				// 그것이 아니라면, 변수 addnumber가 null의 값이 아니고, 변수 addstring의 값이 null이 아니라면
+			  				var stnum = String(addnumber);
+			          // 변수 addnumber이라는 인자를 갖는 String이라는 함수를 변수 stnum에 담는다.
+			  				var firstnum = stnum.substring(0,3);
+			          // 변수 stnum의 substring(문자열 자르기)을 이용하여 0번열부터 3번열까지의 글자를 firstnum이라는 변수에 담는다.
+			  				var lastnum = stnum.substring(4,7);
+			          // 변수 stnum의 substring(문자열 자르기)을 이용하여 4번열부터 7번열까지의 글자를 lastnum이라는 변수에 담는다.
+			  				var address_test = addstring;
+			          // addstring이라는 변수는 address_test이라는 변수에 담는다.
+			  				
+			  				$('.addfirstnum').val(firstnum);
+			          // addfirstnum라는 클라스에 firstnum이라는 value값을 가지고 온다.
+			  				$('.addlastnum').val(lastnum);
+			          // addlastnum라는 클라스에 lastnum이라는 value값을 가지고 온다.	
+			  				$('.address_type1').val(address_test+"\ "+refaddres);
+			  			// address_type1이라는 클라스에 address_test + \ + refaddres라는 value값을 가지고 온다.
+			  				$('.blind').remove();
+			          // blind라는 클라스는 지운다.
+			  				$('.addpop').hide();
+			          // addpop이라는 클라스를 숨긴다.
+			  				
+			  			}
+			  			
+			  			return false;
+			  			// return false로 함수 값을 반환시킨다.
+			  		}
+			  	})
+			  	
+			  	
+			  	
+			  	  	/*join add*/
+			  	var add_count = 0;
+			    // add_count의 변수 값이 0
+			  	/*
+			  	$('.sn-add').on({
+			  		// sn-add라는 클래스에 on이벤트를 실행한다.
+			  		click:function(){
+			      // sn-add를 클릭하면, 함수를 시작해라.
+			  			add_count +=1;
+			        // 변수 add_count 더한후 대입 1을 한다.
+			  			$(this).parent('td').append('<br /><input type="text" style="width:300px; margin-top:5px"  id="number" name="sn[]" />');
+			        // 이것(sn-add)의 td를 갖는 부모에 뒤에서부터 <br /><input type="text" style="width:300px; margin-top:5px"  id="number" name="sn[]" />을 넣는다.
+			        
+			  			return false;
+			  			// return false으로 함수값을 반환시킨다.
+			  		}
+			  	});
+			  	*/
+			  	
+			  	
+			  	/*email*/
+			  	$('.select-mail').change(function(){
+			      // select-mail이라는 클라스를 변경하면, 함수를 실행한다.
+			  		console.log('aa')
+			      // aa라는 콘솔을 찍어본다.
+			  		$('.mailaddress').val($(this).val())
+			      // mailaddress라는 클라스에 이것(select-mail)의 value값을 가지고 온것을 value값을 가지고 온다.
+			  	})
+			  	
+			  	$('.addpop .tab li').on({
+			  		// addpop이라는 클라스의 tab의 클라스 안에 li에 on이벤트를 준다.
+			  		click:function(){
+			        // li를 클릭하면, 함수를 실행해라
+			  			$(this).addClass('on').siblings().removeClass('on');
+			        // 이것(li)에 on 클라스를 주고, 나머지에게  on클라스를 제거 한다.
+			        
+			  			return false;
+			        // return false으로 함수값을 반환시킨다.
+			  		}
+			  	})
+			  	
+			  	
+			  	function blind(){
+			  		$('body').append('<div class="blind"></div>')
+			  		$('.blind').fadeTo(1000,0.8)
+			  		
+			  	}
+			  	window._blind = blind;
+			  	
+			  	
+			  	
+			  	/*community list*/
+			  	$('.meteora_news ul li').find('img').css({
+			  		'width':'103%',
+			  		'margin-left':'-20px'	
+			  	}).parent().parent('div').css('overflow','hidden')
+			  	
+			  	$('.meteora_news ul li').hover(function(){
+			  		
+			  		$(this).find('img').stop().fadeTo(200,0.3).animate({
+			  			'margin-left':'0'
+			  		})
+			  	},function(){
+			  		$(this).find('img').stop().fadeTo(200,1).animate({
+			  			'margin-left':'-20px'
+			  		})
+			  		
+			  	})
+			  	
+			  	/*id pw*/
+			  	$('.login_box input').on({
+			  		click:function(){
+			  			
+			  			if($('#parson_member').is('input:checked')){
+			  				$('.usermesg').text('�대쫫怨� �대찓��');
+			  			}else if($('#company_member').is('input:checked')){
+			  				$('.usermesg').text('湲곗뾽怨� �대찓��');
+			  			}
+			  			
+			  		}
+			  	})
+			  	
 			
-			$('.gnb').css({
-				"position":"relative",
-				"z-index":"10"
-					}).before('<div class="header_bg"></div>');
+			  	var callback = function(){};
+			  	function messageAlet(msg, cb){
+			  		
+			  		//var megtxt = [
+			  		//              "怨좉컼�섏쓽 �꾩씠�붾뒗 ["+param1+"] �낅땲��.",
+			  		//              "�낅젰�섏떊�뺣낫媛� �쇱튂�섏� �딆뒿�덈떎.<br/>�뺣낫 �ㅼ떆 �뺤씤 �댁＜�몄슂.",
+			  		//             "�낅젰�섏떊 �대찓�쇰줈<br />硫붿씪�� 諛쒖넚�섏��듬땲��."
+			  		//              ]
+			  		
+			  		//var msg = megtxt[idx];
+			  		
+			  		if (typeof cb != 'undefined') callback = cb;
+			  		// undefined는 데이터형(문자형, 숫자형 아님)
+			  		// if(cb != undefined) callback = cb; = 이렇게 할수 있다.
+			  		
+			  		blind();
+			  		
+			  		$('body').append('<div class="msgbox">'+
+			  				'<button class="close">�リ린</button>'+
+			  				'<p>'+msg+'</p>'+
+			  				'<div class="btn-group"><a href="" class="radius_btn ok org"><span></span><span>�뺤씤</span><span></span></a></div>'+
+			  				'</div>')
+			  		
+			  		$('.msgbox').find('button').addClass('close');
+			  		$('.msgbox').find('.radius_btn').addClass('comfim');
+			  		centerpop($('.msgbox'))
+			  		
+			  		
+			  		$('.msgbox').animate({
+			  			'top':'+=25%'
+			  		})
+			  		
+			  	}
+			  	
+			  	window.msgbox = messageAlet;
+			  	
+			  	$('body').on("click", ".msgbox .ok", function(){
+			  		$('.msgbox').remove();
+			  		$('.blind').remove();
+			  		callback();
+			  		callback = function(){};
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	});
+			  	
+			  	$('body').on("click", ".msgbox .close", function(){
+			  		$('.msgbox').remove();
+			  		$('.blind').remove();
+			  		callback();
+			  		callback = function(){};
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	});
+			  	
+			  	$('.msgbox .close').click(function(){
+			  		$('.msgbox').remove();
+			  		$('.blind').remove();
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
+			  	
+			  	$('.msgbox .comfim').click(function(){
+			  		$('.msgbox').remove();
+			  		$('.blind').remove();
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
+			  	
+			  	
+			  	
+			  	$('.infopopup').on({
+			  		click:function(){
+			  		
+			  			var content = $(this).children('div').html();
+			  			blind()
+			  			$('body').append('<div class="company_popup mobile"><button>�リ린</button></div>')
+			  			$('.company_popup').children('button').addClass('close');
+			  			
+			  			$('.company_popup').append('<div class="pro-pop-wrap">'+content+'</div>')
+			  			
+			  			centerpop($('.company_popup'))
+			  			
+			  			$('.close , .company_popup .btngroup>a').click(function(){
+			  				console.log('aa')
+			  				$('.company_popup').remove();
+			  				$('.blind').remove();
+			  				return false;
+			          // return false으로 함수값을 반환시킨다.
+			  			});
+			  			
+			  			return false;
+			        // return false으로 함수값을 반환시킨다.
+			  		}
+			  	})	
+			  	
+			  	
+			  	
+			  	
+			  	
+			  		
+			  	$('.ea_modify').click(function(){
 			
-			$('.header_bg').css({
-				"height":"90px",
-				"background":"#000",
-				"position":"absolute",
-				"top":"0",
-				"z-index":"5",
-				"width":"100%",
-				"display":"none"
-			}).fadeTo(500,0.5);
+			  		var content = $('.ea_modify_pop').html()
+			  		blind();
+			  		
+			  		$('body').append('<div class="ea_popup"><button>�リ린</button></div>')
+			  		
+			  		$('.ea_popup').children('button').addClass('close');
+			  		
+			  		$('.ea_popup').append('<div class="pro-pop-wrap">'+content+'</div>')
+			  		
+			  		centerpop($('.ea_popup'))
+			  		
+			  		$('.close , .ea_popup .btngroup>a').click(function(){
+			  			
+			  			$('.ea_popup').remove();
+			  			$('.blind').remove();
+			  			return false;
+			        // return false으로 함수값을 반환시킨다.
+			  		});
+			  		
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	});
 			
-		}else if(sct < 80 && $('header').is('.sct_active') && $(window).width() >763){
+			  	
+			  	
 			
-			$('header').removeClass('sct_active');
+			  	
+			  	/*tab*/	
+			  	$('.proview-tab.depth2>ul>li').click(function(){
+			  		probanner($(this))
+			  		
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
 			
-			$('.header_bg').fadeOut(500,function(){
-				$('.header_bg').remove();
-			});
+			  	$('.proview-tab.depth2>ul>li>div>ul>li').click(function(){
+			  		probanner($(this))
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
 			
-		}
-		
-	};
-	$(window).on("scroll", __onscroll);
-	
-	
-	//媛쒕컻�� 留욊쾶 �섏젙 �꾩슂
-	$('.arrow-box').hide()
-	$('.ckecked_btn').click(function(){
-		
-		/*
-		$('.arrow-box').show().css({
-			'top':$(this).position().top - 5,
-			'left':$(this).position().left + $(this).innerWidth()
-		
+			  	$('.proview-tab.depth2>ul>li>div>ul>li>ul>li>p>a').click(function(){
+			  		probanner($(this),1)
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
+			  		
+			  	$('.one_tap>ul>li').click(function(){
+			  		probanner($(this))
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
+			  	$('.one_tap>ul>li>ul>li').click(function(){
+			  		probanner($(this))
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
 			
-		})
-		return false;
-		*/
-	})
-	
-	
-	
-	/*faq*/
-	$('.faqlist>ul>li').click(function(){
-		$('.faqlist>ul>li').children('div').stop().slideUp()
-		$(this).children('div').stop().slideToggle()
-	})
-	
-	
-	
-	/*popup*/
-	$('.propop').on({
-		click:function(){
-			blind();
-			$('body').append('<div class="product_popup mobile"><button>�リ린</button></div>')
-			$('.product_popup > button').addClass('close')
+			  	$('.normaltap>ul>li').click(function(){
+			  		probanner($(this))
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
+			  	
+			  	$('.proveiw-gride.sidetap ul li').click(function(){
+			  		probanner($(this))
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
+			  	
+			  	$('.solotap > ul > li').click(function(){
+			  		probanner($(this))
+			  		return false;
+			      // return false으로 함수값을 반환시킨다.
+			  	})
 			
-			centerpop($('.product_popup'))
 			
-			var content_targent = '.'+$(this).attr('id');
-			var target_html = $(content_targent).html();
+			  	function probanner(target,depth){
+			  			
+			  			if(depth == undefined) target.addClass('on').siblings('li').removeClass('on')	
+			  			if(depth == 1) target.parent().parent('li').addClass('on').siblings('li').removeClass('on')
+			  			
+			  		}
+			  	
+			  	
+			  	
+			  	
 			
-			$('.product_popup').append('<div class="pro-pop-wrap">'+target_html+'<div>');
-			
-			$('.close').click(function(){
-				$('.product_popup').animate({
-					'top':$(window).scrollTop()+$(window).height()
-				},function(){
-					$(this).remove()
-					$('.blind').fadeOut(function(){
-						$(this).remove()
-					})
-					
-				})
-				
-			})
-			return false;
-		}
-		
-	})
+			  		
+			  	
+			  });
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  	
+  	
+  	
+  	</script>
+</head>
+<body>
 	
-	$(window).resize(function(){
-		
-		centerpop($('.product_popup'))
-	})
-	
-	
-	
-	
-	function centerpop(targent){
-		
-		targent.css({
-			
-			'margin-left':'50%',
-			'left':-(targent.width()/2)+'px',
-			'top':$(window).scrollTop()+$(window).height()
-				
-		}).show().animate({
-			'top':$(window).scrollTop()+40
-		})
-	}
-	window._centerpop = centerpop;
-	
-	/*address*/
-	$('.pop-open').on({
-		click:function(){
-			
-			blind();
-			centerpop($('.addpop'));
-			return false
-			
-		}
-	})
-	
-	$('.addpop .close').on({
-		click:function(){
-			
-			$('.blind').remove()
-			$('.addpop').hide()
-			return false
-			
-		}
-	})
-	
-	/*address*/
-	var addnumber = null;
-	var addstring = null;
-	var refaddres = null;
-	
-	$('.addtable tbody tr').on({
-		click:function(){
-			
-			addnumber = $(this).find('td:eq(0)').html();
-			addstring = $(this).find('td:eq(1)').html();
-			refaddres = $(this).find('td:eq(2)').html();
-		
-		}
-	});
-	
-	
-	
-	$('.old-addconfim').on({
-		click:function(){
-			
-			if(addnumber == null && addstring==null){
-				
-				$('.blind').remove();
-				$('.addpop').hide();
-			}else if(addnumber != null&&addstring != null){
-				
-				var stnum = String(addnumber);
-				var firstnum = stnum.substring(0,3);
-				var lastnum = stnum.substring(4,7);
-				var address_test = addstring;
-				
-				$('.addfirstnum').val(firstnum);
-				$('.addlastnum').val(lastnum);
-				$('.address_type1').val(address_test);
-				$('.blind').remove();
-				$('.addpop').hide();
-				
-			}
-			
-			return false;
-			
-		}
-	})
-	
-	$('.new-addconfim').on({
-		click:function(){
-			
-			if(addnumber == null && addstring==null){
-				
-				$('.blind').remove();
-				$('.addpop').hide();
-			}else if(addnumber != null&&addstring != null){
-				
-				var stnum = String(addnumber);
-				var firstnum = stnum.substring(0,3);
-				var lastnum = stnum.substring(4,7);
-				var address_test = addstring;
-				
-				$('.addfirstnum').val(firstnum);
-				$('.addlastnum').val(lastnum);
-				$('.address_type1').val(address_test+"\ "+refaddres);
-				$('.blind').remove();
-				$('.addpop').hide();
-				
-			}
-			
-			return false;
-			
-		}
-	})
-	
-	
-	
-	/*join add*/
-	var add_count = 0;
-	/*
-	$('.sn-add').on({
-		
-		click:function(){
-			add_count +=1;
-			$(this).parent('td').append('<br /><input type="text" style="width:300px; margin-top:5px"  id="number" name="sn[]" />');
-			return false;
-			
-		}
-	});
-	*/
-	
-	
-	/*email*/
-	$('.select-mail').change(function(){
-		console.log('aa')
-		$('.mailaddress').val($(this).val())
-	})
-	
-	$('.addpop .tab li').on({
-		
-		click:function(){
-			$(this).addClass('on').siblings().removeClass('on');
-			return false;
-		}
-	})
-	
-	
-	function blind(){
-		$('body').append('<div class="blind"></div>')
-		$('.blind').fadeTo(1000,0.8)
-		
-	}
-	window._blind = blind;
-	
-	
-	
-	/*community list*/
-	$('.meteora_news ul li').find('img').css({
-		'width':'103%',
-		'margin-left':'-20px'	
-	}).parent().parent('div').css('overflow','hidden')
-	
-	$('.meteora_news ul li').hover(function(){
-		
-		$(this).find('img').stop().fadeTo(200,0.3).animate({
-			'margin-left':'0'
-		})
-	},function(){
-		$(this).find('img').stop().fadeTo(200,1).animate({
-			'margin-left':'-20px'
-		})
-		
-	})
-	
-	/*id pw*/
-	$('.login_box input').on({
-		click:function(){
-			
-			if($('#parson_member').is('input:checked')){
-				$('.usermesg').text('�대쫫怨� �대찓��');
-			}else if($('#company_member').is('input:checked')){
-				$('.usermesg').text('湲곗뾽怨� �대찓��');
-			}
-			
-		}
-	})
-	
-
-	var callback = function(){};
-	function messageAlet(msg, cb){
-		
-		//var megtxt = [
-		//              "怨좉컼�섏쓽 �꾩씠�붾뒗 ["+param1+"] �낅땲��.",
-		//              "�낅젰�섏떊�뺣낫媛� �쇱튂�섏� �딆뒿�덈떎.<br/>�뺣낫 �ㅼ떆 �뺤씤 �댁＜�몄슂.",
-		//             "�낅젰�섏떊 �대찓�쇰줈<br />硫붿씪�� 諛쒖넚�섏��듬땲��."
-		//              ]
-		
-		//var msg = megtxt[idx];
-		
-		if (typeof cb != 'undefined') callback = cb;
-		
-		blind();
-		
-		$('body').append('<div class="msgbox">'+
-				'<button class="close">�リ린</button>'+
-				'<p>'+msg+'</p>'+
-				'<div class="btn-group"><a href="" class="radius_btn ok org"><span></span><span>�뺤씤</span><span></span></a></div>'+
-				'</div>')
-		
-		$('.msgbox').find('button').addClass('close');
-		$('.msgbox').find('.radius_btn').addClass('comfim');
-		centerpop($('.msgbox'))
-		
-		
-		$('.msgbox').animate({
-			'top':'+=25%'
-		})
-		
-	}
-	
-	window.msgbox = messageAlet;
-	
-	$('body').on("click", ".msgbox .ok", function(){
-		$('.msgbox').remove();
-		$('.blind').remove();
-		callback();
-		callback = function(){};
-		return false;
-	});
-	
-	$('body').on("click", ".msgbox .close", function(){
-		$('.msgbox').remove();
-		$('.blind').remove();
-		callback();
-		callback = function(){};
-		return false;
-	});
-	
-	$('.msgbox .close').click(function(){
-		$('.msgbox').remove();
-		$('.blind').remove();
-		return false;
-	})
-	
-	$('.msgbox .comfim').click(function(){
-		$('.msgbox').remove();
-		$('.blind').remove();
-		return false;
-	})
-	
-	
-	
-	$('.infopopup').on({
-		click:function(){
-		
-			var content = $(this).children('div').html();
-			blind()
-			$('body').append('<div class="company_popup mobile"><button>�リ린</button></div>')
-			$('.company_popup').children('button').addClass('close');
-			
-			$('.company_popup').append('<div class="pro-pop-wrap">'+content+'</div>')
-			
-			centerpop($('.company_popup'))
-			
-			$('.close , .company_popup .btngroup>a').click(function(){
-				console.log('aa')
-				$('.company_popup').remove();
-				$('.blind').remove();
-				return false;
-			});
-			
-			return false;
-		}
-	})	
-	
-	
-	
-	
-	
-		
-	$('.ea_modify').click(function(){
-
-		var content = $('.ea_modify_pop').html()
-		blind();
-		
-		$('body').append('<div class="ea_popup"><button>�リ린</button></div>')
-		
-		$('.ea_popup').children('button').addClass('close');
-		
-		$('.ea_popup').append('<div class="pro-pop-wrap">'+content+'</div>')
-		
-		centerpop($('.ea_popup'))
-		
-		$('.close , .ea_popup .btngroup>a').click(function(){
-			
-			$('.ea_popup').remove();
-			$('.blind').remove();
-			return false;
-		});
-		
-		return false;
-	});
-
-	
-	
-
-	
-	/*tab*/	
-	$('.proview-tab.depth2>ul>li').click(function(){
-		probanner($(this))
-		
-		return false;
-	})
-
-	$('.proview-tab.depth2>ul>li>div>ul>li').click(function(){
-		probanner($(this))
-		return false;
-	})
-
-	$('.proview-tab.depth2>ul>li>div>ul>li>ul>li>p>a').click(function(){
-		probanner($(this),1)
-		return false;
-	})
-		
-	$('.one_tap>ul>li').click(function(){
-		probanner($(this))
-		return false;
-	})
-	$('.one_tap>ul>li>ul>li').click(function(){
-		probanner($(this))
-		return false;
-	})
-
-	$('.normaltap>ul>li').click(function(){
-		probanner($(this))
-		return false;
-	})
-	
-	$('.proveiw-gride.sidetap ul li').click(function(){
-		probanner($(this))
-		return false;
-	})
-	
-	$('.solotap > ul > li').click(function(){
-		probanner($(this))
-		return false;
-	})
-
-
-	function probanner(target,depth){
-			
-			if(depth == undefined) target.addClass('on').siblings('li').removeClass('on')	
-			if(depth == 1) target.parent().parent('li').addClass('on').siblings('li').removeClass('on')
-			
-		}
-	
-	
-	
-	
-
-		
-	
-});
-
-
+</body>
+</html>
