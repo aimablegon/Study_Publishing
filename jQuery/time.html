@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript"> 
+
+        var time = new Date();
+        var hours = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds();
+        
+        console.log(hours , minutes, seconds)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>  
+
+
+<!--==================--><!--==================--><!--==================-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var time = new Date();
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            
+            var timePrint = hours +":"+ minutes+":"+ seconds
+            
+            $('.time').text(timePrint)
+            
+            
+            
+        })
+        
+        
+    </script>
+</head>
+<body>
+    <div class="time"  style="font-size:30px;">
+        
+    </div>
+</body>
+</html>
+
+
+<!--==========================================-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            
+            setInterval(function(){
+                var time = new Date();
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+                
+                var timePrint = hours  %12 +":"+ minutes+":"+ seconds
+                // 근거치를 두기 위해 변수  hours 안에 넣는것이 아니라. 변수 timePrint에 넣어 둔다.
+                 $('.time').text(timePrint);
+            },1000)
+        })
+        
+        
+    </script>
+</head>
+<body>
+    <div class="time" style="font-size:30px;">
+        
+    </div>
+</body>
+</html>
+
+<!--==========================================-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            
+            setInterval(function(){
+                var time = new Date();
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+                
+                if(hours > 12){
+                    hours = hours-12
+                }
+                
+                var timePrint = hours +":"+ minutes+":"+ seconds
+                 $('.time').text(timePrint);
+            },1000)
+        })
+        
+        
+    </script>
+</head>
+<body>
+    <div class="time" style="font-size:30px;">
+        
+    </div>
+</body>
+</html>

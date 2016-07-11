@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        .hours>span, .minutes>span, .seconds>span{width:100px; height:100px; border:1px #f00 solid; display:inline-block;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            
+            // -----------------------------------------------------------------
+            var secondsArr = [];
+            var hoursArr = [];
+            var minutesArr = [];
+            
+            setInterval(function(){
+                var time = new Date();
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+                
+                hours = arrPush(hours,hoursArr);
+                minutes = arrPush(minutes,minutesArr);
+                seconds =arrPush(seconds,secondsArr);
+                
+                
+                timeprint(hours,$('.hours'));
+                timeprint(minutes,$('.minutes'));
+                timeprint(seconds,$('.seconds'));
+                // var timePrint = hours%12 +":"+ minutes+":"+ seconds
+                // $('.time').text(timePrint);
+            },1000);
+            
+            function arrPush(time,arr){
+                arr = [];
+                if(time <10){
+                    time = "0" + time
+                    // console.log(time)
+                }
+                
+                time = String(time);
+                // 현재 time을 단순히 숫자로 받기 때문에 자릿수를 헤아릴 수가 없어서  string(숫자를 문자열로 바꿔줌)을 사용
+                for(i=0; i < time.length; i++){
+                    arr.push(time.substring(i,i+1))
+                }
+                return arr
+            }
+            
+            // function timeprint1(time){
+            //     $('.hours span').eq(0).text(time[0]);
+            //     $('.hours span').eq(1).text(time[1]);
+            // }
+            // function timeprint2(time){
+            //     $('.minutes span').eq(0).text(time[0]);
+            //     $('.minutes span').eq(1).text(time[1]);
+            // }
+            // function timeprint3(time){
+            //     $('.seconds span').eq(0).text(time[0]);
+            //     $('.seconds span').eq(1).text(time[1]);
+            // }
+            
+            function timeprint(time, name){
+                for(i=0; i<2; i++){
+                   name.children('span').eq(i).text(time[i])
+                }
+            }
+            
+            
+            
+            
+        })
+        
+        
+    </script>
+</head>
+<body>
+    <div class="time" style="font-size:30px;">
+        <div class="hours">
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="minutes">
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="seconds">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
+
