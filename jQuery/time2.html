@@ -62,16 +62,19 @@
             // }
             
             function timeprint(time, name){
-                for(i=0; i<2; i++){
-                   name.children('span').eq(i).text(time[i])
+                // for(i=0; i<2; i++){
+                //   name.children('span').eq(i).text(time[i])
+                // }
+                for(var i = 0 in time){
+                    name.children('span').eq(i).text(time[i])
                 }
             }
-            function timeprint(time,name){
-                name.children('span').each(function(i,e){
-                    $(e).text(time[i])
-                    // $(this).text(time[i])
-                })
-            }
+            // function timeprint(time,name){
+            //     name.children('span').each(function(i,e){
+            //         $(e).text(time[i])
+            //         // $(this).text(time[i])
+            //     })
+            // }
             
             
             
