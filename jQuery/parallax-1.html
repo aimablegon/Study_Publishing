@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     
+    <script>
+        // 백그라운드 이미지가 로딩시간이 길기때문에, 정확한 위치값을 위해 window.load를 사용한다.
+        // 또한 spot을 글로벌 변수로 뽑는다.
+         $(window).load(function(){
+            var wrapH = 0;
+            var spot =[];
+    
+            //셋팅
+            $('.wrap div').each(function(i,e){
+                
+                spot.push($(e).offset().top);
+                $(e).css('top',spot[i]);
+                wrapH += $(e).height();
+                
+            });
+            
+            
+            $('.wrap').height(wrapH);
+            $('.wrap div').css({
+                'position':'fixed'
+            })
+            
+            
+            
+            //이벤트
+            $(window).scroll(function(){
+                
+                var sct = $(this).scrollTop()
+                console.log(spot)
+                console.log(sct)
+                
+                
+                $('.wrap div').each(function(i,e){
+                    
+                    var tt = spot[i] - sct 
+                    
+                    if(spot[i] < sct) tt *= 0.5
+                    
+                    $(e).css({
+                        top:tt
+                    })
+                    
+                })
+                
+            })
+            
+            
+            
+            
+        })
+    </script>
+    
+    <style type="text/css">
+        *{margin:0; padding:0;}
+        html,body{height:100%;}
+        .wrap{height:100%; width:100%;}
+        /*실무에선 100%로 사용 안함 왜? 나중에 변경사항있을때, 귀찮아진다.*/
+         .wrap div{height:100%; width:100%; border:1px #F00 solid; 
+        -webkit-background-size: cover;
+        background-size: cover;}
+        .wrap div.section1{background-image:url(../images/f1-1.jpg);}
+        .wrap div.section2{background-image:url(../images/f2-1.jpg);}
+        .wrap div.section3{background-image:url(../images/f3-1.jpg);}
+        .wrap div.section4{background-image:url(../images/f4-1.jpg);}
+        .wrap div.section5{background-image:url(../images/f5-1.jpg);}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="section1"></div>
+        <div class="section2"></div>
+        <div class="section3"></div>
+        <div class="section4"></div>
+        <div class="section5"></div>
+    </div>
+</body>
+</html>
