@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        
+        var obj = {
+            "classNum6":[
+                "project", //이렇게 사용가능함
+            {
+                "userName":"장선경",
+                "pcNum":"01",
+                "class":"스마트 웹 컨텐츠"
+            },{
+                "userName":"이고은",
+                "pcNum":"02",
+                "class":"스마트 웹 컨텐츠"
+            },{
+                "userName":"이혜인",
+                "pcNum":"03",
+                "class":"스마트 웹 컨텐츠"
+            }],
+            "team2":[{
+                "userName":"장미래",
+                "pcNum":"04",
+                "class":"스마트 웹 컨텐츠"
+            },{
+                "userName":"박하연",
+                "pcNum":"05",
+                "class":"스마트 웹 컨텐츠"
+            },{
+                "userName":"최희지",
+                "pcNum":"06",
+                "class":"스마트 웹 컨텐츠"
+            }]
+        }
+    
+    
+       console.log(obj)
+       console.log(obj.classNum6)
+       console.log(obj.classNum6[0])
+       console.log(obj.classNum6[0].userName)
+       console.log(obj.team2[1].userName)
+       
+       $(function(){
+            
+            $.each(obj,function(i,e){
+                txt = ""
+                txt += e
+                
+                //  $('body').append(txt)    
+                console.log(e)
+                console.log(e[1].userName)
+                
+            })
+            
+            // =================================
+            
+           console.log("for")
+            for(i=0; i < obj.team1.length; i++){
+                console.log(obj.team1[i].userName)
+            }
+            
+            
+             console.log('each')
+            $.each(obj.team1,function(i,e){
+               
+               console.log(e.userName)
+            })
+            
+            // ==================================
+            console.log("forin / obj")
+            for(var i = 0 in obj){
+                console.log(obj[i])
+            }
+            
+            
+            console.log("each / obj")
+            $.each(obj,function(i,e){
+               console.log(e)
+            })
+            
+        })
+    </script>
+    
+    
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,890 @@
+
+
+
+
+
+
+var totalpay = "234,091,004";
+//변수 tatalpay는 234,091,004 라는 문자를 갖는다.
+
+
+		 var totalpaynum = Number(totalpay.replace(/,/g,''))
+			//변수 totalpaynum은 totalpay의 문자에 ,를 지우고 빈칸으로 만들어서 숫자로 바꿔라
+			//g는 모든 패턴에 적용한다.
+
+		 var speed = 8
+		 
+		 //speed라는 변수는 8를 갖는다.
+		 
+		 var singnumArr = []
+		 //singnumArr라는 변수는 배열을 갖는다.
+		 
+		 for(i = 0; i < totalpay.length; i++){
+			// i가 0부터 i가 totalpay의 길이가 될때까지 i를 1씩 증가 시키면 계속 반복한다.
+				 
+			 var single = totalpay.substring(i,i+1)	 
+			 // single이라는 변수는 totalpay의 시작인덱스 i부터 끝나는 인덱스 i+1까지 자르는 것을 담는다.
+			 
+			 singnumArr.push(single)
+			 //singnumArr라는 배열에 single을 넣는다.
+		 }		 
+		
+		 var initnum = 0
+		 //변수 initnum은 0을 갖는다.
+		 
+		 var maxnum = singnumArr.length-1
+		 //maxnum이라는 변수는 singnumArr라는 배열의 길이 -1을 갖는다.
+		 
+		 var savenum = ""
+		 //savenum 이라는 변수는 ""을 갖는다.
+		 
+		 var addnum = 0
+		 //addnum 이라는 변수는 0을 갖는다. 
+		 	 
+		 function viewnum(){
+		 //viewnum이라는 함수를 실행한다.
+		 
+		 
+			initnum++
+			//initnum을 1씩 증가 시킨다. 
+			 
+			 
+			$('.total_cost').html('<span>'+(initnum)+'</span>'+savenum)
+			 //tatal_cost라는 클라스를 갖는 것에 (스판열기+initnum변수 +스판닫기+ savenum변수 )를 html안에 박는다. 
+			 
+			 
+			 if(initnum > 9){
+				 //만약 initnum이 9보다 크면
+				 
+				 
+				 initnum = 0
+				 //initnum 은 0이 된다.
+				 
+				 addnum++
+				 //addnum을 1씩 증가 시킨다.
+				
+				
+				 if(addnum==1){
+					//만약 addnum이 1이면
+				
+					 addnum = 0
+					 //addnum은 0이 된다.
+					 
+					 savenum = singnumArr[maxnum].toString()+savenum
+					 //savenum이라는 변수는 singnumArr의 배열에안에  maxnum이라는 것을 toString(수를 문자로 바꿈)+savenum으로 갖는다.
+					 
+					 maxnum --
+					 //maxnum을 1씩 감소 시킨다.
+					 
+					 
+					 
+					 if(singnumArr[maxnum]==undefined){
+					 //만약 singnumArr라는 배열안에 maxnum이  아무값도 찾을 수 없을때, 
+					 
+							clearInterval(hend)
+							함수 head를 interval을 멈춰라.
+							$('.total_cost').children('span').text(singnumArr[0])
+							//total_cost라는 클라스의 자식중 span의 text를 singnumArr의 배열을 0번째로 바꿔라.
+					}
+					 
+				}
+				 
+			}
+			 
+		}
+
+	if($(this).parents('.cost_sec').index() == 1){
+	//만약 클릭한 이것의 부모증에 cost_sec이라는 클라스의 index가 1과 같다면,
+	
+	
+			var hend = setInterval(viewnum,speed)
+			 //hend라는 변수는 viewnum라는 함수에 변수 speed를 갖는 setInterval을 갖는다.
+			
+			$('.cost_tex').text(Math.floor(totalpaynum*15.71428));
+			//cost_tex라는 클라스에 (totalpaynum에 15.71428을 곱한 것의 소수점 절삭을 한것을) text로 넣는다.
+			
+			
+			$('.cost_buy').text(Math.floor(totalpaynum*30));
+			// cost_buy라는 클라스에 (totalpaynum에 30을 곱한것의 소수점을 절삭한것을 )text로 넣는다.
+			
+			
+			$('.cost_discount').text(Math.floor(totalpaynum*28));
+			//cost_discount라는 클라스에 (totalpaynum에 28을 곱한것의 소수점 절삭한 것을 )text로 넣는다.
+			
+		}
+
+
+
+
+
+
+
+
+
+==========================================================================================================
+$(function(){
+				
+				  var e = "1,050,238";
+				  
+				  var e_num = Number(e.replace(/,/g,''));
+				 
+				  var speed = 5;
+				  
+				
+				  var arr_num =[];
+				  
+				 
+				  for(i=0; i<e.length; i++){
+					  var e_sub = e.substring(i,i+1);
+					  
+					  arr_num.push(e_sub)
+				  }
+				  console.log(arr_num)
+				  
+				  var init_num = 0;
+				  
+				  var max_num = arr_num.length-1;
+				  
+				  console.log(max_num);
+				  
+				  
+				  
+				  
+				  var save_num = "";
+				  
+				  var add_num = 0;
+				  
+				  var count_set = setInterval(count,speed)
+				  
+				  function count(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_5>span').text((init_num)+save_num);
+					  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+							  
+							  save_num = arr_num[max_num].toString()+save_num;
+							  
+							  
+							  
+							  max_num --
+							  
+							  console.log(add_num, save_num)
+							  
+							  if(arr_num[max_num] == undefined){
+								  clearInterval(count_set)
+								  $('.st_5_box>.st_box_5>span').text(save_num)
+							  }
+						  }
+					  }
+				  }
+				  
+			  })
+			  
+			  
+			  
+			  ==========================================================================================
+			  
+			    if(!$('.st_5_box').is('.set') && $('.section5').is('.on')){
+					  $('.st_5_box').addClass('set');
+					  console.log('aa');
+					  var setTime = setTimeout(count_down,50);
+					  
+					  var count_set_a = setInterval(function(){
+						  
+						  count($('.st_5_box>.st_box_1>span'), max_a, arr_a, count_set_a)
+					  
+					  },speed)
+//					  var count_set_b = setInterval(function(){
+//						  
+//						  count($('.st_5_box>.st_box_2>span'), save_b, max_b, arr_b[max_b], count_set_b)
+//					  
+//					  },speed)
+//					  var count_set_c = setInterval(function(){
+//						  
+//						  count($('.st_5_box>.st_box_3>span'), save_c, max_c, arr_c[max_c], count_set_c)
+//					  
+//					  },speed)
+//					  var count_set_d = setInterval(function(){
+//						  
+//						  count($('.st_5_box>.st_box_4>span'), save_d, max_d, arr_d[max_d], count_set_d)
+//					  
+//					  },speed)
+//					  var count_set_e = setInterval(function(){
+//						  
+//						  count($('.st_5_box>.st_box_5>span'), save_e, max_e, arr_e[max_e], count_set_e)
+//					  
+//					  },speed)
+				  
+				  }else if($('.st_5_box>div>span').is('.set') && $('.section5').is('on')){
+					  clearTimeout(setTime)
+				  }
+				  
+			  
+			  
+				  function count(selector, max, arr, count_set){
+//				  function count(){  
+					  init_num ++
+					  
+				
+					 var sel = selector.text((init_num)+"");
+					 console.log(sel)
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+						
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+							  
+							  var sv = arr[max]
+							  var sv_ring =sv.toString()+save;
+
+							  
+//							  console.log(sv, arr, max,save, sv_ring)
+							  
+							  max --
+							  
+							  
+							  
+							  if(arr[max] == undefined){
+								  clearInterval(count_set)
+								  selector.text(save)
+								  console.log('gg')
+								 
+							  } 
+							  
+							  
+						  }
+					  }
+				  }
+				 
+		  	}  
+		  	=======================================================================================================
+		  	if(!$('.st_5_box').is('.set_a') && $('.section5').is('.on')){
+					  $('.st_5_box').addClass('set_a');
+					  console.log('aa');
+					  var setTime_a = setTimeout(count_set_a,50);
+					 				  
+				  }else if($('.st_5_box>div>span').is('.set_a') && $('.section5').is('on')){
+					  clearTimeout(setTime_a,100);
+					 
+				  }
+				  if(!$('.st_5_box').is('.set_b') && $('.section5').is('.on')){
+					  $('.st_5_box').addClass('set_b');
+					 
+					  var setTime_b = setTimeout(count_set_b,50);
+					 
+
+				  
+				  }else if($('.st_5_box>div>span').is('.set_b') && $('.section5').is('on')){
+					
+					  clearTimeout(setTime_b,100);
+					  
+				  }
+				  
+				  if(!$('.st_5_box').is('.set_c') && $('.section5').is('.on')){
+					  $('.st_5_box').addClass('set_c');
+					 
+					  var setTime_c = setTimeout(count_set_c,50);
+					 
+
+				  
+				  }else if($('.st_5_box>div>span').is('.set_c') && $('.section5').is('on')){
+					 
+					  clearTimeout(setTime_c,100);
+					
+				  }
+//				  if(!$('.st_5_box').is('.set_d') && $('.section5').is('.on')){
+//					  $('.st_5_box').addClass('set_d');
+//					 					 
+//					  var setTime_d = setTimeout(count_set_d,50);
+//					 				  
+//				  }else if($('.st_5_box>div>span').is('.set_d') && $('.section5').is('on')){
+//					  clearTimeout(setTime_d);
+//					  
+//				  }
+//				  if(!$('.st_5_box').is('.set_e') && $('.section5').is('.on')){
+//					  $('.st_5_box').addClass('set_e');
+//					  var setTime_e = setTimeout(count_set_e,50);
+//
+//				  
+//				  }else if($('.st_5_box>div>span').is('.set_e') && $('.section5').is('on')){
+//					  clearTimeout(setTime_e);
+//				  }
+//				  
+			  
+			  
+
+				 
+				  var count_set_a = setInterval(count_a,speed)
+				  
+				  
+				  function count_a(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_1>span').text((init_num)+save_a);
+					 
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+							  
+							  save_a = arr_a[max_a].toString()+save_a;
+							  
+							  
+							  max_a --
+	
+							  console.log(add_num, save_a)
+							  
+							  
+							  if(arr_a[max_a] == undefined){
+								  clearInterval(count_set_a)
+								  $('.st_5_box>.st_box_1>span').text(save_a)
+								  console.log(arr_a[max_a])
+							  } 
+							  
+							  
+						  }
+					  	}
+				  	}
+				 
+				  
+				 
+				  var count_set_b = setInterval(count_b,speed)
+				  
+				  function count_b(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_2>span').text((init_num)+save_b);
+					 
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+							  
+							  save_b = arr_b[max_b].toString()+save_b;
+							  
+							  
+							  max_b --
+	
+							  console.log(add_num, save_b)
+							  
+							  
+							  if(arr_b[max_b] == undefined){
+								  clearInterval(count_set_b)
+								  $('.st_5_box>.st_box_2>span').text(save_b)
+								  console.log(arr_b[max_b])
+							  } 
+							  
+							  
+						  }
+					  	}
+				  	}
+			  	
+			  
+		  
+			   
+				  var count_set_c = setInterval(count_c,speed)
+				  
+				  function count_c(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_3>span').text((init_num)+save_c);
+					 
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 3){
+							  
+							  add_num =0;
+							  
+							  save_c = arr_c[max_c].toString()+save_c;
+							  
+							  
+							  max_c --
+	
+							  console.log(add_num, save_c)
+							  
+							  
+							  if(arr_c[max_c] == undefined){
+								  clearInterval(count_set_c)
+								  $('.st_5_box>.st_box_3>span').text(save_c)
+								  console.log(arr_c[max_c])
+							  } 
+							  
+							  
+						  }
+					  	}
+				  	}
+					
+				  
+				  
+				  
+			  
+//				  var count_set_d = setInterval(count_d,speed)
+//				  
+//				  function count_d(){
+//					  
+//					  init_num ++
+//					  
+//				
+//					  $('.st_5_box>.st_box_4>span').text((init_num)+save_d);
+//					 
+//					 	  
+//					  if(init_num > 9){
+//						  
+//						  init_num = 0;
+//						  
+//						  add_num ++;
+//						  
+////						  console.log(init_num, add_num)
+//						  
+//						   
+//						  if(add_num == 2){
+//							  
+//							  add_num =0;
+//							  
+//							  save_d = arr_d[max_d].toString()+save_d;
+//							  
+//							  
+//							  max_d --
+//	
+//							  console.log(add_num, save_d)
+//							  
+//							  
+//							  if(arr_d[max_d] == undefined){
+//								  clearInterval(count_set_d)
+//								  $('.st_5_box>.st_box_4>span').text(save_d)
+//								  console.log(arr_d[max_d])
+//							  } 
+//							  
+//							  
+//						  }
+//					  	}
+//				  	}
+//					
+//				  
+//				  
+//				
+//				  var count_set_e = setInterval(count_e,speed)
+//				  
+//				  function count_e(){
+//					  
+//					  init_num ++
+//					  
+//					  $('.st_5_box>.st_box_5>span').text((init_num)+save_e);
+//					  
+//					  
+//					  
+//					  if(init_num > 9){
+//						  
+//						  init_num = 0;
+//						  
+//						  add_num ++;
+//						  
+////						  console.log(init_num, add_num)
+//						  
+//						   
+//						  if(add_num == 2){
+//							  
+//							  add_num =0;
+//
+//							  save_e = arr_e[max_e].toString()+save_e;
+//							  
+//							  max_e --
+//							  
+//							  
+//							  console.log(add_num, save_e)
+//
+//							  if(arr_e[max_e] == undefined){
+//								  clearInterval(count_set_e)
+//								  $('.st_5_box>.st_box_5>span').text(save_e)
+//								  console.log(arr_e[max_e])
+//							  }
+//							  
+//						  }
+//					  	}
+//				  	}
+//				
+				 }
+			   ===================================================================================================================
+			   	
+			  if(!$('.st_5_box').is('.set')){
+					  console.log('aa')
+				  $('.st_5_box').addClass('set');
+				  
+				  var setTime = setTimeout(count_down,50)
+					  
+				  
+			  }else if($('.st_5_box').is('.set')){
+				  clearTimeout(setTime)
+				   console.log('bb')
+			  }
+			  	
+			  	
+			  	
+			  	
+			  function count_down(){
+				  var a = "15";
+				  var b = "15";
+				  var c = "7";
+				  var d = "74";
+				  var e = "1,050,238";
+				  
+				  var a_num = Number(a);
+				  var b_num = Number(b);
+				  var c_num = Number(c);
+				  var d_num = Number(d);
+				  var e_num = Number(e.replace(/,/g,''));
+				  
+				 console.log(a_num, b_num, c_num, d_num, e_num)
+				  
+				  var speed = 5;
+				  
+				
+				  var arr_a =[];
+				  var arr_b =[];
+				  var arr_c =[];
+				  var arr_d =[];
+				  var arr_e =[];
+				  
+				  
+				 
+				  for(i=0; i<a.length; i++){
+					  var a_sub = a.substring(i,i+1);
+					  
+					  arr_a.push(a_sub)
+				  }
+//				  console.log(arr_a)
+				  
+				  for(i=0; i<b.length; i++){
+					  var b_sub = b.substring(i,i+1);
+					  
+					  arr_b.push(b_sub)
+				  }
+//				  console.log(arr_b)
+				  
+				  for(i=0; i<c.length; i++){
+					  var c_sub = c.substring(i,i+1);
+					  
+					  arr_c.push(c_sub)
+				  }
+//				  console.log(arr_c)
+				  
+				  for(i=0; i<d.length; i++){
+					  var d_sub = d.substring(i,i+1);
+					  
+					  arr_d.push(d_sub)
+				  }
+//				  console.log(arr_d)
+				  
+				  for(i=0; i<e.length; i++){
+					  var e_sub = e.substring(i,i+1);
+					  
+					  arr_e.push(e_sub)
+				  }
+//				  console.log(arr_e)
+				  
+				  
+				  var init_num = 0;
+				  
+				  var max_a= arr_a.length-1;
+				  var max_b= arr_b.length-1;
+				  var max_c= arr_c.length-1;
+				  var max_d= arr_d.length-1;
+				  var max_e= arr_e.length-1;
+				  
+//				  console.log(max_a);
+//				  console.log(max_b);
+//				  console.log(max_c);
+//				  console.log(max_d);
+//				  console.log(max_e);
+//				  
+				  
+				  
+				  var save_a = "";
+				  var save_b = "";
+				  var save_c = "";
+				  var save_d = "";
+				  var save_e = "";
+				  
+				  var add_num = 0;
+				  
+				  
+				  
+				  
+				  
+				  
+				  var count_set_a = setInterval(count_a,speed)
+			  
+			  
+				  function count_a(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_1>span').text((init_num)+save_a);
+					 
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+							  
+							  save_a = arr_a[max_a].toString()+save_a;
+							  
+							  
+							  max_a --
+	
+							  console.log(add_num, save_a)
+							  
+							  
+							  if(arr_a[max_a] == undefined){
+								  clearInterval(count_set_a)
+								  $('.st_5_box>.st_box_1>span').text(save_a)
+								  console.log(arr_a[max_a])
+							  } 
+							  
+							  
+						  }
+					  	}
+				  	}
+				 
+				  
+				 
+				  var count_set_b = setInterval(count_b,speed)
+				  
+				  function count_b(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_2>span').text((init_num)+save_b);
+					 
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+							  
+							  save_b = arr_b[max_b].toString()+save_b;
+							  
+							  
+							  max_b --
+	
+							  console.log(add_num, save_b)
+							  
+							  
+							  if(arr_b[max_b] == undefined){
+								  clearInterval(count_set_b)
+								  $('.st_5_box>.st_box_2>span').text(save_b)
+								  console.log(arr_b[max_b])
+							  } 
+							  
+							  
+						  }
+					  	}
+				  	}
+			  	
+			  
+		  
+			   
+				  var count_set_c = setInterval(count_c,speed)
+				  
+				  function count_c(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_3>span').text((init_num)+save_c);
+					 
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 3){
+							  
+							  add_num =0;
+							  
+							  save_c = arr_c[max_c].toString()+save_c;
+							  
+							  
+							  max_c --
+	
+							  console.log(add_num, save_c)
+							  
+							  
+							  if(arr_c[max_c] == undefined){
+								  clearInterval(count_set_c)
+								  $('.st_5_box>.st_box_3>span').text(save_c)
+								  console.log(arr_c[max_c])
+							  } 
+							  
+							  
+						  }
+					  	}
+				  	}
+					
+				  
+				  
+				  
+			  
+				  var count_set_d = setInterval(count_d,speed)
+				  
+				  function count_d(){
+					  
+					  init_num ++
+					  
+				
+					  $('.st_5_box>.st_box_4>span').text((init_num)+save_d);
+					 
+					 	  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+							  
+							  save_d = arr_d[max_d].toString()+save_d;
+							  
+							  
+							  max_d --
+	
+							  console.log(add_num, save_d)
+							  
+							  
+							  if(arr_d[max_d] == undefined){
+								  clearInterval(count_set_d)
+								  $('.st_5_box>.st_box_4>span').text(save_d)
+								  console.log(arr_d[max_d])
+							  } 
+							  
+							  
+						  }
+					  	}
+				  	}
+					
+				  
+				  
+				
+				  var count_set_e = setInterval(count_e,speed)
+				  
+				  function count_e(){
+					  
+					  init_num ++
+					  
+					  $('.st_5_box>.st_box_5>span').text((init_num)+save_e);
+					  
+					  
+					  
+					  if(init_num > 9){
+						  
+						  init_num = 0;
+						  
+						  add_num ++;
+						  
+//						  console.log(init_num, add_num)
+						  
+						   
+						  if(add_num == 2){
+							  
+							  add_num =0;
+
+							  save_e = arr_e[max_e].toString()+save_e;
+							  
+							  max_e --
+							  
+							  
+							  console.log(add_num, save_e)
+
+							  if(arr_e[max_e] == undefined){
+								  clearInterval(count_set_e)
+								  $('.st_5_box>.st_box_5>span').text(save_e)
+								  console.log(arr_e[max_e])
+							  }
+							  
+						  }
+					  	}
+				  	}
+				
+				 }
