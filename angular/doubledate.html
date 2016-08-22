@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+    <!--<html lang="en" ng-app> 이렇게 사용도 가능-->
+<head>
+    <meta charset="UTF-8">
+    <title>양방향 데이터</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+
+<body ng-app ng-init="name='World'">
+     say Hello to : <input type="text" name="" ng-model="name" />
+     <!--ng-model의 name에 작성하면, ng-intit의 name에 저장이 되고, h1에 name에 들어간다.-->
+     <h1>hello {{name}}</h1>
+     <!--변수를 사용할땐, 태그 안에 넣어서 사용 가능-->
+     
+</body>
+</html>

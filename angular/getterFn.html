@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getter function</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.30/angular.min.js"></script>
+    <script>
+        var getterCtrl =function($scope){
+            
+            $scope.getSum = function(){
+                
+                return $scope.name
+                    
+            }
+            
+        }
+    </script> 
+</head>
+<body ng-app>
+    
+    <div ng-controller="getterCtrl">
+        say Hello to : <input type="text" name="" ng-model="name" />
+        <h1>hello, {{getSum()}}</h1>
+        <!--ng-model에 적은 글이 스크립트에 있는 getSum  안에 있는 스콥의 네임의 리턴값을 가지고 있고, 
+            그것을 h1에서 getSum의 함수를 호출하기 때문에 바로 적용가능-->
+        <!--400자 이내 -->
+    </div>
+        
+</body>
+</html>

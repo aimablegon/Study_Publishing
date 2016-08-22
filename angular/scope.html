@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.30/angular.min.js"></script>
+    <script>
+        var helloCtrl = function($scope){
+            $scope.name ='world';
+            $scope.address='korea';
+            // 스콥이라는 녀석안에 네임이라는 녀석이 생긴것(만든것)
+            // scope 무조건 사용
+            // 알아야 할 기능 scope
+            // 익혀야 할 기능 ng
+        }
+    </script> 
+</head>
+<body ng-app>
+    
+    <div ng-controller="helloCtrl">
+        <!--뒤에 Ctrl을 무언의 약속으로 사용함-->
+        name:<input type="text" ng-model="name" />
+        address :<input type="text" ng-model="address" />
+        <h1>bonjour {{name}} {{address}}</h1>
+    </div>
+    
+</body>
+</html>
