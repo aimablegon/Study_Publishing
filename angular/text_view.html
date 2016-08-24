@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    
+    <script>
+    
+        var TAWCtrl = function($scope){
+            
+            $scope.remaining =function(){
+                
+                return $scope.message.length
+                
+            }
+            
+        }
+        
+    </script>
+
+
+</head>
+<body ng-app>
+   
+   
+    
+    
+    <div ng-controller="TAWCtrl">
+        <span>Remaining:{{remaining()}}</span>
+        <div>
+            <textarea ng-model="message">{{message}}</textarea>
+        </div>
+    </div>
+    
+</body>
+</html>

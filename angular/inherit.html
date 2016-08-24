@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    <script>
+        var HelloCtrl = function($scope){
+                // 변수를 정의 하지 않으면, 
+            }
+        var aaCtrl =function($scope){
+            
+        }
+    </script>
+</head>
+<body ng-app ng-init="name='world'">
+    
+    <h1>hello {{name}}</h1>
+    
+    <!--<div ng-controller="HelloCtrl">-->
+    <!--    {{name}}-->
+    <!--</div>-->
+    <div ng-controller="HelloCtrl">
+        Say hello to: <input type="text" ng-model="$parent.name" /><br/>
+        Hell, {{name}}!
+    </div>
+    <!--변수로 사용하고 싶을떄, parent를 사용하고, 스크립트 안에 변수를 넣어서 사용해야 name값을 가져 올 수 있다.-->
+    <!--구역 부분에서만 사용하기 위해 컨트롤러 안에서 상속으로 가지고 오게 하고, 글로벌 변수 name은 다른 용도에서 사용가능.-->
+    <!--기본 디폴트 값을 가지고 있음.-->
+    <div ng-controller="aaCtrl">
+        Say hello to: <input type="text" ng-model="$parent.name" /><br/>
+        Hell, {{name}}!
+    </div>
+</body>
+</html>
+
+<!--======================================================-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+        <script>
+            
+            var HelloCtrl = function($scope){
+               
+            // $scope.yyy =  $parent.yyy 
+            
+               $scope.yyy = "하하하"
+            }
+            
+            
+            var HelloCtrl1 = function($scope){
+               
+            }
+            
+        </script>
+</head>
+<body ng-app ng-init="yyy='world'">
+    
+    <h1>Hello {{yyy}}</h1>
+    <!--yyy는 world--->
+    <div ng-controller="HelloCtrl">
+        Say hello to: <input type="text" ng-model="$parent.yyy" /><br/>
+        <!--parent.yyy는 world-->
+        Hell, {{yyy}}!
+        <!--yyy는 스크립트에 있는 하하하-->
+    </div>
+    
+    
+    
+</body>
+</html>
+<!--==========================================-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+        <script>
+            var helloCtrl = function($scope){
+            
+            }
+            
+         </script>
+</head>
+<body ng-app ng-init="thing={name:'world'}">
+    <h1>hello {{thing.name}}</h1>
+    
+    <div ng-controller="helloCtrl">
+        Say Hello to : <input type="text" ng-model="thing.name"/>
+        <h2>{{thing.name}}</h2>
+    </div>
+    
+</body>
+</html>
+
+<!--=============================================-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+        <script>
+            var HelloCtrl = function($scope){
+            
+            }
+            
+         </script>
+</head>
+<body ng-app ng-init="thing={name:'world',name1:'world1',name2:'world2',name3:'world3',name4:'world4'}">
+    <h1>hello {{thing.name}}</h1>
+        <h1>hello {{thing.name1}}</h1>
+            <h1>hello {{thing.name2}}</h1>
+                <h1>hello {{thing.name3}}</h1>
+                    <h1>hello {{thing.name4}}</h1>
+    
+    
+</body>
+</html>
