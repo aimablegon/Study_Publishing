@@ -1,0 +1,64 @@
+<!doctype html> <!--앙귤러 코어기반/제이슨가지고와서 사용함-->
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+</head>
+<body ng-init="person = {name:'친구들',favorite:['수박','귤','키위','복숭아']}">
+    <h1>hello {{person.name}}</h1>
+    <h2>좋아하는과일</h2>
+    <ul ng-repeat="fruit in person.favorite">
+        <!--person.favorite의 배열의 이름을 fruit라고 지은것-->
+        <li>{{fruit}}</li>
+        <li><a href="../proudct/{{fruit}}.jpg">{{fruit}}</a></li>
+        <!--a태그 안에 링크도 {{fruit}}를 사용할 수 있다.-->
+    </ul>
+    
+   
+</body>
+</html>
+
+
+<!--========================================================================-->
+<!doctype html> <!--제이쿼리는 dom기반-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+        
+        $(function(){
+            
+            var name = "친구들"
+            var fruit = ['사과','배','포도','블루베리','망고','파인애플','천혜향']
+            $('#greeting').text("hello"+name);
+            
+            for(var i = 0 in fruit){
+                
+                var html = ""
+                html += "<li>"
+                html += "<a href='"+fruit[i]+"'>"
+                html += fruit[i]
+                html += "</a>"
+                html += "</li>"
+                
+                $('#favorite').append(html)
+            }
+        })
+        
+    </script>
+    
+    
+</head>
+<body>
+    <h1 id="greeting"></h1>
+    <h2>좋아하는과일</h2>
+    <ul id="favorite"></ul>
+    
+    
+</body>
+</html>

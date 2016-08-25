@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('hello',[]);
+        // [](배열)이건 약속이니깐 꼭 넣어 놔라.
+        
+        app.controller('HelloCtrl',function($scope){
+            // app의 controller의  HelloCtrl를 실행해
+             $scope.name="world"
+        })
+        // angular는 mvc에서 c(controller)를 담당한다.
+    </script>
+</head>
+<body ng-app="hello">
+    <!--ng-app에 hello라는 이름을 지어줌-->
+    <!--이름을 지어줌으로 모듈이 가능하다.-->
+    <!--모듈이란? 독립되어 있는 하나의 소프트웨어 또는 하드웨어 단위를 지칭하는데 사용된다.-->
+    <div ng-controller="HelloCtrl">
+        <input type="text" name="" ng-model="name"/>
+        <h1>{{name}}</h1>
+        <!--{{name}}뒤엔 글을쓸 수 있다.-->
+        <h1 ng-bind="name"></h1>
+        <!--ng-bind는 바인딩 방식의 다른 방법-->
+        <!--<h1>{{name}}</h1>-->
+        <!--<h1>{{name}}</h1>-->
+        <!--이거랑 같다.-->
+        <!--또다른 방법-->
+        <!--<h1 data-ng-bind="name"></h1>-->
+        <!--이런방법도 있지만, 위에꺼들을 더 많이 쓴다.-->
+        
+        <!--연산가능-->
+        <!--<span>{{100+200}}</span>-->
+    </div>
+    
+</body>
+</html>

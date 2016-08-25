@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+</head>
+<body ng-init="person = {name:'친구들',favorite:['수박','귤','키위','복숭아']}">
+    <h1>hello {{person.name}}</h1>
+    <p>과일의 갯수 = {{numberOffavorite = person.favorite.length}}</p>
+    <p>과일의 갯수 = {{person.favorite.length}}</p>
+    <!--값은 같다-->
+    <!--결과치 생성가능-->
+    
+    <p>과일갯수 * 100$ = {{numberOffavorite * 100 | currency}}</p>
+    <!-- | 필터, currency 단위-->
+    <!--필터 종류 알고 싶을때, 앙귤러 필터로 친다.-->
+    
+    <p>친구들이 맞습니까? {{person.name == '친구들'}}</p>
+    <p>친구들이 맞습니까? {{person.name != '친구들'}}</p>
+    
+    <p>좋아하는 과일 수가 4개보다 많습니까?{{numberOffavorite > 4}}</p>
+    <p>좋아하는 과일 수가 4개보다 많습니까?{{numberOffavorite == 4}}</p>
+    
+    <p>scope 에 없는 객체에 접근하려면? {{car.type.name}}</p>
+    <!--아무것도 안나온다.-->
+    
+    
+</body>
+</html>
