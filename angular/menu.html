@@ -1,0 +1,79 @@
+<!doctype html>
+<!--쇼핑몰에서의 장바구니 같은-->
+<html lang="en" ng-app="way">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    
+    <script>
+        
+        var app = angular.module("way",[]);
+        
+        app.controller("mainCtrl",function($scope){
+            
+            var menulist = [
+                {itemId:1,itemName:'오늘의커피',itemprice:1000,itemCount:0},
+                {itemId:2,itemName:'아메리카노',itemprice:2200,itemCount:0},
+                {itemId:3,itemName:'카페라때',itemprice:3400,itemCount:0},
+                {itemId:4,itemName:'캬라멜마키야또',itemprice:5500,itemCount:0},
+                ]
+                
+            $scope.menulist = menulist;
+            $scope.totalPrice = 0;
+                
+            $scope.buy = function(){
+                 $scope.totalPrice = 0;
+                  // 앙귤러 forEach는 제이쿼리 each와 같다고 봐도 된다.
+                 angular.forEach( $scope.menulist,function(menu,idx){
+                                                        // (e,i)
+                     $scope.totalPrice =  $scope.totalPrice + (menu.itemprice * Number(menu.itemCount))
+                     
+                     
+                 })
+                 
+            }
+            
+        })
+        
+        
+    </script>
+    
+</head>
+<body>
+    <!--메뉴판 -->
+    <div ng-controller="mainCtrl">
+        <h1>메뉴판</h1>
+        <p>메뉴판 목록</p>
+        <table width="100%" border="1">
+            <thead>
+                <tr>
+                    <th>메뉴</th>
+                    <th>가격</th>
+                    <th>갯수</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="3">가격:{{totalPrice | currency : "\\"}}원</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr ng-repeat="list in menulist">
+                    <td>{{list.itemName}}</td>
+                    <td>{{list.itemprice}}원</td>
+                    <td><input type="text" ng-model="list.itemCount"/></td>
+                </tr> 
+            </tbody>
+            
+        </table>
+        
+        <button ng-click = buy()>구매</button>
+        
+
+    </div>
+    
+    
+    
+</body>
+</html>
