@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <!--2가지 -->
+    <!--    논리성 값-->
+    <!--        값 ?-->
+    
+    <!--문자 = ''-->
+    <!--숫자 = 1-->
+    <!--불린 = true-->
+    <!--이 3가지 근거로 된다.-->
+        <!--null/ undefined/ NaN-->
+    <!--여기에 대해서 깊게 생각하고 잘 기억해둬라.-->
+    
+    <!--제이쿼리- 무언가 움직일때, 사용-->
+    <!---선택자(select)가 50%이다. 선택자만 잘 해도 움직이기는 쉽다. 연습해라.-->
+    <!--children/ parent/parents/ find/ siblings/ next/ prev/ eq-->
+    <!---if문(문자, 숫자, 불린을 잘 이해해야 눈에 들어온다.)/ for문(반복적인것들이 눈에 들어와야 for문이 이해 된다.)-->
+    
+    
+    
+    <!--자바스크립트로 만들어진 태그를 사용하는 경우, children, parent로 사용한다.-->
+    <!--find, parents는 다 뚫고 지나가서, 쓰고 싶다면, end로 정리를 해줘야 한다.-->
+    <script>
+        $(function(){
+         
+        //  $('.test')
+        //  .find('.a')
+        //  .css('border','1px #F00 solid')
+        //  .next()
+        //  .css('border','1px #F00 solid')
+         
+          $('.test >ul >li')
+         .eq(0)
+         .css('border','1px #F00 solid').end()
+        // eq부터 end까지 만 정리된 상태, 
+         .eq(1)
+         .css('border','1px #F00 solid')
+        //  test>ul>li의 eq(1번째) css효과 됨
+        
+         
+         
+        })
+        
+    </script>
+    
+    
+</head>
+<body>
+    
+    <div class="test">
+        <ul>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                             <li class="a"><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">text</a>
+                <ul>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">text2</a>
+                        <ul>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                            <li><a href="">text3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    
+</body>
+</html>
