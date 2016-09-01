@@ -49,12 +49,17 @@ span.title {
            
 angular.module('etDay',[])
 .filter('Search', Search)
+// Search등록함
 .controller('MemoryCtrl', MemoryCtrl)
+// MemoryCtrl등록함.
 
+// 이것은 마우스 오버나,리브를 했을때 데이터 값을 가지고와서 데이터 값을 바꾼다.
+// 제이쿼리는 데이터 값을 바꾸는 것이 아니다.
 
 function MemoryCtrl($scope){
     
     $scope.memories = [
+    // 뿌려주는 역할 이게 다임.
       {
         "title": "기억1",
         "body": "사람들은 그대로 멈췄으나 기계는 작동한다.",
@@ -91,26 +96,37 @@ function MemoryCtrl($scope){
 }
 
 function Search(){
-    
+    // Search라는 필터를 가지고옴
     
     return function(arr, text){
+        // ng-repeat에 있는 텍스트
         //text 가없으면 그자체를 반환한다
         if(!text){
            return arr;   
         }
+        // 이것은 하나의 예외처리/ 이 이아 없어도 돌아가긴 함.
+        
+        
+        
+        // =====실제 검색되는것==============
         
         //정확도를 위해 모든 영문자는 소문자로 바꾼다.
         searchText = text.toLowerCase();
-        // toLowerCase() 는  모든 영문을 소문자로 바꿀때, 사용
+        // searchText는 소문자로 들어온 검색어를 의미한다.
+        // toLowerCase() 는  모든 영문을 소문자로 바꿀때, 사용-정확도를 높이기 위해!!
         
         
         //검색된 키워드에 맞는 배열이 보이도록 미리보기 배열을 만든다
         var result = [];
 
         arr.forEach(function(data){
+            // arr는 memories안에 있는 객채의 수
             //repeat 의 갯수만큼 즉 arr 의 갯수만금 반복하며 데이터라는 인자로 받아 구성한다
-            
+            console.log(data.body.toLowerCase())
+             console.log(data.body.toLowerCase().indexOf(searchText))
             if(data.body.toLowerCase().indexOf(searchText) !== -1){
+                // searchText가 data의 바디의 소문자의 위치가 -1(ture/false값)과 같지 않으면, 
+                // -1은, 없는 글자가 나올때, -1이 된다.
                     // indexof=('c', 5) 5번째 이후의 c의 자리의 위치, 숫자가 없으면, 첫번째 c만 찾는다.
                     // aa.indexof('c',aa.indexof('c')) -첫번째 c 이후, 그 다음 c
                     //자바스크립트에서 사용, indexof 또한 0부터 시작한다.   
@@ -133,8 +149,12 @@ function Search(){
                     <div class="search">
                         <input type="text" ng-model="text" placeholder="검색어를 입력하세요." class="searchField"/>
                     </div>
-                <ul>                                   
+                <ul>                     
+                <!--ng-model에 들어간 text가 ng-repeat에 text로 들어가고, 그 text는 필터 search함수로 간다.-->
                     <li ng-repeat="memory in memories | Search:text" ng-mouseover="memory.active = true" ng-mouseleave="memory.active = false" ng-class="{active:memory.active}">
+                        <!--위에서 Search를 등록해줌                ng-mouseover/mouseleave를 제이쿼리처럼 사용가능            
+                        ng-class(이게 클라스명임) 그래서 memory.active를 참조하는 active라는 것을 클레스를 가짐, 그래서 css에서 active라는 클라스를 가진 녀석에게 효과를 준다. -->
+                        <!--ng-class="{active:ture 또는 false}라는 의미, ture일때 생기고, false일때 안바뀐다."-->
                     <span class="title">{{memory.title}}</span>
                     <span>{{memory.body}}</span>
                     </li>
