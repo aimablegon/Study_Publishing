@@ -1,0 +1,104 @@
+@media screen and (min-width:777px){
+    header { height:100px; background-color:rgba(255,255,255,0.8); width:100%; padding:0 20px; box-sizing:border-box; transition:500ms;-webkit-transition:500ms;-ms-transition:500ms;-o-transition:500ms;overflow:hidden;}
+    header .mark a { display:block; width:104px; height:40px; padding:25px; background-image:url(../images/logo-s.png); background-repeat:no-repeat; background-position:center; transition:1s; -webkit-transition:1s;-ms-transition:1s;-o-transition:1s;}
+    header .mark { float:left;}
+    header .nav { float:right;}
+    header .nav ul { font-size:0px;}
+    header .nav ul li { display:inline-block; font-size:14px; line-height:100px; vertical-align:top; text-align:center;}
+    header .nav ul li a { padding:0 15px; display:block; transition:0.3s;-webkit-transition:0.3s;-ms-transition:0.3s;-o-transition:0.3s;text-decoration:none; font-size:16px; font-weight:normal; color:#08e9d1; display:inline-block;}
+    header .nav ul li:hover { border-top:4px solid #ffb0b0; background-color: rgba(255,255,255,0.8); font-size:16px; color:#08e9d1 ;}
+    header .nav button { display:none; }
+    .disco_wrapper .box-r {width: 62%; float: right;}
+    .disco_wrapper .box-l {width: 35%; float: left;}
+    .disco_wrapper section .sect-main .album-list ul li{
+        max-width: 150px;
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .video_wrapper iframe { width:760px; height:480px;}
+    .sect-title { margin:0 auto; width:500px; height:60px; padding-bottom:20px; background-repeat:no-repeat; background-position:top center; background-size:50%; text-indent:-9999px;}
+    .video_wrapper .movie{height: 480px;}
+    .full_box{max-width: 1000px; width: 85%; margin: 0 auto;}
+    .photos{max-width: 769px;}
+    .photos li{ width: 20%;}
+    .yearMonth h3{
+        padding: 12px 0 10px 0;
+        margin: 0;
+        font-size: 13px;
+    }
+    .sche-text{
+        padding: 0;
+        font-size: 12px;
+        line-height: 17px;
+    }
+    .cal{
+        float: left;
+        width: 40%;
+    }
+    #sche-list{
+        float: right;
+        width: 55%;
+    }
+}
+@media screen and (max-width:777px) and (min-width:480px){
+    header { padding:0px; background-color:#fff; height:55px; }
+    header .mark a { background-image:url(../images/logo-s.png);float:left; padding:0; width:80px; height:40px; margin-top:5px; background-position:50% 50%; background-size:cover; transition:1s;-webkit-transition:1s;-ms-transition:1s;-o-transition:1s; transform:rotateY(360deg);-webkit-transform:rotateY(360deg);-ms-transform:rotateY(360deg);-o-transform:rotateY(360deg);  }
+    header .nav button { float:right; border:none; display:inline-block; padding:0 30px; height:55px; background-color:#08e9d1; font-size:14px; color:#fff; cursor:pointer;width:200px;font-family: "Oswald";}
+    header .nav ul { display:none; position:absolute; background-color:rgba(255,255,255,0.7);top:100%;right:0;}
+    header .nav ul li { line-height:40px; width:200px; font-size:16px;padding-left:10px;}
+    header .nav ul li:hover { border-top:0px none; border-left:4px solid #08e9d1; background-color: rgba(255,255,255,0.8);}
+    header .nav ul li:hover a{color:#ffb0b0;}
+    footer {background-color:rgba(0,0,0,0.5); position:fixed; bottom:0; width:100%; height:57px; transition:1s; }
+    
+    .video_wrapper iframe { width:480px; height:303px;}
+    .sect-title { margin:0 auto; width:500px; height:50px; padding-bottom:20px; background-repeat:no-repeat; background-position:top center; background-size:50%; text-indent:-9999px;}
+    .video_wrapper .movie{height: 303px;}
+    #video-list img{width:138px;}
+    .yearMonth h3{
+        padding: 12px 0 10px 0;
+        margin: 0;
+        font-size: 13px;
+    }
+    .sche-text{
+        padding: 0;
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+@media screen and (max-width:480px){
+    header { padding:0px; background-color:#fff; height:40px; }
+    header .mark a { background-image:url(../images/logo-s.png);float:left; padding:0; width:60px; height:33px; margin-top:3px; background-position:50% 50%; background-size:cover; transition:1s;-webkit-transition:1s;-ms-transition:1s;-o-transition:1s; transform:rotateY(360deg);-webkit-transform:rotateY(360deg);-ms-transform:rotateY(360deg);-o-transform:rotateY(360deg);  }
+    header .nav button {border:none; display:inline-block; padding:0 30px; height:40px; background-color:#08e9d1; font-size:14px; color:#fff; cursor:pointer;width:150px;font-family: "Oswald";}
+
+    header .nav ul { display:none; position:absolute; background-color:rgba(255,255,255,0.7);top:100%;right:0;}
+
+    header .nav ul li { line-height:40px; width:150px;height:36px;font-size:15px;padding-left:10px;}
+    header .nav ul li:hover { border-top:0px none; border-left:4px solid #08e9d1; background-color: rgba(255,255,255,0.8);height:46px;line-height:46px;}
+    header .nav ul li:hover a{color:#ffb0b0;}
+    footer {background-color:rgba(0,0,0,0.5); position:fixed; bottom:0; width:100%; height:57px; transition:1s;-webkit-transition:1s;-ms-transition:1s;-o-transition:1s; }
+    .video_wrapper iframe { width:363px; height:240px;}
+    .sect-title { margin:0 auto; width:100%; height:30px; padding-bottom:20px; background-repeat:no-repeat; background-position:top center; background-size:40%; text-indent:-9999px;}
+    .video_wrapper .movie{height: 240px;}
+    #video-list img{width:90px;}
+    .yearMonth h3{ line-height: 40px; font-size: 17px;}
+}
+@media screen and (max-width:777px){
+    .disco_wrapper section{margin-bottom:57px;}
+    .disco_wrapper .box-r {width: 100%; float: none;}
+    .disco_wrapper .box-l {width: 100%; float: none;}
+    .disco_wrapper section .sect-main .album-list ul li{
+        max-width: 90px;
+        margin: 0 2px;
+    }
+    .full_box{width: 85%; margin: 0 auto;}
+    .photos{max-width: 480px;}
+    .photos li{width: 32%;}
+    .cal{
+        float: none;
+        width: 100%;
+    }
+    #sche-list{
+        float: none;
+        width: 100%;
+    }
+}

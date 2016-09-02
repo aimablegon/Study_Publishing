@@ -1,0 +1,1 @@
+<?php include("gallery-origin.php"); ?>
