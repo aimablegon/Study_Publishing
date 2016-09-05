@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!--앙귤러는 부스적인 어플리케이션이 많이 필요함, bower를 통해 쉽게 설치 된다.-->
+    <!--routing 을 설치해야 사용가능-->
+   
+</head>
+
+<body ng-app="myApp">
+
+<p><a href="#/">Main</a></p>
+<!--여기서의 #/가 아래 .when의 위치를 이야기한다.-->
+
+<a href="#red">Red</a>
+<a href="#green">Green</a>
+<a href="#blue">Blue</a>
+
+<div ng-view></div>
+<!--이모든것이 여기서 작동-->
+<!--<ng-view></ng-view>-->
+<!--<div class="ng-view"></div>-->
+<!--이렇게 사용가능-->
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+// ng-app인 myApp, []만 쓰던것에 ngRoute를 넣어준다.[]안에 여러개 등록 시킬수 있다.
+
+app.config(function($routeProvider) {
+    // ngRoute는 꼭 routeProvider는 약속
+    $routeProvider
+    .when("/", {
+        // 여기서의 '/'는 아이디이다.
+        templateUrl : "main.html"
+        // 경로는 여기에 들어간다.
+    })
+    .when("/red", {
+        templateUrl : "red.html"
+    })
+    .when("/green", {
+        templateUrl : "green.html"
+    })
+    .when("/blue", {
+        templateUrl : "blue.html"
+    });
+});
+// 화면이 새로고침이 안됨?? 뭔얘기?= 화면이 전체가 변화는것이 아니라, 컨텐츠만 가지고 오는것을 이야기한다. 
+</script>
+
+<p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
+</body>
+</html>
